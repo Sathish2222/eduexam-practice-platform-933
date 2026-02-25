@@ -7,11 +7,13 @@ import FileViewer from '../components/FileViewer';
 /**
  * Paper detail view page showing metadata, file preview, and actions.
  * Provides a comprehensive view of a question paper with exam and answer key access.
+ * Paper info and attempt history are collapsible (hidden by default) to reduce clutter.
  * Optimized for one-hand mobile use with bottom action bar.
  */
 // PUBLIC_INTERFACE
 /**
  * Displays paper details, file preview, and provides actions for exam mode and answer key.
+ * Paper metadata and attempt info are hidden by default behind a toggle for cleaner student view.
  * Features mobile-friendly bottom action bar for reachable controls.
  * @returns {JSX.Element}
  */
@@ -21,6 +23,7 @@ function PaperView() {
   const [paper, setPaper] = useState(null);
   const [fileBlob, setFileBlob] = useState(null);
   const [showViewer, setShowViewer] = useState(true);
+  const [showDetails, setShowDetails] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -81,16 +84,16 @@ function PaperView() {
         <span className="text-primary font-medium truncate max-w-[250px]">{paper.title}</span>
       </nav>
 
-      {/* Paper Info Card */}
-      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden mb-6">
+      {/* Compact Paper Header — always visible */}
+      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden mb-4">
         {/* Header bar with gradient accent */}
         <div className="h-1.5 bg-gradient-to-r from-gray-600 via-gray-500 to-emerald-500"></div>
 
-        <div className="p-4 sm:p-7">
-          {/* Title and basic info */}
-          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-5">
+        <div className="p-4 sm:p-5">
+          {/* Title and essential tags */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div className="flex-1 min-w-0">
-              <h1 className="text-xl sm:text-3xl font-bold text-primary leading-tight mb-3">
+              <h1 className="text-xl sm:text-2xl font-bold text-primary leading-tight mb-2">
                 {paper.title}
               </h1>
               <div className="flex flex-wrap gap-2">
@@ -105,7 +108,7 @@ function PaperView() {
                   </span>
                 )}
                 <span className="tag-pill bg-blue-50 text-blue-600">
-                  ⏱ {paper.duration || 180} minutes
+                  ⏱ {paper.duration || 180} min
                 </span>
                 {paper.hasAnswerKey && (
                   <span className="tag-pill bg-emerald-50 text-success">
@@ -114,51 +117,79 @@ function PaperView() {
                 )}
               </div>
             </div>
+
+            {/* Toggle details button */}
+            <button
+              onClick={() => setShowDetails(!showDetails)}
+              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-secondary bg-gray-50 border border-gray-200 rounded-xl hover:bg-gray-100 transition-all duration-200 btn-press shrink-0 self-start"
+              aria-expanded={showDetails}
+              aria-label={showDetails ? 'Hide paper details' : 'Show paper details'}
+            >
+              <svg
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${showDetails ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+              {showDetails ? 'Hide Details' : 'More Info'}
+              {attempts.length > 0 && !showDetails && (
+                <span className="ml-1 inline-flex items-center justify-center w-5 h-5 text-[10px] font-bold bg-blue-100 text-blue-700 rounded-full">
+                  {attempts.length}
+                </span>
+              )}
+            </button>
           </div>
 
-          {/* Notes section */}
-          {paper.notes && (
-            <div className="bg-gray-50 rounded-xl p-4 mb-5 border border-gray-100">
-              <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">Notes</p>
-              <p className="text-sm text-secondary leading-relaxed">{paper.notes}</p>
-            </div>
-          )}
+          {/* Collapsible details section */}
+          {showDetails && (
+            <div className="mt-4 pt-4 border-t border-gray-100 animate-fadeIn">
+              {/* Notes section */}
+              {paper.notes && (
+                <div className="bg-gray-50 rounded-xl p-4 mb-4 border border-gray-100">
+                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">Notes</p>
+                  <p className="text-sm text-secondary leading-relaxed">{paper.notes}</p>
+                </div>
+              )}
 
-          {/* Meta row */}
-          <div className="flex flex-wrap items-center gap-4 text-xs text-gray-400 mb-5">
-            <span>
-              📁 {paper.paperFileName || 'Question Paper'}
-            </span>
-            <span>
-              Added {formatDate(paper.createdAt)}
-            </span>
-            {paper.updatedAt !== paper.createdAt && (
-              <span>Updated {formatDate(paper.updatedAt)}</span>
-            )}
-          </div>
+              {/* Meta row */}
+              <div className="flex flex-wrap items-center gap-4 text-xs text-gray-400 mb-4">
+                <span>
+                  📁 {paper.paperFileName || 'Question Paper'}
+                </span>
+                <span>
+                  Added {formatDate(paper.createdAt)}
+                </span>
+                {paper.updatedAt !== paper.createdAt && (
+                  <span>Updated {formatDate(paper.updatedAt)}</span>
+                )}
+              </div>
 
-          {/* Attempt summary */}
-          {attempts.length > 0 && (
-            <div className="bg-blue-50 rounded-xl p-4 mb-5 border border-blue-100 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-lg shrink-0">
-                📊
-              </div>
-              <div>
-                <p className="text-sm font-medium text-blue-800">
-                  {attempts.length} attempt{attempts.length !== 1 ? 's' : ''} •{' '}
-                  {completedAttempts.length} completed
-                </p>
-                <p className="text-xs text-blue-600 mt-0.5">
-                  {completedAttempts.length > 0
-                    ? `Last completed ${formatDate(new Date(completedAttempts[completedAttempts.length - 1].endTime).toISOString())}`
-                    : 'No completed attempts yet'}
-                </p>
-              </div>
+              {/* Attempt summary */}
+              {attempts.length > 0 && (
+                <div className="bg-blue-50 rounded-xl p-4 mb-4 border border-blue-100 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-lg shrink-0">
+                    📊
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-blue-800">
+                      {attempts.length} attempt{attempts.length !== 1 ? 's' : ''} •{' '}
+                      {completedAttempts.length} completed
+                    </p>
+                    <p className="text-xs text-blue-600 mt-0.5">
+                      {completedAttempts.length > 0
+                        ? `Last completed ${formatDate(new Date(completedAttempts[completedAttempts.length - 1].endTime).toISOString())}`
+                        : 'No completed attempts yet'}
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
           )}
 
           {/* Action Buttons — visible on desktop, hidden on mobile (moved to bottom bar) */}
-          <div className="hidden md:flex flex-wrap gap-3">
+          <div className="hidden md:flex flex-wrap gap-3 mt-4">
             <button
               onClick={() => setShowViewer(!showViewer)}
               className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 btn-press ${

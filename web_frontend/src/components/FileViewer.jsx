@@ -78,13 +78,15 @@ function toImageSrc(input) {
 
 /**
  * FileViewer component for rendering PDFs and images.
- * Supports page-by-page PDF navigation, zoom controls, and fit-to-width mode.
+ * Supports page-by-page PDF navigation, zoom controls, fit-to-width mode,
+ * and a full-screen (full page) viewing mode.
  * Mobile-optimized with bottom-positioned navigation controls for one-hand use.
  */
 // PUBLIC_INTERFACE
 /**
- * Renders a PDF or image file from a Blob with navigation and zoom controls.
+ * Renders a PDF or image file from a Blob with navigation, zoom, and full-screen controls.
  * Features bottom-positioned mobile controls for easy one-hand reach.
+ * Full-screen mode covers the entire viewport for distraction-free viewing.
  * @param {{ fileBlob: Blob|null, fileType: string, title: string }} props
  * @returns {JSX.Element}
  */
@@ -97,10 +99,32 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
   const [error, setError] = useState(null);
   const [scale, setScale] = useState(1.2);
   const [fitWidth, setFitWidth] = useState(false);
+  const [isFullScreen, setIsFullScreen] = useState(false);
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
+  const fullscreenContainerRef = useRef(null);
   const renderTaskRef = useRef(null);
   const imageRevokeRef = useRef(null);
+
+  // Listen for Escape key to exit full-screen mode
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isFullScreen) {
+        setIsFullScreen(false);
+      }
+    };
+    if (isFullScreen) {
+      document.addEventListener('keydown', handleKeyDown);
+      // Prevent body scroll when full-screen is active
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [isFullScreen]);
 
   // Load file when blob changes
   useEffect(() => {
@@ -173,8 +197,10 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
       const page = await pdfDoc.getPage(pageNum);
 
       let currentScale = scale;
-      if (fitWidth && containerRef.current) {
-        const containerWidth = containerRef.current.clientWidth - 48; // account for padding
+      // In full-screen mode, use the full-screen container for fit-width calculation
+      const activeContainer = isFullScreen ? fullscreenContainerRef.current : containerRef.current;
+      if (fitWidth && activeContainer) {
+        const containerWidth = activeContainer.clientWidth - 48; // account for padding
         const viewport = page.getViewport({ scale: 1 });
         currentScale = containerWidth / viewport.width;
       }
@@ -203,14 +229,14 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
         console.error('Error rendering page:', err);
       }
     }
-  }, [pdfDoc, scale, fitWidth]);
+  }, [pdfDoc, scale, fitWidth, isFullScreen]);
 
   // Re-render when page or scale changes
   useEffect(() => {
     if (pdfDoc && currentPage > 0) {
       renderPage(currentPage);
     }
-  }, [pdfDoc, currentPage, scale, fitWidth, renderPage]);
+  }, [pdfDoc, currentPage, scale, fitWidth, isFullScreen, renderPage]);
 
   // Zoom controls
   const zoomIn = () => { setFitWidth(false); setScale(s => Math.min(3, s + 0.2)); };
@@ -220,6 +246,9 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
   // Page navigation
   const goToPrevPage = () => setCurrentPage(p => Math.max(1, p - 1));
   const goToNextPage = () => setCurrentPage(p => Math.min(totalPages, p + 1));
+
+  // Full-screen toggle
+  const toggleFullScreen = () => setIsFullScreen(f => !f);
 
   // Loading state
   if (loading) {
@@ -250,6 +279,245 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
     );
   }
 
+  /** Shared toolbar controls for both normal and full-screen modes */
+  const renderToolbarControls = (isMobile = false) => (
+    <div className={`flex items-center gap-1.5 ${isMobile ? 'justify-between w-full' : 'shrink-0'}`}>
+      {/* Page navigation for PDF */}
+      {pdfDoc && (
+        <>
+          <button
+            onClick={goToPrevPage}
+            disabled={currentPage <= 1}
+            className={`${isMobile ? 'p-2.5' : 'p-1.5'} rounded-${isMobile ? 'xl' : 'md'} text-sm bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:border-gray-200 transition-all duration-150 btn-press`}
+            title="Previous page"
+            aria-label="Previous page"
+          >
+            <svg className={`${isMobile ? 'w-5 h-5' : 'w-4 h-4'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          {isMobile ? (
+            <div className="flex-1 flex flex-col items-center gap-1 px-1">
+              <span className="text-[11px] text-secondary font-medium tabular-nums">
+                Page {currentPage} of {totalPages}
+              </span>
+              {totalPages > 1 && (
+                <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-success rounded-full transition-all duration-300"
+                    style={{ width: `${(currentPage / totalPages) * 100}%` }}
+                  />
+                </div>
+              )}
+            </div>
+          ) : (
+            <span className="text-xs text-secondary font-medium px-2 min-w-[60px] text-center tabular-nums">
+              {currentPage} of {totalPages}
+            </span>
+          )}
+          <button
+            onClick={goToNextPage}
+            disabled={currentPage >= totalPages}
+            className={`${isMobile ? 'p-2.5' : 'p-1.5'} rounded-${isMobile ? 'xl' : 'md'} text-sm bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:border-gray-200 transition-all duration-150 btn-press`}
+            title="Next page"
+            aria-label="Next page"
+          >
+            <svg className={`${isMobile ? 'w-5 h-5' : 'w-4 h-4'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          {!isMobile && <div className="w-px h-5 bg-gray-200 mx-1" />}
+          {isMobile && pdfDoc && totalPages > 1 && <div className="w-px h-7 bg-gray-200 mx-0.5" />}
+        </>
+      )}
+
+      {/* Zoom controls */}
+      <button
+        onClick={zoomOut}
+        className={`${isMobile ? 'p-2.5 rounded-xl' : 'p-1.5 rounded-md'} bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-150 btn-press`}
+        title="Zoom out"
+        aria-label="Zoom out"
+      >
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+        </svg>
+      </button>
+      <span className={`text-xs text-secondary font-medium ${isMobile ? 'w-9' : 'w-12'} text-center tabular-nums`}>
+        {fitWidth ? 'Fit' : `${Math.round(scale * 100)}%`}
+      </span>
+      <button
+        onClick={zoomIn}
+        className={`${isMobile ? 'p-2.5 rounded-xl' : 'p-1.5 rounded-md'} bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-150 btn-press`}
+        title="Zoom in"
+        aria-label="Zoom in"
+      >
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+        </svg>
+      </button>
+
+      {/* Fit width toggle for PDF */}
+      {pdfDoc && (
+        <>
+          {!isMobile && <div className="w-px h-5 bg-gray-200 mx-1" />}
+          <button
+            onClick={toggleFitWidth}
+            className={`${isMobile ? 'p-2.5 rounded-xl' : 'p-1.5 rounded-md'} border transition-all duration-150 btn-press ${
+              fitWidth
+                ? 'bg-primary text-white border-primary'
+                : 'bg-white border-gray-200 hover:bg-gray-50 hover:border-gray-300'
+            }`}
+            title={fitWidth ? 'Exit fit width' : 'Fit to width'}
+            aria-label="Fit to width"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+            </svg>
+          </button>
+        </>
+      )}
+    </div>
+  );
+
+  /** Shared document content area */
+  const renderDocumentContent = (maxHeight = '78vh') => (
+    <div
+      ref={isFullScreen ? fullscreenContainerRef : containerRef}
+      className="overflow-auto bg-gray-100 section-bg"
+      style={{ maxHeight }}
+    >
+      <div className="p-3 sm:p-6 pb-20 sm:pb-6">
+        {pdfDoc ? (
+          <div className="flex justify-center">
+            <canvas
+              ref={canvasRef}
+              className="shadow-md rounded-sm bg-white"
+              style={{ maxWidth: '100%' }}
+            />
+          </div>
+        ) : imageUrl ? (
+          <div className="flex justify-center">
+            <img
+              src={imageUrl}
+              alt={title}
+              style={{
+                transform: `scale(${scale})`,
+                transformOrigin: 'top center',
+              }}
+              className="max-w-full transition-transform duration-200 shadow-md rounded-sm"
+            />
+          </div>
+        ) : (
+          <div className="flex flex-col items-center justify-center py-16 text-gray-400">
+            <div className="text-4xl mb-3">📄</div>
+            <p className="text-sm">No file to display</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+
+  /** Full-screen icon SVG (expand) */
+  const FullScreenIcon = () => (
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+    </svg>
+  );
+
+  /** Exit full-screen icon SVG (collapse) */
+  const ExitFullScreenIcon = () => (
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 9V4m0 5H4m0 0l5-5m11 5h-5m5 0V4m0 0l-5 5M9 15v5m0-5H4m0 0l5 5m11-5h-5m5 0v5m0 0l-5-5" />
+    </svg>
+  );
+
+  // Full-screen overlay view
+  if (isFullScreen) {
+    return (
+      <>
+        {/* Placeholder in the normal flow so layout doesn't jump */}
+        <div className="viewer-container flex items-center justify-center h-72 bg-gray-50">
+          <div className="text-center">
+            <div className="text-3xl mb-2">🔍</div>
+            <p className="text-secondary text-sm">Viewing in full-screen mode</p>
+            <button
+              onClick={toggleFullScreen}
+              className="mt-3 inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-white rounded-xl text-sm font-medium hover:bg-primary/90 transition-all btn-press"
+            >
+              <ExitFullScreenIcon />
+              Exit Full Screen
+            </button>
+          </div>
+        </div>
+
+        {/* Full-screen overlay */}
+        <div className="fullscreen-viewer-overlay" role="dialog" aria-label="Full screen document viewer">
+          {/* Full-screen toolbar */}
+          <div className="fullscreen-viewer-toolbar">
+            <div className="flex items-center justify-between w-full gap-2">
+              {/* Left: title */}
+              <div className="flex items-center gap-2 min-w-0 mr-3">
+                <span className="text-base">
+                  {pdfDoc ? '📄' : '🖼️'}
+                </span>
+                <h3 className="text-sm font-semibold text-primary truncate">{title}</h3>
+              </div>
+
+              {/* Center: controls (hidden on mobile, shown in bottom bar) */}
+              <div className="hidden sm:flex items-center">
+                {renderToolbarControls(false)}
+              </div>
+
+              {/* Right: exit button */}
+              <button
+                onClick={toggleFullScreen}
+                className="shrink-0 inline-flex items-center gap-1.5 px-3 py-2 bg-gray-100 text-primary border border-gray-200 rounded-xl text-sm font-medium hover:bg-gray-200 transition-all btn-press"
+                title="Exit full screen (Esc)"
+                aria-label="Exit full screen"
+              >
+                <ExitFullScreenIcon />
+                <span className="hidden sm:inline">Exit</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Full-screen content area */}
+          <div className="fullscreen-viewer-content">
+            {renderDocumentContent('100%')}
+          </div>
+
+          {/* Full-screen mobile bottom controls */}
+          <div className="sm:hidden fullscreen-viewer-bottom-bar">
+            <div className="flex items-center justify-between px-2 py-2 gap-1">
+              {renderToolbarControls(true)}
+            </div>
+          </div>
+
+          {/* Desktop bottom progress bar for PDF */}
+          {pdfDoc && totalPages > 1 && (
+            <div className="hidden sm:flex fullscreen-viewer-progress">
+              <p className="text-[11px] text-gray-400">
+                Press Esc to exit full screen
+              </p>
+              <div className="flex items-center gap-2">
+                <div className="w-24 h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-success rounded-full transition-all duration-300"
+                    style={{ width: `${(currentPage / totalPages) * 100}%` }}
+                  />
+                </div>
+                <span className="text-[11px] text-gray-400 tabular-nums">
+                  {Math.round((currentPage / totalPages) * 100)}%
+                </span>
+              </div>
+            </div>
+          )}
+        </div>
+      </>
+    );
+  }
+
+  // Normal (non-full-screen) view
   return (
     <div className="viewer-container bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
       {/* Desktop Toolbar — hidden on mobile, controls are in the bottom bar */}
@@ -264,83 +532,18 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
 
         {/* Right: Controls */}
         <div className="flex items-center gap-1.5 shrink-0">
-          {/* Page navigation for PDF */}
-          {pdfDoc && (
-            <>
-              <button
-                onClick={goToPrevPage}
-                disabled={currentPage <= 1}
-                className="p-1.5 rounded-md text-sm bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:border-gray-200 transition-all duration-150 btn-press"
-                title="Previous page"
-                aria-label="Previous page"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <span className="text-xs text-secondary font-medium px-2 min-w-[60px] text-center tabular-nums">
-                {currentPage} of {totalPages}
-              </span>
-              <button
-                onClick={goToNextPage}
-                disabled={currentPage >= totalPages}
-                className="p-1.5 rounded-md text-sm bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:border-gray-200 transition-all duration-150 btn-press"
-                title="Next page"
-                aria-label="Next page"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-              <div className="w-px h-5 bg-gray-200 mx-1" />
-            </>
-          )}
+          {renderToolbarControls(false)}
 
-          {/* Zoom controls */}
+          {/* Full-screen toggle button */}
+          <div className="w-px h-5 bg-gray-200 mx-1" />
           <button
-            onClick={zoomOut}
+            onClick={toggleFullScreen}
             className="p-1.5 rounded-md bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-150 btn-press"
-            title="Zoom out"
-            aria-label="Zoom out"
+            title="Full screen view"
+            aria-label="Full screen view"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
-            </svg>
+            <FullScreenIcon />
           </button>
-          <span className="text-xs text-secondary font-medium w-12 text-center tabular-nums">
-            {fitWidth ? 'Fit' : `${Math.round(scale * 100)}%`}
-          </span>
-          <button
-            onClick={zoomIn}
-            className="p-1.5 rounded-md bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-150 btn-press"
-            title="Zoom in"
-            aria-label="Zoom in"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-            </svg>
-          </button>
-
-          {/* Fit width toggle */}
-          {pdfDoc && (
-            <>
-              <div className="w-px h-5 bg-gray-200 mx-1" />
-              <button
-                onClick={toggleFitWidth}
-                className={`p-1.5 rounded-md border transition-all duration-150 btn-press ${
-                  fitWidth
-                    ? 'bg-primary text-white border-primary'
-                    : 'bg-white border-gray-200 hover:bg-gray-50 hover:border-gray-300'
-                }`}
-                title={fitWidth ? 'Exit fit width' : 'Fit to width'}
-                aria-label="Fit to width"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                </svg>
-              </button>
-            </>
-          )}
         </div>
       </div>
 
@@ -355,43 +558,19 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
             {currentPage}/{totalPages}
           </span>
         )}
+        {/* Mobile full-screen button in title bar */}
+        <button
+          onClick={toggleFullScreen}
+          className="p-1.5 rounded-lg bg-white border border-gray-200 hover:bg-gray-50 transition-all duration-150 btn-press shrink-0"
+          title="Full screen view"
+          aria-label="Full screen view"
+        >
+          <FullScreenIcon />
+        </button>
       </div>
 
       {/* Content Area — extra bottom padding on mobile for bottom controls */}
-      <div
-        ref={containerRef}
-        className="overflow-auto bg-gray-100 section-bg"
-        style={{ maxHeight: '78vh' }}
-      >
-        <div className="p-3 sm:p-6 pb-20 sm:pb-6">
-          {pdfDoc ? (
-            <div className="flex justify-center">
-              <canvas
-                ref={canvasRef}
-                className="shadow-md rounded-sm bg-white"
-                style={{ maxWidth: '100%' }}
-              />
-            </div>
-          ) : imageUrl ? (
-            <div className="flex justify-center">
-              <img
-                src={imageUrl}
-                alt={title}
-                style={{
-                  transform: `scale(${scale})`,
-                  transformOrigin: 'top center',
-                }}
-                className="max-w-full transition-transform duration-200 shadow-md rounded-sm"
-              />
-            </div>
-          ) : (
-            <div className="flex flex-col items-center justify-center py-16 text-gray-400">
-              <div className="text-4xl mb-3">📄</div>
-              <p className="text-sm">No file to display</p>
-            </div>
-          )}
-        </div>
-      </div>
+      {renderDocumentContent('78vh')}
 
       {/* Desktop bottom status bar for PDF */}
       {pdfDoc && totalPages > 1 && (
@@ -417,94 +596,17 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
       {/* Mobile bottom control bar — one-hand friendly, within the viewer */}
       <div className="sm:hidden border-t border-gray-200 bg-white/97 backdrop-blur-sm">
         <div className="flex items-center justify-between px-2 py-2 gap-1">
-          {/* Page navigation (PDF) or zoom info */}
-          {pdfDoc && totalPages > 1 ? (
-            <>
-              {/* Prev page — large touch target */}
-              <button
-                onClick={goToPrevPage}
-                disabled={currentPage <= 1}
-                className="p-2.5 rounded-xl bg-white border border-gray-200 hover:bg-gray-50 disabled:opacity-30 transition-all duration-150 btn-press mobile-touch-target"
-                aria-label="Previous page"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
+          {renderToolbarControls(true)}
 
-              {/* Page progress bar */}
-              <div className="flex-1 flex flex-col items-center gap-1 px-1">
-                <span className="text-[11px] text-secondary font-medium tabular-nums">
-                  Page {currentPage} of {totalPages}
-                </span>
-                <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-success rounded-full transition-all duration-300"
-                    style={{ width: `${(currentPage / totalPages) * 100}%` }}
-                  />
-                </div>
-              </div>
-
-              {/* Next page — large touch target */}
-              <button
-                onClick={goToNextPage}
-                disabled={currentPage >= totalPages}
-                className="p-2.5 rounded-xl bg-white border border-gray-200 hover:bg-gray-50 disabled:opacity-30 transition-all duration-150 btn-press mobile-touch-target"
-                aria-label="Next page"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </>
-          ) : (
-            <div className="flex-1" />
-          )}
-
-          {/* Divider */}
-          {pdfDoc && totalPages > 1 && (
-            <div className="w-px h-7 bg-gray-200 mx-0.5" />
-          )}
-
-          {/* Zoom controls — always visible on mobile */}
+          {/* Full-screen button in mobile bottom bar */}
           <button
-            onClick={zoomOut}
-            className="p-2.5 rounded-xl bg-white border border-gray-200 hover:bg-gray-50 transition-all duration-150 btn-press mobile-touch-target"
-            aria-label="Zoom out"
+            onClick={toggleFullScreen}
+            className="p-2.5 rounded-xl bg-primary text-white border border-primary hover:bg-primary/90 transition-all duration-150 btn-press mobile-touch-target"
+            aria-label="Full screen view"
+            title="Full screen view"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
-            </svg>
+            <FullScreenIcon />
           </button>
-          <span className="text-[11px] text-secondary font-medium w-9 text-center tabular-nums">
-            {fitWidth ? 'Fit' : `${Math.round(scale * 100)}%`}
-          </span>
-          <button
-            onClick={zoomIn}
-            className="p-2.5 rounded-xl bg-white border border-gray-200 hover:bg-gray-50 transition-all duration-150 btn-press mobile-touch-target"
-            aria-label="Zoom in"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-            </svg>
-          </button>
-
-          {/* Fit width toggle for PDF */}
-          {pdfDoc && (
-            <button
-              onClick={toggleFitWidth}
-              className={`p-2.5 rounded-xl border transition-all duration-150 btn-press mobile-touch-target ${
-                fitWidth
-                  ? 'bg-primary text-white border-primary'
-                  : 'bg-white border-gray-200 hover:bg-gray-50'
-              }`}
-              aria-label="Fit to width"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-              </svg>
-            </button>
-          )}
         </div>
       </div>
     </div>
