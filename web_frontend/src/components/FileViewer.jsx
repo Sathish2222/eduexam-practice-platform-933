@@ -7,11 +7,11 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs
 
 /**
  * FileViewer component for rendering PDFs and images.
- * Supports page-by-page PDF navigation and zoom for images.
+ * Supports page-by-page PDF navigation, zoom controls, and fit-to-width mode.
  */
 // PUBLIC_INTERFACE
 /**
- * Renders a PDF or image file from a Blob.
+ * Renders a PDF or image file from a Blob with navigation and zoom controls.
  * @param {{ fileBlob: Blob|null, fileType: string, title: string }} props
  * @returns {JSX.Element}
  */
@@ -23,7 +23,9 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [scale, setScale] = useState(1.2);
+  const [fitWidth, setFitWidth] = useState(false);
   const canvasRef = useRef(null);
+  const containerRef = useRef(null);
   const renderTaskRef = useRef(null);
 
   // Load file when blob changes
@@ -55,7 +57,7 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
         }
       } catch (err) {
         console.error('Error loading file:', err);
-        setError('Failed to load file. It may be corrupted.');
+        setError('Failed to load file. It may be corrupted or in an unsupported format.');
       } finally {
         setLoading(false);
       }
@@ -82,12 +84,25 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
       }
 
       const page = await pdfDoc.getPage(pageNum);
-      const viewport = page.getViewport({ scale });
+
+      let currentScale = scale;
+      if (fitWidth && containerRef.current) {
+        const containerWidth = containerRef.current.clientWidth - 48; // account for padding
+        const viewport = page.getViewport({ scale: 1 });
+        currentScale = containerWidth / viewport.width;
+      }
+
+      const viewport = page.getViewport({ scale: currentScale });
       const canvas = canvasRef.current;
       const context = canvas.getContext('2d');
 
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
+      // Use device pixel ratio for crisp rendering
+      const pixelRatio = window.devicePixelRatio || 1;
+      canvas.width = viewport.width * pixelRatio;
+      canvas.height = viewport.height * pixelRatio;
+      canvas.style.width = `${viewport.width}px`;
+      canvas.style.height = `${viewport.height}px`;
+      context.scale(pixelRatio, pixelRatio);
 
       const renderContext = {
         canvasContext: context,
@@ -101,101 +116,203 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
         console.error('Error rendering page:', err);
       }
     }
-  }, [pdfDoc, scale]);
+  }, [pdfDoc, scale, fitWidth]);
 
   // Re-render when page or scale changes
   useEffect(() => {
     if (pdfDoc && currentPage > 0) {
       renderPage(currentPage);
     }
-  }, [pdfDoc, currentPage, scale, renderPage]);
+  }, [pdfDoc, currentPage, scale, fitWidth, renderPage]);
 
+  // Zoom controls
+  const zoomIn = () => { setFitWidth(false); setScale(s => Math.min(3, s + 0.2)); };
+  const zoomOut = () => { setFitWidth(false); setScale(s => Math.max(0.5, s - 0.2)); };
+  const toggleFitWidth = () => setFitWidth(f => !f);
+
+  // Page navigation
+  const goToPrevPage = () => setCurrentPage(p => Math.max(1, p - 1));
+  const goToNextPage = () => setCurrentPage(p => Math.min(totalPages, p + 1));
+
+  // Loading state
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64 bg-gray-50 rounded-lg">
+      <div className="viewer-container flex items-center justify-center h-72">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary mx-auto mb-3"></div>
-          <p className="text-secondary">Loading {title}...</p>
+          <div className="relative mx-auto mb-4 w-12 h-12">
+            <div className="absolute inset-0 rounded-full border-4 border-gray-200"></div>
+            <div className="absolute inset-0 rounded-full border-4 border-primary border-t-transparent animate-spin"></div>
+          </div>
+          <p className="text-secondary text-sm font-medium">Loading {title}...</p>
+          <p className="text-gray-400 text-xs mt-1">Please wait while the document loads</p>
         </div>
       </div>
     );
   }
 
+  // Error state
   if (error) {
     return (
-      <div className="flex items-center justify-center h-64 bg-red-50 rounded-lg">
-        <p className="text-error">{error}</p>
+      <div className="viewer-container flex items-center justify-center h-72 bg-red-50/50">
+        <div className="text-center px-6">
+          <div className="text-4xl mb-3">⚠️</div>
+          <p className="text-error font-medium mb-1">Unable to load document</p>
+          <p className="text-red-400 text-sm">{error}</p>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border">
+    <div className="viewer-container bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
       {/* Toolbar */}
-      <div className="flex items-center justify-between px-4 py-2 border-b bg-gray-50 rounded-t-lg">
-        <h3 className="text-sm font-medium text-primary truncate">{title}</h3>
-        <div className="flex items-center gap-2">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-white">
+        {/* Left: Title */}
+        <div className="flex items-center gap-2 min-w-0 mr-3">
+          <span className="text-base">
+            {pdfDoc ? '📄' : '🖼️'}
+          </span>
+          <h3 className="text-sm font-semibold text-primary truncate">{title}</h3>
+        </div>
+
+        {/* Right: Controls */}
+        <div className="flex items-center gap-1.5 shrink-0">
+          {/* Page navigation for PDF */}
           {pdfDoc && (
             <>
               <button
-                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                onClick={goToPrevPage}
                 disabled={currentPage <= 1}
-                className="px-2 py-1 text-xs bg-white border rounded hover:bg-gray-100 disabled:opacity-40"
+                className="p-1.5 rounded-md text-sm bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:border-gray-200 transition-all duration-150 btn-press"
+                title="Previous page"
+                aria-label="Previous page"
               >
-                ◀ Prev
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
               </button>
-              <span className="text-xs text-secondary">
-                {currentPage} / {totalPages}
+              <span className="text-xs text-secondary font-medium px-2 min-w-[60px] text-center tabular-nums">
+                {currentPage} of {totalPages}
               </span>
               <button
-                onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                onClick={goToNextPage}
                 disabled={currentPage >= totalPages}
-                className="px-2 py-1 text-xs bg-white border rounded hover:bg-gray-100 disabled:opacity-40"
+                className="p-1.5 rounded-md text-sm bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:border-gray-200 transition-all duration-150 btn-press"
+                title="Next page"
+                aria-label="Next page"
               >
-                Next ▶
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </button>
-              <span className="text-xs text-gray-400 mx-1">|</span>
+              <div className="w-px h-5 bg-gray-200 mx-1" />
             </>
           )}
+
+          {/* Zoom controls */}
           <button
-            onClick={() => setScale(s => Math.max(0.5, s - 0.2))}
-            className="px-2 py-1 text-xs bg-white border rounded hover:bg-gray-100"
+            onClick={zoomOut}
+            className="p-1.5 rounded-md bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-150 btn-press"
             title="Zoom out"
+            aria-label="Zoom out"
           >
-            −
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+            </svg>
           </button>
-          <span className="text-xs text-secondary w-10 text-center">
-            {Math.round(scale * 100)}%
+          <span className="text-xs text-secondary font-medium w-12 text-center tabular-nums">
+            {fitWidth ? 'Fit' : `${Math.round(scale * 100)}%`}
           </span>
           <button
-            onClick={() => setScale(s => Math.min(3, s + 0.2))}
-            className="px-2 py-1 text-xs bg-white border rounded hover:bg-gray-100"
+            onClick={zoomIn}
+            className="p-1.5 rounded-md bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-150 btn-press"
             title="Zoom in"
+            aria-label="Zoom in"
           >
-            +
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+            </svg>
           </button>
+
+          {/* Fit width toggle */}
+          {pdfDoc && (
+            <>
+              <div className="w-px h-5 bg-gray-200 mx-1" />
+              <button
+                onClick={toggleFitWidth}
+                className={`p-1.5 rounded-md border transition-all duration-150 btn-press ${
+                  fitWidth
+                    ? 'bg-primary text-white border-primary'
+                    : 'bg-white border-gray-200 hover:bg-gray-50 hover:border-gray-300'
+                }`}
+                title={fitWidth ? 'Exit fit width' : 'Fit to width'}
+                aria-label="Fit to width"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                </svg>
+              </button>
+            </>
+          )}
         </div>
       </div>
 
-      {/* Content */}
-      <div className="overflow-auto p-4" style={{ maxHeight: '75vh' }}>
-        {pdfDoc ? (
-          <div className="flex justify-center">
-            <canvas ref={canvasRef} className="shadow-sm" />
-          </div>
-        ) : imageUrl ? (
-          <div className="flex justify-center">
-            <img
-              src={imageUrl}
-              alt={title}
-              style={{ transform: `scale(${scale})`, transformOrigin: 'top center' }}
-              className="max-w-full transition-transform"
-            />
-          </div>
-        ) : (
-          <p className="text-center text-secondary">No file to display</p>
-        )}
+      {/* Content Area */}
+      <div
+        ref={containerRef}
+        className="overflow-auto bg-gray-100 section-bg"
+        style={{ maxHeight: '78vh' }}
+      >
+        <div className="p-4 sm:p-6">
+          {pdfDoc ? (
+            <div className="flex justify-center">
+              <canvas
+                ref={canvasRef}
+                className="shadow-md rounded-sm bg-white"
+                style={{ maxWidth: '100%' }}
+              />
+            </div>
+          ) : imageUrl ? (
+            <div className="flex justify-center">
+              <img
+                src={imageUrl}
+                alt={title}
+                style={{
+                  transform: `scale(${scale})`,
+                  transformOrigin: 'top center',
+                }}
+                className="max-w-full transition-transform duration-200 shadow-md rounded-sm"
+              />
+            </div>
+          ) : (
+            <div className="flex flex-col items-center justify-center py-16 text-gray-400">
+              <div className="text-4xl mb-3">📄</div>
+              <p className="text-sm">No file to display</p>
+            </div>
+          )}
+        </div>
       </div>
+
+      {/* Bottom status bar for PDF */}
+      {pdfDoc && totalPages > 1 && (
+        <div className="px-4 py-2 border-t border-gray-100 bg-gray-50/80 flex items-center justify-between">
+          <p className="text-[11px] text-gray-400">
+            Use controls above to navigate pages
+          </p>
+          {/* Page progress */}
+          <div className="flex items-center gap-2">
+            <div className="w-24 h-1.5 bg-gray-200 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-success rounded-full transition-all duration-300"
+                style={{ width: `${(currentPage / totalPages) * 100}%` }}
+              />
+            </div>
+            <span className="text-[11px] text-gray-400 tabular-nums">
+              {Math.round((currentPage / totalPages) * 100)}%
+            </span>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
