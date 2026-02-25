@@ -125,35 +125,30 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ── Mode Cards — modern with gradient accents ── */}
+      {/* ── Mode Cards ── */}
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-10 px-1">
-        {/* Student Mode */}
+        {/* Exam Mode */}
         <Link
           to="/browse"
           className="group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 active:scale-[0.98]"
         >
-          {/* Top accent gradient */}
           <div className="h-1.5 bg-gradient-to-r from-emerald-500 via-emerald-400 to-teal-400" />
-
           <div className="p-5 sm:p-7 flex items-start gap-4">
-            {/* Icon — modern rounded container */}
             <div className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center text-2xl sm:text-3xl group-hover:scale-105 transition-transform duration-300 shadow-sm">
-              📄
+              🎯
             </div>
             <div className="min-w-0">
               <h2 className="text-lg sm:text-xl font-extrabold text-gray-800 mb-1 group-hover:text-emerald-600 transition-colors duration-200">
-                Student Mode
+                Exam Mode
               </h2>
               <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
-                Browse papers, start timed exams, view answer keys & review your attempt history.
+                Start a timed exam, practice under real exam conditions, and review your attempt history.
               </p>
             </div>
           </div>
-
-          {/* CTA hint */}
           <div className="px-5 pb-4 sm:px-7 sm:pb-5">
             <span className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 group-hover:translate-x-1.5 transition-transform duration-300">
-              Start Practicing
+              Start Exam
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
               </svg>
@@ -161,33 +156,28 @@ function HomePage() {
           </div>
         </Link>
 
-        {/* Admin Mode */}
+        {/* Study Mode */}
         <Link
-          to="/admin"
-          className="group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:border-gray-300 transition-all duration-300 active:scale-[0.98]"
+          to="/browse?mode=study"
+          className="group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 active:scale-[0.98]"
         >
-          {/* Top accent gradient */}
-          <div className="h-1.5 bg-gradient-to-r from-gray-600 via-gray-500 to-gray-400" />
-
+          <div className="h-1.5 bg-gradient-to-r from-blue-500 via-blue-400 to-indigo-400" />
           <div className="p-5 sm:p-7 flex items-start gap-4">
-            {/* Icon — modern rounded container */}
-            <div className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center text-2xl sm:text-3xl group-hover:scale-105 transition-transform duration-300 shadow-sm">
-              🔧
+            <div className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center text-2xl sm:text-3xl group-hover:scale-105 transition-transform duration-300 shadow-sm">
+              📖
             </div>
             <div className="min-w-0">
-              <h2 className="text-lg sm:text-xl font-extrabold text-gray-800 mb-1 group-hover:text-gray-600 transition-colors duration-200">
-                Admin Mode
+              <h2 className="text-lg sm:text-xl font-extrabold text-gray-800 mb-1 group-hover:text-blue-600 transition-colors duration-200">
+                Study Mode
               </h2>
               <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
-                Upload & manage question papers, add answer keys & configure exam settings.
+                View the question paper and answer key side by side. Study at your own pace without a timer.
               </p>
             </div>
           </div>
-
-          {/* CTA hint */}
           <div className="px-5 pb-4 sm:px-7 sm:pb-5">
-            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-500 group-hover:translate-x-1.5 transition-transform duration-300">
-              Manage Papers
+            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 group-hover:translate-x-1.5 transition-transform duration-300">
+              Start Studying
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
               </svg>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { getPaperById, getFile, getAttemptsForPaper } from '../utils/storage';
-import { formatDate } from '../utils/helpers';
+import { formatDate, isValidPdfBlob } from '../utils/helpers';
 import FileViewer from '../components/FileViewer';
 import StudentNameDialog from '../components/StudentNameDialog';
 
@@ -41,7 +41,22 @@ function PaperView() {
       }
       setPaper(p);
 
-      const blob = await getFile(paperId, 'paper');
+      // URL-first: if a static URL exists, always fetch fresh (avoids stale/broken IndexedDB blobs).
+      // Fall back to IndexedDB only for manually-uploaded files that have no URL.
+      let blob = null;
+      if (p.paperUrl) {
+        try {
+          const res = await fetch(p.paperUrl, { cache: 'no-cache' });
+          if (res.ok) blob = await res.blob();
+          else console.warn('Could not fetch paper from URL: HTTP', res.status);
+        } catch (e) {
+          console.warn('Could not fetch paper from URL:', e);
+        }
+      }
+      if (!blob) {
+        const stored = await getFile(paperId, 'paper');
+        if (stored && await isValidPdfBlob(stored)) blob = stored;
+      }
       setFileBlob(blob);
       setLoading(false);
     };
@@ -113,14 +128,21 @@ function PaperView() {
       </nav>
 
       {/* Mobile-only: Top Start Exam button — visible & prominent for easy access */}
-      <div className="md:hidden mb-3">
+      <div className="md:hidden mb-3 flex gap-2">
         <button
           onClick={handleStartExamClick}
-          className="w-full flex items-center justify-center gap-2 px-4 py-3.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-bold text-base shadow-md btn-press mobile-touch-target"
+          className="flex-1 flex items-center justify-center gap-2 px-4 py-3.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-bold text-base shadow-md btn-press mobile-touch-target"
         >
           <span>🎯</span>
           Start Exam
         </button>
+        <Link
+          to={`/study/${paperId}`}
+          className="flex items-center justify-center gap-2 px-4 py-3.5 bg-blue-50 text-blue-600 rounded-xl hover:bg-blue-100 transition-all duration-200 font-bold text-base shadow-sm btn-press mobile-touch-target"
+        >
+          <span>📖</span>
+          Study
+        </Link>
       </div>
 
       {/* Compact Paper Header — always visible */}
@@ -230,6 +252,14 @@ function PaperView() {
               Start Exam
             </button>
 
+            <Link
+              to={`/study/${paperId}`}
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-50 text-blue-600 rounded-xl hover:bg-blue-100 transition-all duration-200 font-medium text-sm btn-press"
+            >
+              <span>📖</span>
+              Study Mode
+            </Link>
+
             {paper.hasAnswerKey && (
               <Link
                 to={`/answer/${paperId}`}
@@ -282,8 +312,17 @@ function PaperView() {
             className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-semibold text-base shadow-sm btn-press mobile-touch-target"
           >
             <span>🎯</span>
-            Start Exam
+            Exam
           </button>
+
+          {/* Study Mode */}
+          <Link
+            to={`/study/${paperId}`}
+            className="flex items-center justify-center gap-1.5 px-3 py-2.5 bg-blue-50 text-blue-600 rounded-xl hover:bg-blue-100 transition-all duration-200 text-sm font-medium btn-press mobile-touch-target"
+          >
+            <span>📖</span>
+            Study
+          </Link>
 
           {/* Answer Key */}
           {paper.hasAnswerKey && (

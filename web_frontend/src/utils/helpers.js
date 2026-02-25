@@ -77,6 +77,23 @@ export function isImage(filenameOrType) {
 
 // PUBLIC_INTERFACE
 /**
+ * Validate that a Blob contains real PDF data by checking the %PDF magic bytes.
+ * Used to detect stale/corrupt blobs stored in IndexedDB before the response.ok fix.
+ * @param {Blob|null} blob
+ * @returns {Promise<boolean>}
+ */
+export async function isValidPdfBlob(blob) {
+  if (!blob) return false;
+  try {
+    const header = new Uint8Array(await blob.slice(0, 4).arrayBuffer());
+    return header[0] === 0x25 && header[1] === 0x50 && header[2] === 0x44 && header[3] === 0x46;
+  } catch {
+    return false;
+  }
+}
+
+// PUBLIC_INTERFACE
+/**
  * Truncate text to a maximum length.
  * @param {string} text - Text to truncate
  * @param {number} maxLength - Maximum character length

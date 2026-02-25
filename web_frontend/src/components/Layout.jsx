@@ -22,11 +22,9 @@ function Layout({ children }) {
 
   const navItems = [
     { to: '/', label: 'Home', icon: '🏠' },
-    { to: '/browse', label: 'Papers', icon: '📄' },
-    { to: '/admin', label: 'Admin', icon: '🔧' },
+    { to: '/browse', label: 'Exam', icon: '🎯' },
     { to: '/history', label: 'History', icon: '📊' },
     { to: '/settings', label: 'Settings', icon: '⚙️' },
-    { to: '/import-export', label: 'Backup', icon: '💾' },
   ];
 
   const isActive = (path) => location.pathname === path;

@@ -165,7 +165,7 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
         }
       } catch (err) {
         console.error('Error loading file:', err);
-        setError('Failed to load file. It may be corrupted or in an unsupported format.');
+        setError(err.message || 'Failed to load file. It may be corrupted or in an unsupported format.');
       } finally {
         setLoading(false);
       }

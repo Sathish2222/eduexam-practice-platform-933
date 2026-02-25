@@ -11,7 +11,7 @@ import {
   getStudentName,
   saveStudentName,
 } from '../utils/storage';
-import { formatTime } from '../utils/helpers';
+import { formatTime, isValidPdfBlob } from '../utils/helpers';
 import FileViewer from '../components/FileViewer';
 import ExamTimer from '../components/ExamTimer';
 
@@ -60,7 +60,22 @@ function ExamMode() {
       }
       setPaper(p);
 
-      const blob = await getFile(paperId, 'paper');
+      // URL-first: if a static URL exists, always fetch fresh (avoids stale/broken IndexedDB blobs).
+      // Fall back to IndexedDB only for manually-uploaded files that have no URL.
+      let blob = null;
+      if (p.paperUrl) {
+        try {
+          const res = await fetch(p.paperUrl, { cache: 'no-cache' });
+          if (res.ok) blob = await res.blob();
+          else console.warn('Could not fetch paper from URL: HTTP', res.status);
+        } catch (e) {
+          console.warn('Could not fetch paper from URL:', e);
+        }
+      }
+      if (!blob) {
+        const stored = await getFile(paperId, 'paper');
+        if (stored && await isValidPdfBlob(stored)) blob = stored;
+      }
       setFileBlob(blob);
 
       // Pre-fill saved student name
