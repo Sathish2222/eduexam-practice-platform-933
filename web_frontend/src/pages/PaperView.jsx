@@ -8,15 +8,18 @@ import StudentNameDialog from '../components/StudentNameDialog';
 /**
  * Paper detail view page showing metadata, file preview, and actions.
  * Provides a comprehensive view of a question paper with exam and answer key access.
- * Paper info and attempt history are collapsible (hidden by default) to reduce clutter.
+ * Paper info is collapsible (hidden by default) to reduce clutter.
+ * Attempt history is NOT shown here — it lives in the History tab.
  * Requires student name entry before navigating to exam mode.
  * Optimized for one-hand mobile use with bottom action bar.
+ * Start Exam button is prominent at the top on mobile for easy access.
  */
 // PUBLIC_INTERFACE
 /**
  * Displays paper details, file preview, and provides actions for exam mode and answer key.
- * Paper metadata and attempt info are hidden by default behind a toggle for cleaner student view.
+ * Paper metadata is hidden by default behind a toggle for cleaner student view.
  * Features mobile-friendly bottom action bar and student name prompt before exam start.
+ * Start Exam button appears at the top on mobile for quick access.
  * @returns {JSX.Element}
  */
 function PaperView() {
@@ -70,7 +73,7 @@ function PaperView() {
             <div className="absolute inset-0 rounded-full border-4 border-gray-200"></div>
             <div className="absolute inset-0 rounded-full border-4 border-primary border-t-transparent animate-spin"></div>
           </div>
-          <p className="text-secondary text-sm">Loading paper...</p>
+          <p className="text-secondary text-sm sm:text-base">Loading paper...</p>
         </div>
       </div>
     );
@@ -80,16 +83,13 @@ function PaperView() {
     return (
       <div className="text-center py-20">
         <div className="text-5xl mb-4">📄</div>
-        <p className="text-secondary text-lg">Paper not found.</p>
-        <Link to="/browse" className="mt-4 inline-block text-sm text-primary hover:text-success transition">
+        <p className="text-secondary text-base sm:text-lg">Paper not found.</p>
+        <Link to="/browse" className="mt-4 inline-block text-sm sm:text-base text-primary hover:text-success transition">
           ← Browse all papers
         </Link>
       </div>
     );
   }
-
-  const attempts = getAttemptsForPaper(paperId);
-  const completedAttempts = attempts.filter(a => a.completed);
 
   return (
     <div className="max-w-5xl mx-auto has-mobile-bottom-bar">
@@ -112,6 +112,17 @@ function PaperView() {
         <span className="text-primary font-medium truncate max-w-[200px] sm:max-w-[250px]">{paper.title}</span>
       </nav>
 
+      {/* Mobile-only: Top Start Exam button — visible & prominent for easy access */}
+      <div className="md:hidden mb-3">
+        <button
+          onClick={handleStartExamClick}
+          className="w-full flex items-center justify-center gap-2 px-4 py-3.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-bold text-base shadow-md btn-press mobile-touch-target"
+        >
+          <span>🎯</span>
+          Start Exam
+        </button>
+      </div>
+
       {/* Compact Paper Header — always visible */}
       <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-sm overflow-hidden mb-3 sm:mb-4">
         {/* Header bar with gradient accent */}
@@ -126,20 +137,20 @@ function PaperView() {
               </h1>
               <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {paper.subject && (
-                  <span className="tag-pill bg-gray-100 text-secondary text-[10px] sm:text-xs">
+                  <span className="tag-pill bg-gray-100 text-secondary text-xs sm:text-xs">
                     📚 {paper.subject}
                   </span>
                 )}
                 {paper.year && (
-                  <span className="tag-pill bg-gray-100 text-secondary text-[10px] sm:text-xs">
+                  <span className="tag-pill bg-gray-100 text-secondary text-xs sm:text-xs">
                     📅 {paper.year}
                   </span>
                 )}
-                <span className="tag-pill bg-blue-50 text-blue-600 text-[10px] sm:text-xs">
+                <span className="tag-pill bg-blue-50 text-blue-600 text-xs sm:text-xs">
                   ⏱ {paper.duration || 180} min
                 </span>
                 {paper.hasAnswerKey && (
-                  <span className="tag-pill bg-emerald-50 text-success text-[10px] sm:text-xs">
+                  <span className="tag-pill bg-emerald-50 text-success text-xs sm:text-xs">
                     ✓ Answer Key
                   </span>
                 )}
@@ -149,7 +160,7 @@ function PaperView() {
             {/* Toggle details button */}
             <button
               onClick={() => setShowDetails(!showDetails)}
-              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 text-[11px] sm:text-xs font-medium text-secondary bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl hover:bg-gray-100 transition-all duration-200 btn-press shrink-0 self-start"
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-xs font-medium text-secondary bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl hover:bg-gray-100 transition-all duration-200 btn-press shrink-0 self-start"
               aria-expanded={showDetails}
               aria-label={showDetails ? 'Hide paper details' : 'Show paper details'}
             >
@@ -162,27 +173,22 @@ function PaperView() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
               {showDetails ? 'Hide Details' : 'More Info'}
-              {attempts.length > 0 && !showDetails && (
-                <span className="ml-1 inline-flex items-center justify-center w-4 h-4 sm:w-5 sm:h-5 text-[9px] sm:text-[10px] font-bold bg-blue-100 text-blue-700 rounded-full">
-                  {attempts.length}
-                </span>
-              )}
             </button>
           </div>
 
-          {/* Collapsible details section */}
+          {/* Collapsible details section — notes and meta only, no attempt history */}
           {showDetails && (
             <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-100 animate-fadeIn">
               {/* Notes section */}
               {paper.notes && (
                 <div className="bg-gray-50 rounded-lg sm:rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border border-gray-100">
-                  <p className="text-[10px] sm:text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">Notes</p>
-                  <p className="text-xs sm:text-sm text-secondary leading-relaxed">{paper.notes}</p>
+                  <p className="text-xs sm:text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">Notes</p>
+                  <p className="text-sm sm:text-sm text-secondary leading-relaxed">{paper.notes}</p>
                 </div>
               )}
 
               {/* Meta row */}
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[10px] sm:text-xs text-gray-400 mb-3 sm:mb-4">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-xs text-gray-400">
                 <span>
                   📁 {paper.paperFileName || 'Question Paper'}
                 </span>
@@ -193,30 +199,10 @@ function PaperView() {
                   <span>Updated {formatDate(paper.updatedAt)}</span>
                 )}
               </div>
-
-              {/* Attempt summary */}
-              {attempts.length > 0 && (
-                <div className="bg-blue-50 rounded-lg sm:rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border border-blue-100 flex items-center gap-2.5 sm:gap-3">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-100 flex items-center justify-center text-base sm:text-lg shrink-0">
-                    📊
-                  </div>
-                  <div>
-                    <p className="text-xs sm:text-sm font-medium text-blue-800">
-                      {attempts.length} attempt{attempts.length !== 1 ? 's' : ''} •{' '}
-                      {completedAttempts.length} completed
-                    </p>
-                    <p className="text-[10px] sm:text-xs text-blue-600 mt-0.5">
-                      {completedAttempts.length > 0
-                        ? `Last completed ${formatDate(new Date(completedAttempts[completedAttempts.length - 1].endTime).toISOString())}`
-                        : 'No completed attempts yet'}
-                    </p>
-                  </div>
-                </div>
-              )}
             </div>
           )}
 
-          {/* Action Buttons — visible on desktop, hidden on mobile (moved to bottom bar) */}
+          {/* Action Buttons — visible on desktop, hidden on mobile (moved to bottom bar + top button) */}
           <div className="hidden md:flex flex-wrap gap-3 mt-4">
             <button
               onClick={() => setShowViewer(!showViewer)}
@@ -274,7 +260,7 @@ function PaperView() {
           {/* Toggle viewer */}
           <button
             onClick={() => setShowViewer(!showViewer)}
-            className={`flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all duration-200 btn-press mobile-touch-target ${
+            className={`flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 btn-press mobile-touch-target ${
               showViewer
                 ? 'bg-gray-100 text-primary border border-gray-200'
                 : 'bg-primary text-white'
@@ -293,7 +279,7 @@ function PaperView() {
           {/* Start Exam — primary CTA, now opens name dialog */}
           <button
             onClick={handleStartExamClick}
-            className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-semibold text-sm shadow-sm btn-press mobile-touch-target"
+            className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-semibold text-base shadow-sm btn-press mobile-touch-target"
           >
             <span>🎯</span>
             Start Exam
@@ -303,7 +289,7 @@ function PaperView() {
           {paper.hasAnswerKey && (
             <Link
               to={`/answer/${paperId}`}
-              className="flex items-center justify-center gap-1.5 px-3 py-2.5 border border-gray-200 text-primary rounded-xl hover:bg-gray-50 transition-all duration-200 text-xs font-medium btn-press mobile-touch-target"
+              className="flex items-center justify-center gap-1.5 px-3 py-2.5 border border-gray-200 text-primary rounded-xl hover:bg-gray-50 transition-all duration-200 text-sm font-medium btn-press mobile-touch-target"
             >
               <span>🔑</span>
               Key

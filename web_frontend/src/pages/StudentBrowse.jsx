@@ -55,15 +55,15 @@ function StudentBrowse() {
       {/* Page Header — compact & clean on mobile */}
       <div className="flex items-center justify-between mb-3 sm:mb-6">
         <div className="min-w-0">
-          <h1 className="text-lg sm:text-2xl font-bold text-primary leading-tight truncate">
+          <h1 className="text-xl sm:text-2xl font-bold text-primary leading-tight truncate">
             Browse Papers
           </h1>
-          <p className="text-[11px] sm:text-sm text-secondary mt-0.5 hidden sm:block">
+          <p className="text-xs sm:text-sm text-secondary mt-0.5 hidden sm:block">
             Find and practice with available question papers
           </p>
         </div>
         {/* Paper count badge — always visible, compact */}
-        <span className="shrink-0 ml-2 text-[11px] sm:text-xs font-medium text-secondary bg-gray-100 rounded-full px-2.5 py-1">
+        <span className="shrink-0 ml-2 text-xs sm:text-xs font-medium text-secondary bg-gray-100 rounded-full px-2.5 py-1">
           {allPapers.length} paper{allPapers.length !== 1 ? 's' : ''}
         </span>
       </div>
@@ -160,7 +160,7 @@ function StudentBrowse() {
       {hasActiveFilters && !showFilters && (
         <div className="flex flex-wrap items-center gap-1.5 mb-3 px-0.5">
           {searchTerm && (
-            <span className="inline-flex items-center gap-1 text-[11px] font-medium bg-gray-100 text-secondary rounded-full px-2 py-0.5">
+            <span className="inline-flex items-center gap-1 text-xs font-medium bg-gray-100 text-secondary rounded-full px-2.5 py-0.5">
               &ldquo;{truncateText(searchTerm, 16)}&rdquo;
               <button onClick={() => setSearchTerm('')} className="text-gray-400 hover:text-gray-600" aria-label="Remove search filter">
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
@@ -168,7 +168,7 @@ function StudentBrowse() {
             </span>
           )}
           {filterSubject && (
-            <span className="inline-flex items-center gap-1 text-[11px] font-medium bg-gray-100 text-secondary rounded-full px-2 py-0.5">
+            <span className="inline-flex items-center gap-1 text-xs font-medium bg-gray-100 text-secondary rounded-full px-2.5 py-0.5">
               {filterSubject}
               <button onClick={() => setFilterSubject('')} className="text-gray-400 hover:text-gray-600" aria-label="Remove subject filter">
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
@@ -176,7 +176,7 @@ function StudentBrowse() {
             </span>
           )}
           {filterYear && (
-            <span className="inline-flex items-center gap-1 text-[11px] font-medium bg-gray-100 text-secondary rounded-full px-2 py-0.5">
+            <span className="inline-flex items-center gap-1 text-xs font-medium bg-gray-100 text-secondary rounded-full px-2.5 py-0.5">
               {filterYear}
               <button onClick={() => setFilterYear('')} className="text-gray-400 hover:text-gray-600" aria-label="Remove year filter">
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
@@ -188,7 +188,7 @@ function StudentBrowse() {
 
       {/* Results summary — only shown when filtering */}
       {hasActiveFilters && (
-        <p className="text-[11px] sm:text-xs text-secondary mb-2 sm:mb-3 px-0.5">
+        <p className="text-xs sm:text-xs text-secondary mb-2 sm:mb-3 px-0.5">
           Showing <span className="font-semibold text-primary">{filteredPapers.length}</span> of {allPapers.length} papers
         </p>
       )}
@@ -224,23 +224,23 @@ function StudentBrowse() {
                 {/* Mobile: single-row layout | Desktop: stacked card */}
                 {/* Left section: title + meta */}
                 <div className="flex-1 min-w-0 sm:mb-3">
-                  <h3 className="font-semibold text-primary group-hover:text-success transition-colors duration-200 text-sm leading-snug truncate sm:whitespace-normal sm:line-clamp-2">
+                  <h3 className="font-semibold text-primary group-hover:text-success transition-colors duration-200 text-base sm:text-sm leading-snug truncate sm:whitespace-normal sm:line-clamp-2">
                     {truncateText(paper.title, 60)}
                   </h3>
-                  {/* Tags row — tight on mobile */}
-                  <div className="flex flex-wrap items-center gap-1 mt-1 sm:mt-2">
+                  {/* Tags row — bigger on mobile for readability */}
+                  <div className="flex flex-wrap items-center gap-1.5 mt-1.5 sm:mt-2">
                     {paper.subject && (
-                      <span className="text-[10px] sm:text-[11px] font-medium text-secondary bg-gray-100 rounded-full px-2 py-0.5">
+                      <span className="text-xs sm:text-[11px] font-medium text-secondary bg-gray-100 rounded-full px-2.5 py-0.5">
                         {paper.subject}
                       </span>
                     )}
                     {paper.year && (
-                      <span className="text-[10px] sm:text-[11px] font-medium text-secondary bg-gray-100 rounded-full px-2 py-0.5">
+                      <span className="text-xs sm:text-[11px] font-medium text-secondary bg-gray-100 rounded-full px-2.5 py-0.5">
                         {paper.year}
                       </span>
                     )}
                     {paper.hasAnswerKey && (
-                      <span className="text-[10px] sm:text-[11px] font-medium text-success bg-emerald-50 rounded-full px-2 py-0.5">
+                      <span className="text-xs sm:text-[11px] font-medium text-success bg-emerald-50 rounded-full px-2.5 py-0.5">
                         ✓ Key
                       </span>
                     )}
@@ -252,7 +252,7 @@ function StudentBrowse() {
                   <svg className="w-4 h-4 text-gray-300 group-hover:text-success transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                  <span className="text-[10px] text-gray-400">
+                  <span className="text-xs text-gray-400">
                     {paper.duration || 180}m
                   </span>
                 </div>
@@ -301,7 +301,7 @@ function StudentBrowse() {
           </button>
 
           {/* Results count */}
-          <span className="text-[11px] text-secondary">
+          <span className="text-xs text-secondary">
             {filteredPapers.length}/{allPapers.length} papers
           </span>
 

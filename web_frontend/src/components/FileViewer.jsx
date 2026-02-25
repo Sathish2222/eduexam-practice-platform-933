@@ -597,16 +597,6 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
       <div className="sm:hidden border-t border-gray-200 bg-white/97 backdrop-blur-sm">
         <div className="flex items-center justify-between px-2 py-2 gap-1">
           {renderToolbarControls(true)}
-
-          {/* Full-screen button in mobile bottom bar */}
-          <button
-            onClick={toggleFullScreen}
-            className="p-2.5 rounded-xl bg-primary text-white border border-primary hover:bg-primary/90 transition-all duration-150 btn-press mobile-touch-target"
-            aria-label="Full screen view"
-            title="Full screen view"
-          >
-            <FullScreenIcon />
-          </button>
         </div>
       </div>
     </div>

@@ -240,7 +240,7 @@ function ExamMode() {
             <div className="absolute inset-0 rounded-full border-4 border-gray-200"></div>
             <div className="absolute inset-0 rounded-full border-4 border-primary border-t-transparent animate-spin"></div>
           </div>
-          <p className="text-secondary text-sm">Preparing exam...</p>
+          <p className="text-secondary text-sm sm:text-sm">Preparing exam...</p>
         </div>
       </div>
     );
@@ -274,23 +274,23 @@ function ExamMode() {
 
           {/* Show student name */}
           {currentName && (
-            <p className="text-sm text-secondary mb-1">
+            <p className="text-base sm:text-sm text-secondary mb-1">
               Well done, <span className="font-semibold text-primary">{currentName}</span>!
             </p>
           )}
 
-          <p className="text-secondary mb-4 text-xs sm:text-sm">{finishReason}</p>
+          <p className="text-secondary mb-4 text-sm sm:text-sm">{finishReason}</p>
 
           {/* Display the time taken when available */}
           {stoppedTimeDisplay && (
             <div className="bg-blue-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 mb-5 sm:mb-6 border border-blue-100 inline-block w-full max-w-xs">
               <div className="flex items-center justify-center gap-2 mb-1">
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-5 sm:h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="text-blue-800 font-bold text-base sm:text-lg font-mono">{stoppedTimeDisplay}</span>
+                <span className="text-blue-800 font-bold text-lg sm:text-lg font-mono">{stoppedTimeDisplay}</span>
               </div>
-              <p className="text-blue-600 text-[10px] sm:text-xs">Time taken for this attempt</p>
+              <p className="text-blue-600 text-xs sm:text-xs">Time taken for this attempt</p>
             </div>
           )}
 
@@ -341,7 +341,7 @@ function ExamMode() {
             </div>
 
             <h2 className="text-xl sm:text-3xl font-bold text-primary mb-1.5 sm:mb-2">Ready to Start?</h2>
-            <p className="text-secondary text-xs sm:text-sm mb-5 sm:mb-6 max-w-xs mx-auto">{paper.title}</p>
+            <p className="text-secondary text-sm sm:text-sm mb-5 sm:mb-6 max-w-xs mx-auto">{paper.title}</p>
 
             {/* Student Name Input — required */}
             <div className="text-left mb-4 sm:mb-5">
@@ -390,15 +390,15 @@ function ExamMode() {
                   {hours === 0 && mins === 0 && `${duration}m`}
                 </span>
               </div>
-              <p className="text-blue-600 text-[10px] sm:text-xs">
+              <p className="text-blue-600 text-xs sm:text-xs">
                 Timer starts when you click begin. You can stop when done.
               </p>
             </div>
 
             {/* Important notes */}
             <div className="text-left bg-yellow-50 rounded-lg sm:rounded-xl p-3 sm:p-4 mb-5 sm:mb-6 border border-yellow-100">
-              <p className="text-[10px] sm:text-xs font-medium text-yellow-800 mb-1 sm:mb-1.5">📌 Before you begin:</p>
-              <ul className="text-[10px] sm:text-xs text-yellow-700 space-y-0.5 sm:space-y-1">
+              <p className="text-xs sm:text-xs font-medium text-yellow-800 mb-1 sm:mb-1.5">📌 Before you begin:</p>
+              <ul className="text-xs sm:text-xs text-yellow-700 space-y-0.5 sm:space-y-1">
                 <li>• The timer will start counting down when you begin</li>
                 <li>• Use the <strong>Stop / Finish</strong> button when you complete the exam</li>
                 <li>• Your name and time will be recorded for this attempt</li>
@@ -441,14 +441,14 @@ function ExamMode() {
               {/* Left: Paper info */}
               <div className="min-w-0 flex-1 mr-2 sm:mr-3">
                 <div className="flex items-center gap-1.5 sm:gap-2 mb-0.5">
-                  <span className="inline-flex items-center gap-1 px-1.5 sm:px-2 py-0.5 bg-emerald-50 text-success text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider rounded-full">
+                  <span className="inline-flex items-center gap-1 px-1.5 sm:px-2 py-0.5 bg-emerald-50 text-success text-[10px] sm:text-[10px] font-semibold uppercase tracking-wider rounded-full">
                     <span className="w-1.5 h-1.5 bg-success rounded-full animate-pulse"></span>
                     Live
                   </span>
-                  <h2 className="font-semibold text-primary text-[11px] sm:text-sm truncate">{paper.title}</h2>
+                  <h2 className="font-semibold text-primary text-sm sm:text-sm truncate">{paper.title}</h2>
                 </div>
                 {/* Show student name in header on desktop */}
-                <p className="text-[9px] sm:text-[11px] text-gray-400 hidden sm:block">
+                <p className="text-[10px] sm:text-[11px] text-gray-400 hidden sm:block">
                   {getStudentName() ? `${getStudentName()} — ` : ''}Exam in progress — stay focused!
                 </p>
               </div>
@@ -516,7 +516,7 @@ function ExamMode() {
           {/* Quit button */}
           <button
             onClick={handleQuitExam}
-            className="flex items-center justify-center gap-1 px-2.5 py-2.5 border border-red-200 text-error rounded-xl hover:bg-red-50 transition-all duration-200 btn-press mobile-touch-target text-xs font-medium"
+            className="flex items-center justify-center gap-1 px-2.5 py-2.5 border border-red-200 text-error rounded-xl hover:bg-red-50 transition-all duration-200 btn-press mobile-touch-target text-sm font-medium"
             aria-label="Quit exam"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -540,7 +540,7 @@ function ExamMode() {
           {/* Submit button */}
           <button
             onClick={handleSubmitEarly}
-            className="flex items-center justify-center gap-1 px-2.5 py-2.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 btn-press mobile-touch-target text-xs font-medium"
+            className="flex items-center justify-center gap-1 px-2.5 py-2.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 btn-press mobile-touch-target text-sm font-medium"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
