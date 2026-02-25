@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getPapers, getAttempts } from '../utils/storage';
 import InstructionsModal, {
   hasSeenInstructions,
+  markInstructionsSeen,
 } from '../components/InstructionsModal';
 
 /**
@@ -26,14 +27,13 @@ function HomePage() {
   const papers = getPapers();
   const attempts = getAttempts();
 
-  // Instructions modal state — show on first visit
-  const [showInstructions, setShowInstructions] = useState(false);
-
-  useEffect(() => {
-    if (!hasSeenInstructions()) {
-      setShowInstructions(true);
-    }
-  }, []);
+  // Instructions modal state — show only on first visit.
+  // Uses a lazy initializer so localStorage is read synchronously during
+  // the very first render, avoiding race conditions with useEffect that
+  // caused the modal to reopen on every refresh in React StrictMode.
+  const [showInstructions, setShowInstructions] = useState(() => {
+    return !hasSeenInstructions();
+  });
 
   // Derived stats
   const completedCount = attempts.filter((a) => a.completed).length;
@@ -44,7 +44,14 @@ function HomePage() {
       {/* Instructions Modal */}
       <InstructionsModal
         isOpen={showInstructions}
-        onClose={() => setShowInstructions(false)}
+        onClose={() => {
+          // Persist dismissal in localStorage as defense-in-depth
+          // (InstructionsModal's handleClose also calls markInstructionsSeen,
+          // but we duplicate here to guarantee persistence regardless of
+          // how the close was triggered).
+          markInstructionsSeen();
+          setShowInstructions(false);
+        }}
       />
 
       {/* ── Hero Section — modern & engaging ── */}
