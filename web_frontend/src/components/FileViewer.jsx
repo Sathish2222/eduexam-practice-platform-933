@@ -281,28 +281,28 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
 
   /** Shared toolbar controls for both normal and full-screen modes */
   const renderToolbarControls = (isMobile = false) => (
-    <div className={`flex items-center gap-1.5 ${isMobile ? 'justify-between w-full' : 'shrink-0'}`}>
+    <div className={`flex items-center ${isMobile ? 'gap-2 justify-between w-full' : 'gap-1.5 shrink-0'}`}>
       {/* Page navigation for PDF */}
       {pdfDoc && (
         <>
           <button
             onClick={goToPrevPage}
             disabled={currentPage <= 1}
-            className={`${isMobile ? 'p-2.5' : 'p-1.5'} rounded-${isMobile ? 'xl' : 'md'} text-sm bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:border-gray-200 transition-all duration-150 btn-press`}
+            className={`${isMobile ? 'p-3.5 min-w-[52px] min-h-[52px]' : 'p-1.5'} rounded-${isMobile ? '2xl' : 'md'} text-sm bg-white border ${isMobile ? 'border-gray-300 shadow-sm' : 'border-gray-200'} hover:bg-gray-50 hover:border-gray-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:border-gray-200 transition-all duration-150 btn-press flex items-center justify-center`}
             title="Previous page"
             aria-label="Previous page"
           >
-            <svg className={`${isMobile ? 'w-5 h-5' : 'w-4 h-4'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <svg className={`${isMobile ? 'w-7 h-7' : 'w-4 h-4'}`} fill="none" stroke="currentColor" strokeWidth={isMobile ? 2.5 : 2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           {isMobile ? (
-            <div className="flex-1 flex flex-col items-center gap-1 px-1">
-              <span className="text-[11px] text-secondary font-medium tabular-nums">
+            <div className="flex-1 flex flex-col items-center gap-1.5 px-1">
+              <span className="text-sm text-secondary font-semibold tabular-nums">
                 Page {currentPage} of {totalPages}
               </span>
               {totalPages > 1 && (
-                <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                <div className="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-success rounded-full transition-all duration-300"
                     style={{ width: `${(currentPage / totalPages) * 100}%` }}
@@ -318,41 +318,41 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
           <button
             onClick={goToNextPage}
             disabled={currentPage >= totalPages}
-            className={`${isMobile ? 'p-2.5' : 'p-1.5'} rounded-${isMobile ? 'xl' : 'md'} text-sm bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:border-gray-200 transition-all duration-150 btn-press`}
+            className={`${isMobile ? 'p-3.5 min-w-[52px] min-h-[52px]' : 'p-1.5'} rounded-${isMobile ? '2xl' : 'md'} text-sm bg-white border ${isMobile ? 'border-gray-300 shadow-sm' : 'border-gray-200'} hover:bg-gray-50 hover:border-gray-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:border-gray-200 transition-all duration-150 btn-press flex items-center justify-center`}
             title="Next page"
             aria-label="Next page"
           >
-            <svg className={`${isMobile ? 'w-5 h-5' : 'w-4 h-4'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <svg className={`${isMobile ? 'w-7 h-7' : 'w-4 h-4'}`} fill="none" stroke="currentColor" strokeWidth={isMobile ? 2.5 : 2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </button>
           {!isMobile && <div className="w-px h-5 bg-gray-200 mx-1" />}
-          {isMobile && pdfDoc && totalPages > 1 && <div className="w-px h-7 bg-gray-200 mx-0.5" />}
+          {isMobile && pdfDoc && totalPages > 1 && <div className="w-px h-9 bg-gray-200 mx-0.5" />}
         </>
       )}
 
       {/* Zoom controls */}
       <button
         onClick={zoomOut}
-        className={`${isMobile ? 'p-2.5 rounded-xl' : 'p-1.5 rounded-md'} bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-150 btn-press`}
+        className={`${isMobile ? 'p-3.5 min-w-[52px] min-h-[52px] rounded-2xl border-gray-300 shadow-sm' : 'p-1.5 rounded-md border-gray-200'} bg-white border hover:bg-gray-50 hover:border-gray-300 transition-all duration-150 btn-press flex items-center justify-center`}
         title="Zoom out"
         aria-label="Zoom out"
       >
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+        <svg className={`${isMobile ? 'w-6 h-6' : 'w-4 h-4'}`} fill="none" stroke="currentColor" strokeWidth={isMobile ? 2.5 : 2} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" />
         </svg>
       </button>
-      <span className={`text-xs text-secondary font-medium ${isMobile ? 'w-9' : 'w-12'} text-center tabular-nums`}>
+      <span className={`${isMobile ? 'text-sm font-semibold w-12' : 'text-xs font-medium w-12'} text-secondary text-center tabular-nums`}>
         {fitWidth ? 'Fit' : `${Math.round(scale * 100)}%`}
       </span>
       <button
         onClick={zoomIn}
-        className={`${isMobile ? 'p-2.5 rounded-xl' : 'p-1.5 rounded-md'} bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-150 btn-press`}
+        className={`${isMobile ? 'p-3.5 min-w-[52px] min-h-[52px] rounded-2xl border-gray-300 shadow-sm' : 'p-1.5 rounded-md border-gray-200'} bg-white border hover:bg-gray-50 hover:border-gray-300 transition-all duration-150 btn-press flex items-center justify-center`}
         title="Zoom in"
         aria-label="Zoom in"
       >
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+        <svg className={`${isMobile ? 'w-6 h-6' : 'w-4 h-4'}`} fill="none" stroke="currentColor" strokeWidth={isMobile ? 2.5 : 2} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
         </svg>
       </button>
 
@@ -362,16 +362,16 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
           {!isMobile && <div className="w-px h-5 bg-gray-200 mx-1" />}
           <button
             onClick={toggleFitWidth}
-            className={`${isMobile ? 'p-2.5 rounded-xl' : 'p-1.5 rounded-md'} border transition-all duration-150 btn-press ${
+            className={`${isMobile ? 'p-3.5 min-w-[52px] min-h-[52px] rounded-2xl shadow-sm' : 'p-1.5 rounded-md'} border transition-all duration-150 btn-press flex items-center justify-center ${
               fitWidth
                 ? 'bg-primary text-white border-primary'
-                : 'bg-white border-gray-200 hover:bg-gray-50 hover:border-gray-300'
+                : `bg-white ${isMobile ? 'border-gray-300' : 'border-gray-200'} hover:bg-gray-50 hover:border-gray-300`
             }`}
             title={fitWidth ? 'Exit fit width' : 'Fit to width'}
             aria-label="Fit to width"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+            <svg className={`${isMobile ? 'w-6 h-6' : 'w-4 h-4'}`} fill="none" stroke="currentColor" strokeWidth={isMobile ? 2.5 : 2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
             </svg>
           </button>
         </>
@@ -468,14 +468,16 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
                 {renderToolbarControls(false)}
               </div>
 
-              {/* Right: exit button */}
+              {/* Right: exit button — larger touch target on mobile */}
               <button
                 onClick={toggleFullScreen}
-                className="shrink-0 inline-flex items-center gap-1.5 px-3 py-2 bg-gray-100 text-primary border border-gray-200 rounded-xl text-sm font-medium hover:bg-gray-200 transition-all btn-press"
+                className="shrink-0 inline-flex items-center justify-center gap-1.5 px-3 py-2 sm:px-3 sm:py-2 min-w-[44px] min-h-[44px] bg-gray-100 text-primary border border-gray-200 rounded-xl text-sm font-medium hover:bg-gray-200 transition-all btn-press"
                 title="Exit full screen (Esc)"
                 aria-label="Exit full screen"
               >
-                <ExitFullScreenIcon />
+                <svg className="w-5 h-5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 9V4m0 5H4m0 0l5-5m11 5h-5m5 0V4m0 0l-5 5M9 15v5m0-5H4m0 0l5 5m11-5h-5m5 0v5m0 0l-5-5" />
+                </svg>
                 <span className="hidden sm:inline">Exit</span>
               </button>
             </div>
@@ -486,9 +488,9 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
             {renderDocumentContent('100%')}
           </div>
 
-          {/* Full-screen mobile bottom controls */}
+          {/* Full-screen mobile bottom controls — enlarged touch targets */}
           <div className="sm:hidden fullscreen-viewer-bottom-bar">
-            <div className="flex items-center justify-between px-2 py-2 gap-1">
+            <div className="flex items-center justify-between px-3 py-3 gap-2">
               {renderToolbarControls(true)}
             </div>
           </div>
@@ -547,25 +549,27 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
         </div>
       </div>
 
-      {/* Mobile compact title bar */}
-      <div className="sm:hidden flex items-center gap-2 px-3 py-2.5 border-b border-gray-200 bg-gray-50">
-        <span className="text-base">
+      {/* Mobile compact title bar — enlarged for better touch targets */}
+      <div className="sm:hidden flex items-center gap-2.5 px-3.5 py-3 border-b border-gray-200 bg-gray-50">
+        <span className="text-lg">
           {pdfDoc ? '📄' : '🖼️'}
         </span>
-        <h3 className="text-xs font-semibold text-primary truncate flex-1">{title}</h3>
+        <h3 className="text-sm font-semibold text-primary truncate flex-1">{title}</h3>
         {pdfDoc && totalPages > 0 && (
-          <span className="text-[11px] text-secondary font-medium tabular-nums shrink-0">
+          <span className="text-xs text-secondary font-semibold tabular-nums shrink-0 bg-gray-200/70 px-2 py-0.5 rounded-full">
             {currentPage}/{totalPages}
           </span>
         )}
-        {/* Mobile full-screen button in title bar */}
+        {/* Mobile full-screen button in title bar — larger touch target */}
         <button
           onClick={toggleFullScreen}
-          className="p-1.5 rounded-lg bg-white border border-gray-200 hover:bg-gray-50 transition-all duration-150 btn-press shrink-0"
+          className="p-2.5 min-w-[44px] min-h-[44px] rounded-xl bg-white border border-gray-300 shadow-sm hover:bg-gray-50 transition-all duration-150 btn-press shrink-0 flex items-center justify-center"
           title="Full screen view"
           aria-label="Full screen view"
         >
-          <FullScreenIcon />
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+          </svg>
         </button>
       </div>
 
@@ -593,9 +597,9 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
         </div>
       )}
 
-      {/* Mobile bottom control bar — one-hand friendly, within the viewer */}
-      <div className="sm:hidden border-t border-gray-200 bg-white/97 backdrop-blur-sm">
-        <div className="flex items-center justify-between px-2 py-2 gap-1">
+      {/* Mobile bottom control bar — enlarged for one-hand friendly use */}
+      <div className="sm:hidden border-t border-gray-200 bg-white/97 backdrop-blur-sm shadow-[0_-2px_8px_rgba(0,0,0,0.06)]">
+        <div className="flex items-center justify-between px-3 py-3 gap-2">
           {renderToolbarControls(true)}
         </div>
       </div>
