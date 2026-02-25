@@ -27,13 +27,8 @@ function HomePage() {
   const papers = getPapers();
   const attempts = getAttempts();
 
-  // Instructions modal state — show only on first visit.
-  // Uses a lazy initializer so localStorage is read synchronously during
-  // the very first render, avoiding race conditions with useEffect that
-  // caused the modal to reopen on every refresh in React StrictMode.
-  const [showInstructions, setShowInstructions] = useState(() => {
-    return !hasSeenInstructions();
-  });
+  // Instructions modal — always show on home page load/refresh.
+  const [showInstructions, setShowInstructions] = useState(true);
 
   // Derived stats
   const completedCount = attempts.filter((a) => a.completed).length;

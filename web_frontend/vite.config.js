@@ -7,7 +7,7 @@ export default defineConfig({
         host: '0.0.0.0',
         allowedHosts: ['.kavia.ai'],
         port: 3000,
-        strictPort: true,
+        strictPort: false,
         cors: true,
         headers: {
             'Access-Control-Allow-Origin': '*'

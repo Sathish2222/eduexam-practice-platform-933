@@ -100,6 +100,7 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
   const [scale, setScale] = useState(1.2);
   const [fitWidth, setFitWidth] = useState(false);
   const [isFullScreen, setIsFullScreen] = useState(false);
+  const [copied, setCopied] = useState(false);
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
   const fullscreenContainerRef = useRef(null);
@@ -249,6 +250,27 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
 
   // Full-screen toggle
   const toggleFullScreen = () => setIsFullScreen(f => !f);
+
+  // Share — copy production URL to clipboard (replaces localhost with live domain)
+  const handleShare = async () => {
+    const { hostname, pathname, search } = window.location;
+    const isLocal = hostname === 'localhost' || hostname === '127.0.0.1';
+    const url = isLocal
+      ? `https://tnstudyhubcom.web.app${pathname}${search}`
+      : window.location.href;
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch {
+      const el = document.createElement('textarea');
+      el.value = url;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   // Loading state
   if (loading) {
@@ -468,6 +490,34 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
                 {renderToolbarControls(false)}
               </div>
 
+              {/* Share button */}
+              <button
+                onClick={handleShare}
+                className={`shrink-0 inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border text-sm font-semibold transition-all duration-200 btn-press mr-1 ${
+                  copied
+                    ? 'bg-emerald-50 text-success border-emerald-200'
+                    : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50 hover:border-gray-300'
+                }`}
+                title="Copy link to clipboard"
+                aria-label="Share link"
+              >
+                {copied ? (
+                  <>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    Share
+                  </>
+                )}
+              </button>
+
               {/* Right: exit button — larger touch target on mobile */}
               <button
                 onClick={toggleFullScreen}
@@ -536,6 +586,35 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
         <div className="flex items-center gap-1.5 shrink-0">
           {renderToolbarControls(false)}
 
+          {/* Share button */}
+          <div className="w-px h-5 bg-gray-200 mx-1" />
+          <button
+            onClick={handleShare}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-semibold transition-all duration-200 btn-press ${
+              copied
+                ? 'bg-emerald-50 text-success border-emerald-200'
+                : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50 hover:border-gray-300'
+            }`}
+            title="Copy link to clipboard"
+            aria-label="Share link"
+          >
+            {copied ? (
+              <>
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                </svg>
+                Copied!
+              </>
+            ) : (
+              <>
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg>
+                Share
+              </>
+            )}
+          </button>
+
           {/* Full-screen toggle button */}
           <div className="w-px h-5 bg-gray-200 mx-1" />
           <button
@@ -549,60 +628,123 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
         </div>
       </div>
 
-      {/* Mobile compact title bar — enlarged for better touch targets */}
-      <div className="sm:hidden flex items-center gap-2.5 px-3.5 py-3 border-b border-gray-200 bg-gray-50">
-        <span className="text-lg">
-          {pdfDoc ? '📄' : '🖼️'}
-        </span>
-        <h3 className="text-sm font-semibold text-primary truncate flex-1">{title}</h3>
-        {pdfDoc && totalPages > 0 && (
-          <span className="text-xs text-secondary font-semibold tabular-nums shrink-0 bg-gray-200/70 px-2 py-0.5 rounded-full">
-            {currentPage}/{totalPages}
+      {/* Mobile top control bar */}
+      <div className="sm:hidden border-b border-gray-200 bg-gray-50">
+        {/* Row 1: title + share + fullscreen */}
+        <div className="flex items-center gap-2 px-3 pt-2 pb-1.5">
+          <span className="text-sm shrink-0">{pdfDoc ? '📄' : '🖼️'}</span>
+          <h3 className="text-xs font-semibold text-gray-800 truncate flex-1 min-w-0">{title}</h3>
+          {/* Share button */}
+          <button
+            onClick={handleShare}
+            className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border shadow-sm shrink-0 text-xs font-semibold transition-all duration-200 ${
+              copied
+                ? 'bg-emerald-50 border-emerald-200 text-success'
+                : 'bg-white border-gray-200 text-gray-600 hover:bg-gray-50'
+            }`}
+            aria-label={copied ? 'Copied!' : 'Share link'}
+          >
+            {copied ? (
+              <>
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                </svg>
+                Copied!
+              </>
+            ) : (
+              <>
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg>
+                Share
+              </>
+            )}
+          </button>
+          <button
+            onClick={toggleFullScreen}
+            className="p-1.5 rounded-lg bg-white border border-gray-200 shadow-sm shrink-0 flex items-center justify-center"
+            aria-label="Full screen"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+            </svg>
+          </button>
+        </div>
+        {/* Row 2: page nav (prominent) + zoom controls */}
+        <div className="flex items-center gap-1 px-3 pb-2">
+          {pdfDoc && (
+            <>
+              <button onClick={goToPrevPage} disabled={currentPage <= 1}
+                className="p-2 rounded-lg bg-white border border-gray-300 disabled:opacity-30 flex items-center justify-center shrink-0 shadow-sm">
+                <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
+              </button>
+              <span className="flex-1 text-center text-xs font-bold text-gray-800 bg-white border border-gray-300 rounded-lg py-2 tabular-nums mx-0.5 shadow-sm">
+                {totalPages > 0 ? `Page ${currentPage} / ${totalPages}` : 'Page 1'}
+              </span>
+              <button onClick={goToNextPage} disabled={currentPage >= totalPages}
+                className="p-2 rounded-lg bg-white border border-gray-300 disabled:opacity-30 flex items-center justify-center shrink-0 shadow-sm">
+                <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </button>
+              <div className="w-px h-5 bg-gray-200 mx-0.5 shrink-0" />
+            </>
+          )}
+          <button onClick={zoomOut} className="p-2 rounded-lg bg-white border border-gray-200 flex items-center justify-center shrink-0">
+            <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" /></svg>
+          </button>
+          <span className="text-xs text-gray-700 w-9 text-center tabular-nums font-bold shrink-0">
+            {fitWidth ? 'Fit' : `${Math.round(scale * 100)}%`}
           </span>
-        )}
-        {/* Mobile full-screen button in title bar — larger touch target */}
-        <button
-          onClick={toggleFullScreen}
-          className="p-2.5 min-w-[44px] min-h-[44px] rounded-xl bg-white border border-gray-300 shadow-sm hover:bg-gray-50 transition-all duration-150 btn-press shrink-0 flex items-center justify-center"
-          title="Full screen view"
-          aria-label="Full screen view"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-          </svg>
-        </button>
+          <button onClick={zoomIn} className="p-2 rounded-lg bg-white border border-gray-200 flex items-center justify-center shrink-0">
+            <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" /></svg>
+          </button>
+          {pdfDoc && (
+            <button onClick={toggleFitWidth}
+              className={`p-2 rounded-lg border flex items-center justify-center shrink-0 ${fitWidth ? 'bg-primary text-white border-primary' : 'bg-white border-gray-200 text-gray-700'}`}
+              aria-label="Fit to width">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
+            </button>
+          )}
+        </div>
       </div>
 
-      {/* Content Area — extra bottom padding on mobile for bottom controls */}
-      {renderDocumentContent('78vh')}
+      {/* Content Area */}
+      <div
+        ref={containerRef}
+        className="overflow-auto bg-gray-100 section-bg"
+        style={{ maxHeight: 'calc(100dvh - 3.5rem - 6rem)' }}
+      >
+        <div className="p-3 sm:p-6">
+          {pdfDoc ? (
+            <div className="flex justify-center">
+              <canvas ref={canvasRef} className="shadow-md rounded-sm bg-white" style={{ maxWidth: '100%' }} />
+            </div>
+          ) : imageUrl ? (
+            <div className="flex justify-center">
+              <img src={imageUrl} alt={title}
+                style={{ transform: `scale(${scale})`, transformOrigin: 'top center' }}
+                className="max-w-full transition-transform duration-200 shadow-md rounded-sm" />
+            </div>
+          ) : (
+            <div className="flex flex-col items-center justify-center py-16 text-gray-400">
+              <div className="text-4xl mb-3">📄</div>
+              <p className="text-sm">No file to display</p>
+            </div>
+          )}
+        </div>
+      </div>
 
-      {/* Desktop bottom status bar for PDF */}
+      {/* Desktop bottom status bar */}
       {pdfDoc && totalPages > 1 && (
         <div className="hidden sm:flex px-4 py-2 border-t border-gray-100 bg-gray-50/80 items-center justify-between">
-          <p className="text-[11px] text-gray-400">
-            Use controls above to navigate pages
-          </p>
-          {/* Page progress */}
+          <p className="text-[11px] text-gray-400">Use controls above to navigate pages</p>
           <div className="flex items-center gap-2">
             <div className="w-24 h-1.5 bg-gray-200 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-success rounded-full transition-all duration-300"
-                style={{ width: `${(currentPage / totalPages) * 100}%` }}
-              />
+              <div className="h-full bg-success rounded-full transition-all duration-300" style={{ width: `${(currentPage / totalPages) * 100}%` }} />
             </div>
-            <span className="text-[11px] text-gray-400 tabular-nums">
-              {Math.round((currentPage / totalPages) * 100)}%
-            </span>
+            <span className="text-[11px] text-gray-400 tabular-nums">{Math.round((currentPage / totalPages) * 100)}%</span>
           </div>
         </div>
       )}
-
-      {/* Mobile bottom control bar — enlarged for one-hand friendly use */}
-      <div className="sm:hidden border-t border-gray-200 bg-white/97 backdrop-blur-sm shadow-[0_-2px_8px_rgba(0,0,0,0.06)]">
-        <div className="flex items-center justify-between px-3 py-3 gap-2">
-          {renderToolbarControls(true)}
-        </div>
-      </div>
     </div>
   );
 }

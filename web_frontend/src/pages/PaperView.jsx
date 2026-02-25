@@ -127,21 +127,42 @@ function PaperView() {
         <span className="text-primary font-medium truncate max-w-[200px] sm:max-w-[250px]">{paper.title}</span>
       </nav>
 
-      {/* Mobile-only: Top Start Exam button — visible & prominent for easy access */}
-      <div className="md:hidden mb-3 flex gap-2">
+      {/* Mode Cards — visible on all screen sizes */}
+      <div className="grid grid-cols-2 gap-2.5 mb-4">
+        {/* Exam Mode Card */}
         <button
           onClick={handleStartExamClick}
-          className="flex-1 flex items-center justify-center gap-2 px-4 py-3.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-bold text-base shadow-md btn-press mobile-touch-target"
+          className="group relative flex items-start gap-2.5 p-3 sm:p-3.5 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 hover:shadow-sm active:scale-[0.98] transition-all duration-200 text-left overflow-hidden"
         >
-          <span>🎯</span>
-          Start Exam
+          <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-400" />
+          <div className="w-9 h-9 bg-emerald-50 rounded-lg flex items-center justify-center text-lg shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-200">
+            🎯
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className="font-bold text-sm text-gray-900 leading-tight">Start Exam</p>
+            <p className="text-[10px] text-gray-500 leading-snug mt-0.5">Timed with countdown. Auto-submits when time ends.</p>
+            <p className="text-[10px] font-semibold text-emerald-600 mt-1.5 flex items-center gap-0.5 group-hover:gap-1 transition-all duration-150">
+              Click here <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7"/></svg>
+            </p>
+          </div>
         </button>
+
+        {/* Study Mode Card */}
         <Link
           to={`/study/${paperId}`}
-          className="flex items-center justify-center gap-2 px-4 py-3.5 bg-blue-50 text-blue-600 rounded-xl hover:bg-blue-100 transition-all duration-200 font-bold text-base shadow-sm btn-press mobile-touch-target"
+          className="group relative flex items-start gap-2.5 p-3 sm:p-3.5 bg-white border border-gray-200 rounded-xl hover:border-blue-300 hover:shadow-sm active:scale-[0.98] transition-all duration-200 overflow-hidden"
         >
-          <span>📖</span>
-          Study
+          <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-indigo-400" />
+          <div className="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center text-lg shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-200">
+            📖
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className="font-bold text-sm text-gray-900 leading-tight">Study Mode</p>
+            <p className="text-[10px] text-gray-500 leading-snug mt-0.5">Paper &amp; answer key side by side. No timer.</p>
+            <p className="text-[10px] font-semibold text-blue-600 mt-1.5 flex items-center gap-0.5 group-hover:gap-1 transition-all duration-150">
+              Click here <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7"/></svg>
+            </p>
+          </div>
         </Link>
       </div>
 
@@ -224,17 +245,17 @@ function PaperView() {
             </div>
           )}
 
-          {/* Action Buttons — visible on desktop, hidden on mobile (moved to bottom bar + top button) */}
-          <div className="hidden md:flex flex-wrap gap-3 mt-4">
+          {/* Secondary utility actions */}
+          <div className="flex flex-wrap gap-2 mt-3 pt-3 border-t border-gray-100">
             <button
               onClick={() => setShowViewer(!showViewer)}
-              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 btn-press ${
+              className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-medium text-xs transition-all duration-200 btn-press ${
                 showViewer
-                  ? 'bg-gray-100 text-primary border border-gray-200 hover:bg-gray-200'
-                  : 'bg-primary text-white hover:bg-primary/90 shadow-sm'
+                  ? 'bg-gray-100 text-gray-600 border border-gray-200 hover:bg-gray-200'
+                  : 'bg-gray-800 text-white hover:bg-gray-900 shadow-sm'
               }`}
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {showViewer ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21" />
                 ) : (
@@ -244,26 +265,10 @@ function PaperView() {
               {showViewer ? 'Hide Paper' : 'View Paper'}
             </button>
 
-            <button
-              onClick={handleStartExamClick}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-medium text-sm shadow-sm btn-press"
-            >
-              <span>🎯</span>
-              Start Exam
-            </button>
-
-            <Link
-              to={`/study/${paperId}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-50 text-blue-600 rounded-xl hover:bg-blue-100 transition-all duration-200 font-medium text-sm btn-press"
-            >
-              <span>📖</span>
-              Study Mode
-            </Link>
-
             {paper.hasAnswerKey && (
               <Link
                 to={`/answer/${paperId}`}
-                className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-200 text-primary rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 font-medium text-sm btn-press"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 border border-gray-200 text-gray-600 rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 font-medium text-xs btn-press"
               >
                 <span>🔑</span>
                 Answer Key

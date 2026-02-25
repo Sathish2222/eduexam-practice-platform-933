@@ -133,8 +133,104 @@ const slides = [
   },
   {
     step: 3,
+    emoji: '🎯',
+    title: 'Exam Mode',
+    subtitle: 'Simulate a real exam environment',
+    bullets: [
+      { icon: '⏱️', text: 'A 3-hour countdown timer runs automatically' },
+      { icon: '📄', text: 'Question paper is shown full screen — focus only on exam' },
+      { icon: '⏸️', text: 'You can pause & resume anytime — timer saves your progress' },
+      { icon: '🔒', text: 'Answer key is locked during the exam — unlocks after!' },
+      { icon: '✅', text: 'Submit early or wait for the timer to auto-submit' },
+    ],
+    tip: '💡 Treat it like a real exam — no peeking at answers during the test!',
+    tipColor: 'amber',
+    illustration: (
+      <svg viewBox="0 0 220 120" className="w-full h-24 mx-auto" aria-hidden="true">
+        {/* Exam paper */}
+        <rect x="35" y="10" width="90" height="100" rx="8" fill="#ffffff" stroke="#d1fae5" strokeWidth="1.5" />
+        <rect x="35" y="10" width="90" height="18" rx="8" fill="#059669" />
+        <rect x="35" y="20" width="90" height="8" rx="0" fill="#059669" />
+        <text x="80" y="23" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold" fontFamily="sans-serif">EXAM MODE</text>
+        <rect x="45" y="38" width="60" height="3" rx="1.5" fill="#d1d5db" />
+        <rect x="45" y="46" width="70" height="2" rx="1" fill="#e5e7eb" />
+        <rect x="45" y="52" width="65" height="2" rx="1" fill="#e5e7eb" />
+        <rect x="45" y="62" width="60" height="3" rx="1.5" fill="#d1d5db" />
+        <rect x="45" y="70" width="70" height="2" rx="1" fill="#e5e7eb" />
+        <rect x="45" y="76" width="55" height="2" rx="1" fill="#e5e7eb" />
+        {/* Timer circle */}
+        <circle cx="170" cy="40" r="28" fill="#fef3c7" stroke="#f59e0b" strokeWidth="2" />
+        <circle cx="170" cy="40" r="22" fill="#ffffff" stroke="#fde68a" strokeWidth="1" />
+        <line x1="170" y1="22" x2="170" y2="26" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
+        <line x1="170" y1="54" x2="170" y2="58" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
+        <line x1="148" y1="40" x2="152" y2="40" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
+        <line x1="188" y1="40" x2="192" y2="40" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
+        <line x1="170" y1="40" x2="170" y2="26" stroke="#374151" strokeWidth="2" strokeLinecap="round" />
+        <line x1="170" y1="40" x2="180" y2="34" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="170" cy="40" r="2.5" fill="#f59e0b" />
+        {/* Lock icon */}
+        <rect x="152" y="80" width="36" height="28" rx="5" fill="#ecfdf5" stroke="#059669" strokeWidth="1.5" />
+        <path d="M160 80 L160 74 A10 10 0 0 1 180 74 L180 80" fill="none" stroke="#059669" strokeWidth="2" />
+        <circle cx="170" cy="94" r="4" fill="#059669" />
+        <rect x="168.5" y="94" width="3" height="6" rx="1" fill="#059669" />
+      </svg>
+    ),
+  },
+  {
+    step: 4,
+    emoji: '📖',
+    title: 'Study Mode',
+    subtitle: 'Question paper & answer key side by side',
+    bullets: [
+      { icon: '🖥️', text: 'Desktop: QP and Answer Key shown side by side' },
+      { icon: '📱', text: 'Mobile: Switch between QP and Answer Key with one tap' },
+      { icon: '🔑', text: 'Multiple answer key variants available (Official, Sura, etc.)' },
+      { icon: '📚', text: 'Perfect for reviewing and understanding correct answers' },
+      { icon: '🎯', text: 'Use Study Mode AFTER attempting the exam for best results' },
+    ],
+    tip: '✨ Study Mode is best used after you finish an exam attempt!',
+    tipColor: 'blue',
+    illustration: (
+      <svg viewBox="0 0 220 120" className="w-full h-24 mx-auto" aria-hidden="true">
+        {/* Desktop split view */}
+        <rect x="10" y="15" width="95" height="90" rx="6" fill="#ffffff" stroke="#bfdbfe" strokeWidth="1.5" />
+        <rect x="10" y="15" width="95" height="14" rx="6" fill="#3b82f6" />
+        <rect x="10" y="22" width="95" height="7" rx="0" fill="#3b82f6" />
+        <text x="57" y="25" textAnchor="middle" fill="white" fontSize="7" fontWeight="bold">📄 Question Paper</text>
+        <rect x="18" y="38" width="70" height="3" rx="1.5" fill="#d1d5db" />
+        <rect x="18" y="46" width="79" height="2" rx="1" fill="#e5e7eb" />
+        <rect x="18" y="52" width="72" height="2" rx="1" fill="#e5e7eb" />
+        <rect x="18" y="58" width="75" height="2" rx="1" fill="#e5e7eb" />
+        <rect x="18" y="68" width="70" height="3" rx="1.5" fill="#d1d5db" />
+        <rect x="18" y="76" width="79" height="2" rx="1" fill="#e5e7eb" />
+        <rect x="18" y="82" width="65" height="2" rx="1" fill="#e5e7eb" />
+        {/* AK panel */}
+        <rect x="115" y="15" width="95" height="90" rx="6" fill="#ffffff" stroke="#a7f3d0" strokeWidth="1.5" />
+        <rect x="115" y="15" width="95" height="14" rx="6" fill="#059669" />
+        <rect x="115" y="22" width="95" height="7" rx="0" fill="#059669" />
+        <text x="162" y="25" textAnchor="middle" fill="white" fontSize="7" fontWeight="bold">🔑 Answer Key</text>
+        {/* Answer key content with checkmarks */}
+        <rect x="123" y="38" width="50" height="3" rx="1.5" fill="#d1d5db" />
+        <circle cx="186" cy="40" r="5" fill="#ecfdf5" stroke="#059669" strokeWidth="1" />
+        <polyline points="183,40 185,42 189,37" fill="none" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="123" y="50" width="50" height="3" rx="1.5" fill="#d1d5db" />
+        <circle cx="186" cy="52" r="5" fill="#ecfdf5" stroke="#059669" strokeWidth="1" />
+        <polyline points="183,52 185,54 189,49" fill="none" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="123" y="62" width="50" height="3" rx="1.5" fill="#d1d5db" />
+        <circle cx="186" cy="64" r="5" fill="#fef3c7" stroke="#f59e0b" strokeWidth="1" />
+        <text x="186" y="67" textAnchor="middle" fill="#f59e0b" fontSize="7" fontWeight="bold">?</text>
+        <rect x="123" y="74" width="50" height="3" rx="1.5" fill="#d1d5db" />
+        <circle cx="186" cy="76" r="5" fill="#ecfdf5" stroke="#059669" strokeWidth="1" />
+        <polyline points="183,76 185,78 189,73" fill="none" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        {/* Divider line */}
+        <line x1="110" y1="15" x2="110" y2="105" stroke="#e5e7eb" strokeWidth="1" strokeDasharray="4,3" />
+      </svg>
+    ),
+  },
+  {
+    step: 5,
     emoji: '✅',
-    title: 'Step 3: Check Your Answers',
+    title: 'Step 5: Check Your Answers',
     subtitle: 'See how well you did!',
     bullets: [
       { icon: '🔑', text: 'Tap "Answer Key" to see correct answers' },
@@ -171,9 +267,9 @@ const slides = [
     ),
   },
   {
-    step: 4,
+    step: 6,
     emoji: '💾',
-    title: 'Step 4: Your Data is Safe',
+    title: 'Step 6: Your Data is Safe',
     subtitle: 'No internet? No problem!',
     bullets: [
       { icon: '📱', text: 'Everything is saved on YOUR device' },
@@ -333,17 +429,12 @@ function InstructionsModal({ isOpen, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4 bg-black/50 backdrop-blur-md"
       role="dialog"
       aria-modal="true"
       aria-label="App Instructions — How to use TN Study Hub"
+      onClick={(e) => { if (e.target === e.currentTarget) handleClose(); }}
     >
-      {/* Backdrop with blur */}
-      <div
-        className="absolute inset-0 bg-black/40 backdrop-blur-sm animate-fadeIn"
-        onClick={handleClose}
-        aria-hidden="true"
-      />
 
       {/* Modal Container — modern rounded design */}
       <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden animate-scaleIn border border-gray-100">

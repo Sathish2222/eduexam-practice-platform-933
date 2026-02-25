@@ -6,13 +6,12 @@ import { getSettings, saveSettings } from '../utils/storage';
  */
 // PUBLIC_INTERFACE
 /**
- * Application settings page for admin PIN, exam duration, and answer key lock.
+ * Application settings page for exam duration and answer key lock.
  * @returns {JSX.Element}
  */
 function SettingsPage() {
   const [settings, setSettingsState] = useState(getSettings());
   const [saved, setSaved] = useState(false);
-  const [showPin, setShowPin] = useState(false);
 
   useEffect(() => {
     setSettingsState(getSettings());
@@ -34,30 +33,6 @@ function SettingsPage() {
       <h1 className="text-2xl font-bold text-primary mb-6">⚙️ Settings</h1>
 
       <div className="bg-white rounded-xl border p-6 space-y-6">
-        {/* Admin PIN */}
-        <div>
-          <label className="block text-sm font-medium text-primary mb-1">Admin PIN</label>
-          <p className="text-xs text-secondary mb-2">
-            Required to access the admin dashboard. Default is 1234.
-          </p>
-          <div className="flex gap-2">
-            <input
-              type={showPin ? 'text' : 'password'}
-              value={settings.adminPin || ''}
-              onChange={(e) => handleChange('adminPin', e.target.value)}
-              className="flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none tracking-widest"
-              maxLength={10}
-            />
-            <button
-              type="button"
-              onClick={() => setShowPin(!showPin)}
-              className="px-3 py-2 border rounded-lg text-secondary hover:bg-gray-50 transition text-sm"
-            >
-              {showPin ? '🙈 Hide' : '👁️ Show'}
-            </button>
-          </div>
-        </div>
-
         {/* Default Exam Duration */}
         <div>
           <label className="block text-sm font-medium text-primary mb-1">

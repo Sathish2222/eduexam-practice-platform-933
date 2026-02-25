@@ -95,40 +95,42 @@ function StudyMode() {
   const selectedAk = allAks[selectedAkIdx] || null;
 
   return (
-    <div className="flex flex-col h-full">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-3 gap-2 flex-wrap">
-        <div className="flex items-center gap-2 min-w-0">
-          <Link
-            to={`/paper/${paperId}`}
-            className="text-sm text-secondary hover:text-primary shrink-0"
-          >
-            ← Back
-          </Link>
-          <span className="text-gray-300">/</span>
-          <div className="min-w-0">
-            <h1 className="text-base sm:text-lg font-bold text-primary truncate">📖 {paper.title}</h1>
-            <p className="text-xs text-secondary hidden sm:block">Study Mode — Question Paper &amp; Answer Key</p>
+    <div className="flex flex-col">
+      {/* Compact Header */}
+      <div className="flex items-center gap-2 mb-2 sm:mb-3 flex-wrap">
+        <Link to={`/paper/${paperId}`} className="text-xs sm:text-sm text-secondary hover:text-primary shrink-0">
+          ← Back
+        </Link>
+        <span className="text-gray-300 hidden sm:inline">/</span>
+        <div className="flex-1 min-w-0">
+          <h1 className="text-sm sm:text-lg font-bold text-primary truncate">📖 {paper.title}</h1>
+          <div className="flex items-center gap-1 mt-0.5 flex-wrap">
+            {paper.subject && (
+              <span className="text-[10px] font-medium text-secondary bg-gray-100 rounded-full px-1.5 py-0.5 leading-tight">{paper.subject}</span>
+            )}
+            {paper.year && (
+              <span className="text-[10px] font-medium text-secondary bg-gray-100 rounded-full px-1.5 py-0.5 leading-tight">{paper.year}</span>
+            )}
+            {paper.duration && (
+              <span className="text-[10px] font-medium text-secondary bg-gray-100 rounded-full px-1.5 py-0.5 leading-tight">⏱ {paper.duration} min</span>
+            )}
           </div>
         </div>
-        {/* Start Exam CTA */}
         <Link
           to={`/exam/${paperId}`}
-          className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 bg-success text-white rounded-xl text-sm font-semibold hover:bg-success/90 transition-all shadow-sm"
+          className="shrink-0 inline-flex items-center gap-1 px-3 py-1.5 sm:px-4 sm:py-2 bg-success text-white rounded-xl text-xs sm:text-sm font-semibold hover:bg-success/90 transition-all shadow-sm"
         >
-          🎯 Start Exam
+          🎯 <span className="hidden sm:inline">Start </span>Exam
         </Link>
       </div>
 
-      {/* AK Selector — shown when multiple variants */}
+      {/* AK Selector */}
       {allAks.length > 1 && (
-        <div className="bg-white border border-gray-200 rounded-xl shadow-sm mb-3 p-2 flex flex-wrap gap-1.5 items-center">
-          <span className="text-xs text-gray-400 font-medium px-1 shrink-0">Answer Key:</span>
+        <div className="bg-white border border-gray-200 rounded-xl shadow-sm mb-2 sm:mb-3 px-2 py-1.5 flex flex-wrap gap-1.5 items-center">
+          <span className="text-xs text-gray-400 font-medium shrink-0">AK:</span>
           {allAks.map((ak, idx) => (
-            <button
-              key={idx}
-              onClick={() => setSelectedAkIdx(idx)}
-              className={`px-3 py-1 rounded-lg text-xs font-medium transition-all border ${
+            <button key={idx} onClick={() => setSelectedAkIdx(idx)}
+              className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all border ${
                 selectedAkIdx === idx
                   ? 'bg-primary text-white border-primary'
                   : 'bg-white text-secondary border-gray-200 hover:border-primary/40 hover:text-primary'
@@ -141,18 +143,16 @@ function StudyMode() {
       )}
 
       {/* Mobile tab toggle */}
-      <div className="flex sm:hidden mb-3 bg-gray-100 rounded-xl p-1 gap-1">
-        <button
-          onClick={() => setMobileTab('qp')}
-          className={`flex-1 py-2 rounded-lg text-sm font-semibold transition-all ${
+      <div className="flex sm:hidden mb-2 bg-gray-100 rounded-xl p-1 gap-1">
+        <button onClick={() => setMobileTab('qp')}
+          className={`flex-1 py-2 rounded-lg text-xs font-bold transition-all ${
             mobileTab === 'qp' ? 'bg-white text-primary shadow-sm' : 'text-secondary'
           }`}
         >
           📄 Question Paper
         </button>
-        <button
-          onClick={() => setMobileTab('ak')}
-          className={`flex-1 py-2 rounded-lg text-sm font-semibold transition-all ${
+        <button onClick={() => setMobileTab('ak')}
+          className={`flex-1 py-2 rounded-lg text-xs font-bold transition-all ${
             mobileTab === 'ak' ? 'bg-white text-success shadow-sm' : 'text-secondary'
           } ${!paper.hasAnswerKey ? 'opacity-40 cursor-not-allowed' : ''}`}
           disabled={!paper.hasAnswerKey}
@@ -161,11 +161,11 @@ function StudyMode() {
         </button>
       </div>
 
-      {/* Desktop: side-by-side | Mobile: single tab */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 flex-1">
+      {/* Content panels */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
         {/* Question Paper panel */}
         <div className={`${mobileTab === 'ak' ? 'hidden sm:block' : 'block'}`}>
-          <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5 hidden sm:block px-0.5">
+          <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1 hidden sm:block px-0.5">
             📄 Question Paper
           </div>
           <FileViewer
@@ -177,18 +177,18 @@ function StudyMode() {
 
         {/* Answer Key panel */}
         <div className={`${mobileTab === 'qp' ? 'hidden sm:block' : 'block'}`}>
-          <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5 hidden sm:block px-0.5">
+          <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1 hidden sm:block px-0.5">
             🔑 {selectedAk?.label || 'Answer Key'}
           </div>
           {!paper.hasAnswerKey ? (
-            <div className="flex items-center justify-center h-64 bg-gray-50 rounded-xl border border-gray-200">
+            <div className="flex items-center justify-center h-48 bg-gray-50 rounded-xl border border-gray-200">
               <div className="text-center">
                 <div className="text-3xl mb-2">🔒</div>
                 <p className="text-secondary text-sm">No answer key available</p>
               </div>
             </div>
           ) : akLoading ? (
-            <div className="flex items-center justify-center h-64 bg-white rounded-xl border border-gray-200">
+            <div className="flex items-center justify-center h-48 bg-white rounded-xl border border-gray-200">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
             </div>
           ) : (
