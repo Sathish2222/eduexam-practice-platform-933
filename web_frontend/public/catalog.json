@@ -1,0 +1,2771 @@
+[
+  {
+    "id": "tamil-march-2025",
+    "title": "12th Tamil - March 2025",
+    "subject": "Tamil",
+    "year": "2025",
+    "examType": "March 2025",
+    "duration": 180,
+    "paperUrl": "/papers/Tamil/Question_Paper/12th_Tamil_Public_Exam_March_2025_Question_Paper.pdf",
+    "paperFileName": "12th_Tamil_Public_Exam_March_2025_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Tamil/Answer_Key/12th_Tamil_Public_Exam_March_2025_Official_Answer_Key.pdf",
+    "answerFileName": "12th_Tamil_Public_Exam_March_2025_Official_Answer_Key.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Tamil/Answer_Key/12th_Tamil_Public_Exam_March_2025_Official_Answer_Key.pdf",
+        "filename": "12th_Tamil_Public_Exam_March_2025_Official_Answer_Key.pdf",
+        "label": "Official Answer Key",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Tamil/Answer_Key/12th_Tamil_Public_Exam_March_2025_Answer_Key.pdf",
+        "filename": "12th_Tamil_Public_Exam_March_2025_Answer_Key.pdf",
+        "label": "Answer Key",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "tamil-june-2024",
+    "title": "12th Tamil - June 2024 (Supplementary)",
+    "subject": "Tamil",
+    "year": "2024",
+    "examType": "June 2024 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Tamil/Question_Paper/12th_Tamil_Public_Exam_June_2024_Question_Paper.pdf",
+    "paperFileName": "12th_Tamil_Public_Exam_June_2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "tamil-march-2024",
+    "title": "12th Tamil - March 2024",
+    "subject": "Tamil",
+    "year": "2024",
+    "examType": "March 2024",
+    "duration": 180,
+    "paperUrl": "/papers/Tamil/Question_Paper/12th_Tamil_Public_Exam_March_2024_Question_Paper.pdf",
+    "paperFileName": "12th_Tamil_Public_Exam_March_2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Tamil/Answer_Key/12th_Tamil_Public_Exam_March_2024_Official_Answer_Key.pdf",
+    "answerFileName": "12th_Tamil_Public_Exam_March_2024_Official_Answer_Key.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Tamil/Answer_Key/12th_Tamil_Public_Exam_March_2024_Official_Answer_Key.pdf",
+        "filename": "12th_Tamil_Public_Exam_March_2024_Official_Answer_Key.pdf",
+        "label": "Official Answer Key",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "tamil-june-2023",
+    "title": "12th Tamil - June 2023 (Supplementary)",
+    "subject": "Tamil",
+    "year": "2023",
+    "examType": "June 2023 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Tamil/Question_Paper/12th_Tamil_Public_Exam_June_2023_Question_Paper.pdf",
+    "paperFileName": "12th_Tamil_Public_Exam_June_2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Tamil/Answer_Key/12th_Tamil_Public_Exam_June_2023_QP_with_Answer_Key_Sura.pdf",
+    "answerFileName": "12th_Tamil_Public_Exam_June_2023_QP_with_Answer_Key_Sura.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Tamil/Answer_Key/12th_Tamil_Public_Exam_June_2023_QP_with_Answer_Key_Sura.pdf",
+        "filename": "12th_Tamil_Public_Exam_June_2023_QP_with_Answer_Key_Sura.pdf",
+        "label": "QP with Answer Key Sura",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "tamil-march-2023",
+    "title": "12th Tamil - March 2023",
+    "subject": "Tamil",
+    "year": "2023",
+    "examType": "March 2023",
+    "duration": 180,
+    "paperUrl": "/papers/Tamil/Question_Paper/12th_Tamil_Public_Exam_March_2023_Question_Paper.pdf",
+    "paperFileName": "12th_Tamil_Public_Exam_March_2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Tamil/Answer_Key/12th_Tamil_Public_Exam_March_2023_Official_Answer_Key.pdf",
+    "answerFileName": "12th_Tamil_Public_Exam_March_2023_Official_Answer_Key.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Tamil/Answer_Key/12th_Tamil_Public_Exam_March_2023_Official_Answer_Key.pdf",
+        "filename": "12th_Tamil_Public_Exam_March_2023_Official_Answer_Key.pdf",
+        "label": "Official Answer Key",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "english-march-2025",
+    "title": "12th English - March 2025",
+    "subject": "English",
+    "year": "2025",
+    "examType": "March 2025",
+    "duration": 180,
+    "paperUrl": "/papers/English/Question_Paper/12th_English_march-2025_Question_Paper.pdf",
+    "paperFileName": "12th_English_march-2025_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/English/Answer_Key/12th_English_march-2025_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_English_march-2025_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2025_Answer_Key_English_Medium.pdf",
+        "filename": "12th_English_march-2025_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2025_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_English_march-2025_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2025_Answer_Key_English_Medium_Duraisamy.pdf",
+        "filename": "12th_English_march-2025_Answer_Key_English_Medium_Duraisamy.pdf",
+        "label": "Answer Key English Medium Duraisamy",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2025_Answer_Key.pdf",
+        "filename": "12th_English_march-2025_Answer_Key.pdf",
+        "label": "Answer Key",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2025_Answer_Key_2.pdf",
+        "filename": "12th_English_march-2025_Answer_Key_2.pdf",
+        "label": "Answer Key 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2025_Answer_Key_3.pdf",
+        "filename": "12th_English_march-2025_Answer_Key_3.pdf",
+        "label": "Answer Key 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2025_Answer_Key_Robert.pdf",
+        "filename": "12th_English_march-2025_Answer_Key_Robert.pdf",
+        "label": "Answer Key Robert",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2025_Answer_Key_Win.pdf",
+        "filename": "12th_English_march-2025_Answer_Key_Win.pdf",
+        "label": "Answer Key Win",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "english-june-2024",
+    "title": "12th English - June 2024 (Supplementary)",
+    "subject": "English",
+    "year": "2024",
+    "examType": "June 2024 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/English/Question_Paper/12th_English_june-2024_Question_Paper.pdf",
+    "paperFileName": "12th_English_june-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "english-march-2024",
+    "title": "12th English - March 2024",
+    "subject": "English",
+    "year": "2024",
+    "examType": "March 2024",
+    "duration": 180,
+    "paperUrl": "/papers/English/Question_Paper/12th_English_march-2024_Question_Paper.pdf",
+    "paperFileName": "12th_English_march-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/English/Answer_Key/12th_English_march-2024_Official_Answer_Key.pdf",
+    "answerFileName": "12th_English_march-2024_Official_Answer_Key.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2024_Official_Answer_Key.pdf",
+        "filename": "12th_English_march-2024_Official_Answer_Key.pdf",
+        "label": "Official Answer Key",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2024_Official_Answer_Key_2.pdf",
+        "filename": "12th_English_march-2024_Official_Answer_Key_2.pdf",
+        "label": "Official Answer Key 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2024_Answer_Key.pdf",
+        "filename": "12th_English_march-2024_Answer_Key.pdf",
+        "label": "Answer Key",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2024_Answer_Key_2.pdf",
+        "filename": "12th_English_march-2024_Answer_Key_2.pdf",
+        "label": "Answer Key 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2024_Answer_Key_3.pdf",
+        "filename": "12th_English_march-2024_Answer_Key_3.pdf",
+        "label": "Answer Key 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2024_Answer_Key_4.pdf",
+        "filename": "12th_English_march-2024_Answer_Key_4.pdf",
+        "label": "Answer Key 4",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2024_Answer_Key_5.pdf",
+        "filename": "12th_English_march-2024_Answer_Key_5.pdf",
+        "label": "Answer Key 5",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2024_Answer_Key_6.pdf",
+        "filename": "12th_English_march-2024_Answer_Key_6.pdf",
+        "label": "Answer Key 6",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2024_Answer_Key_7.pdf",
+        "filename": "12th_English_march-2024_Answer_Key_7.pdf",
+        "label": "Answer Key 7",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2024_Answer_Key_8.pdf",
+        "filename": "12th_English_march-2024_Answer_Key_8.pdf",
+        "label": "Answer Key 8",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "english-june-2023",
+    "title": "12th English - June 2023 (Supplementary)",
+    "subject": "English",
+    "year": "2023",
+    "examType": "June 2023 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/English/Question_Paper/12th_English_june-2023_Question_Paper.pdf",
+    "paperFileName": "12th_English_june-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/English/Answer_Key/12th_English_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileName": "12th_English_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/English/Answer_Key/12th_English_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "filename": "12th_English_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "label": "Answer Key English Medium Sura",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_june-2023_Answer_Key.pdf",
+        "filename": "12th_English_june-2023_Answer_Key.pdf",
+        "label": "Answer Key",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "english-march-2023",
+    "title": "12th English - March 2023",
+    "subject": "English",
+    "year": "2023",
+    "examType": "March 2023",
+    "duration": 180,
+    "paperUrl": "/papers/English/Question_Paper/12th_English_march-2023_Question_Paper.pdf",
+    "paperFileName": "12th_English_march-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/English/Answer_Key/12th_English_march-2023_Official_Answer_Key.pdf",
+    "answerFileName": "12th_English_march-2023_Official_Answer_Key.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2023_Official_Answer_Key.pdf",
+        "filename": "12th_English_march-2023_Official_Answer_Key.pdf",
+        "label": "Official Answer Key",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2023_Answer_Key_English_Medium.pdf",
+        "filename": "12th_English_march-2023_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2023_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_English_march-2023_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2023_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_English_march-2023_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2023_Answer_Key_English_Medium_4.pdf",
+        "filename": "12th_English_march-2023_Answer_Key_English_Medium_4.pdf",
+        "label": "Answer Key English Medium 4",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2023_Answer_Key_English_Medium_5.pdf",
+        "filename": "12th_English_march-2023_Answer_Key_English_Medium_5.pdf",
+        "label": "Answer Key English Medium 5",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2023_Answer_Key_English_Medium_6.pdf",
+        "filename": "12th_English_march-2023_Answer_Key_English_Medium_6.pdf",
+        "label": "Answer Key English Medium 6",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2023_Answer_Key.pdf",
+        "filename": "12th_English_march-2023_Answer_Key.pdf",
+        "label": "Answer Key",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2023_Answer_Key_2.pdf",
+        "filename": "12th_English_march-2023_Answer_Key_2.pdf",
+        "label": "Answer Key 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2023_Answer_Key_3.pdf",
+        "filename": "12th_English_march-2023_Answer_Key_3.pdf",
+        "label": "Answer Key 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2023_Answer_Key_Rasi.pdf",
+        "filename": "12th_English_march-2023_Answer_Key_Rasi.pdf",
+        "label": "Answer Key Rasi",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2023_Answer_Key_Rasi_2.pdf",
+        "filename": "12th_English_march-2023_Answer_Key_Rasi_2.pdf",
+        "label": "Answer Key Rasi 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2023_Answer_Key_Rasi_3.pdf",
+        "filename": "12th_English_march-2023_Answer_Key_Rasi_3.pdf",
+        "label": "Answer Key Rasi 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/English/Answer_Key/12th_English_march-2023_Answer_Key_Svb.pdf",
+        "filename": "12th_English_march-2023_Answer_Key_Svb.pdf",
+        "label": "Answer Key Svb",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "commerce-march-2025",
+    "title": "12th Commerce - March 2025",
+    "subject": "Commerce",
+    "year": "2025",
+    "examType": "March 2025",
+    "duration": 180,
+    "paperUrl": "/papers/Commerce/Question_Paper/12th_Commerce_march-2025_Question_Paper.pdf",
+    "paperFileName": "12th_Commerce_march-2025_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Commerce/Answer_Key/12th_Commerce_march-2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Commerce_march-2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2025_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Commerce_march-2025_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Commerce_march-2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2025_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Commerce_march-2025_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2025_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Commerce_march-2025_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2025_Answer_Key_Tamil_Medium_2.pdf",
+        "filename": "12th_Commerce_march-2025_Answer_Key_Tamil_Medium_2.pdf",
+        "label": "Answer Key Tamil Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2025_Answer_Key_Tamil_Medium_3.pdf",
+        "filename": "12th_Commerce_march-2025_Answer_Key_Tamil_Medium_3.pdf",
+        "label": "Answer Key Tamil Medium 3",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "commerce-june-2024",
+    "title": "12th Commerce - June 2024 (Supplementary)",
+    "subject": "Commerce",
+    "year": "2024",
+    "examType": "June 2024 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Commerce/Question_Paper/12th_Commerce_june-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Commerce_june-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "commerce-march-2024",
+    "title": "12th Commerce - March 2024",
+    "subject": "Commerce",
+    "year": "2024",
+    "examType": "March 2024",
+    "duration": 180,
+    "paperUrl": "/papers/Commerce/Question_Paper/12th_Commerce_march-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Commerce_march-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Commerce/Answer_Key/12th_Commerce_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Commerce_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Commerce_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Commerce_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2024_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Commerce_march-2024_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2024_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Commerce_march-2024_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2024_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Commerce_march-2024_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2024_Answer_Key_Tamil_Medium_2.pdf",
+        "filename": "12th_Commerce_march-2024_Answer_Key_Tamil_Medium_2.pdf",
+        "label": "Answer Key Tamil Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2024_Answer_Key_Tamil_Medium_3.pdf",
+        "filename": "12th_Commerce_march-2024_Answer_Key_Tamil_Medium_3.pdf",
+        "label": "Answer Key Tamil Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2024_Answer_Key.pdf",
+        "filename": "12th_Commerce_march-2024_Answer_Key.pdf",
+        "label": "Answer Key",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "commerce-june-2023",
+    "title": "12th Commerce - June 2023 (Supplementary)",
+    "subject": "Commerce",
+    "year": "2023",
+    "examType": "June 2023 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Commerce/Question_Paper/12th_Commerce_june-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Commerce_june-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Commerce/Answer_Key/12th_Commerce_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileName": "12th_Commerce_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "filename": "12th_Commerce_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "label": "Answer Key English Medium Sura",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "filename": "12th_Commerce_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "label": "Answer Key Tamil Medium Sura",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "commerce-march-2023",
+    "title": "12th Commerce - March 2023",
+    "subject": "Commerce",
+    "year": "2023",
+    "examType": "March 2023",
+    "duration": 180,
+    "paperUrl": "/papers/Commerce/Question_Paper/12th_Commerce_march-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Commerce_march-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Commerce/Answer_Key/12th_Commerce_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Commerce_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Commerce_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2023_Official_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Commerce_march-2023_Official_Answer_Key_English_Medium_2.pdf",
+        "label": "Official Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Commerce_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2023_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Commerce_march-2023_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2023_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Commerce_march-2023_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2023_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_Commerce_march-2023_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2023_Answer_Key_English_Medium_4.pdf",
+        "filename": "12th_Commerce_march-2023_Answer_Key_English_Medium_4.pdf",
+        "label": "Answer Key English Medium 4",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2023_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Commerce_march-2023_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2023_Answer_Key_Tamil_Medium_2.pdf",
+        "filename": "12th_Commerce_march-2023_Answer_Key_Tamil_Medium_2.pdf",
+        "label": "Answer Key Tamil Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2023_Answer_Key_Tamil_Medium_3.pdf",
+        "filename": "12th_Commerce_march-2023_Answer_Key_Tamil_Medium_3.pdf",
+        "label": "Answer Key Tamil Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Commerce/Answer_Key/12th_Commerce_march-2023_Answer_Key_Tamil_Medium_4.pdf",
+        "filename": "12th_Commerce_march-2023_Answer_Key_Tamil_Medium_4.pdf",
+        "label": "Answer Key Tamil Medium 4",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "economics-march-2025",
+    "title": "12th Economics - March 2025",
+    "subject": "Economics",
+    "year": "2025",
+    "examType": "March 2025",
+    "duration": 180,
+    "paperUrl": "/papers/Economics/Question_Paper/12th_Economics_march-2025_Question_Paper.pdf",
+    "paperFileName": "12th_Economics_march-2025_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Economics/Answer_Key/12th_Economics_march-2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Economics_march-2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2025_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Economics_march-2025_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2025_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Economics_march-2025_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2025_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Economics_march-2025_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2025_Answer_Key_Tamil_Medium_2.pdf",
+        "filename": "12th_Economics_march-2025_Answer_Key_Tamil_Medium_2.pdf",
+        "label": "Answer Key Tamil Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2025_Answer_Key_Tamil_Medium_3.pdf",
+        "filename": "12th_Economics_march-2025_Answer_Key_Tamil_Medium_3.pdf",
+        "label": "Answer Key Tamil Medium 3",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "economics-june-2024",
+    "title": "12th Economics - June 2024 (Supplementary)",
+    "subject": "Economics",
+    "year": "2024",
+    "examType": "June 2024 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Economics/Question_Paper/12th_Economics_june-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Economics_june-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "economics-march-2024",
+    "title": "12th Economics - March 2024",
+    "subject": "Economics",
+    "year": "2024",
+    "examType": "March 2024",
+    "duration": 180,
+    "paperUrl": "/papers/Economics/Question_Paper/12th_Economics_march-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Economics_march-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Economics/Answer_Key/12th_Economics_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Economics_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Economics_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Economics_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2024_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Economics_march-2024_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2024_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Economics_march-2024_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2024_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_Economics_march-2024_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2024_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Economics_march-2024_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2024_Answer_Key_Tamil_Medium_2.pdf",
+        "filename": "12th_Economics_march-2024_Answer_Key_Tamil_Medium_2.pdf",
+        "label": "Answer Key Tamil Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2024_Answer_Key_Tamil_Medium_3.pdf",
+        "filename": "12th_Economics_march-2024_Answer_Key_Tamil_Medium_3.pdf",
+        "label": "Answer Key Tamil Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2024_Answer_Key_Tamil_Medium_4.pdf",
+        "filename": "12th_Economics_march-2024_Answer_Key_Tamil_Medium_4.pdf",
+        "label": "Answer Key Tamil Medium 4",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "economics-june-2023",
+    "title": "12th Economics - June 2023 (Supplementary)",
+    "subject": "Economics",
+    "year": "2023",
+    "examType": "June 2023 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Economics/Question_Paper/12th_Economics_june-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Economics_june-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Economics/Answer_Key/12th_Economics_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileName": "12th_Economics_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "filename": "12th_Economics_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "label": "Answer Key English Medium Sura",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "filename": "12th_Economics_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "label": "Answer Key Tamil Medium Sura",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "economics-march-2023",
+    "title": "12th Economics - March 2023",
+    "subject": "Economics",
+    "year": "2023",
+    "examType": "March 2023",
+    "duration": 180,
+    "paperUrl": "/papers/Economics/Question_Paper/12th_Economics_march-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Economics_march-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Economics/Answer_Key/12th_Economics_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Economics_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Economics_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2023_Official_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Economics_march-2023_Official_Answer_Key_English_Medium_2.pdf",
+        "label": "Official Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Economics_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2023_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Economics_march-2023_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Economics/Answer_Key/12th_Economics_march-2023_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Economics_march-2023_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "accountancy-march-2025",
+    "title": "12th Accountancy - March 2025",
+    "subject": "Accountancy",
+    "year": "2025",
+    "examType": "March 2025",
+    "duration": 180,
+    "paperUrl": "/papers/Accountancy/Question_Paper/12th_Accountancy_march-2025_Question_Paper.pdf",
+    "paperFileName": "12th_Accountancy_march-2025_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Accountancy_march-2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2025_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Accountancy_march-2025_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Accountancy_march-2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2025_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Accountancy_march-2025_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2025_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Accountancy_march-2025_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2025_Answer_Key_Tamil_Medium_2.pdf",
+        "filename": "12th_Accountancy_march-2025_Answer_Key_Tamil_Medium_2.pdf",
+        "label": "Answer Key Tamil Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2025_Answer_Key_Tamil_Medium_3.pdf",
+        "filename": "12th_Accountancy_march-2025_Answer_Key_Tamil_Medium_3.pdf",
+        "label": "Answer Key Tamil Medium 3",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "accountancy-june-2024",
+    "title": "12th Accountancy - June 2024 (Supplementary)",
+    "subject": "Accountancy",
+    "year": "2024",
+    "examType": "June 2024 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Accountancy/Question_Paper/12th_Accountancy_june-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Accountancy_june-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "accountancy-march-2024",
+    "title": "12th Accountancy - March 2024",
+    "subject": "Accountancy",
+    "year": "2024",
+    "examType": "March 2024",
+    "duration": 180,
+    "paperUrl": "/papers/Accountancy/Question_Paper/12th_Accountancy_march-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Accountancy_march-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Accountancy_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Accountancy_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Accountancy_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2024_Official_Answer_Key_Prasad.pdf",
+        "filename": "12th_Accountancy_march-2024_Official_Answer_Key_Prasad.pdf",
+        "label": "Official Answer Key Prasad",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2024_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Accountancy_march-2024_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2024_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Accountancy_march-2024_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2024_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Accountancy_march-2024_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2024_Answer_Key_Tamil_Medium_2.pdf",
+        "filename": "12th_Accountancy_march-2024_Answer_Key_Tamil_Medium_2.pdf",
+        "label": "Answer Key Tamil Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2024_Answer_Key_Tamil_Medium_3.pdf",
+        "filename": "12th_Accountancy_march-2024_Answer_Key_Tamil_Medium_3.pdf",
+        "label": "Answer Key Tamil Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2024_Answer_Key_Tamil_Medium_4.pdf",
+        "filename": "12th_Accountancy_march-2024_Answer_Key_Tamil_Medium_4.pdf",
+        "label": "Answer Key Tamil Medium 4",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2024_Answer_Key.pdf",
+        "filename": "12th_Accountancy_march-2024_Answer_Key.pdf",
+        "label": "Answer Key",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2024_Answer_Key_2.pdf",
+        "filename": "12th_Accountancy_march-2024_Answer_Key_2.pdf",
+        "label": "Answer Key 2",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "accountancy-june-2023",
+    "title": "12th Accountancy - June 2023 (Supplementary)",
+    "subject": "Accountancy",
+    "year": "2023",
+    "examType": "June 2023 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Accountancy/Question_Paper/12th_Accountancy_june-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Accountancy_june-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Accountancy/Answer_Key/12th_Accountancy_june-2023_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Accountancy_june-2023_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_june-2023_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Accountancy_june-2023_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_june-2023_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Accountancy_june-2023_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "accountancy-march-2023",
+    "title": "12th Accountancy - March 2023",
+    "subject": "Accountancy",
+    "year": "2023",
+    "examType": "March 2023",
+    "duration": 180,
+    "paperUrl": "/papers/Accountancy/Question_Paper/12th_Accountancy_march-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Accountancy_march-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Accountancy_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Accountancy_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Accountancy_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2023_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Accountancy_march-2023_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2023_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Accountancy_march-2023_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2023_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_Accountancy_march-2023_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2023_Answer_Key_English_Medium_4.pdf",
+        "filename": "12th_Accountancy_march-2023_Answer_Key_English_Medium_4.pdf",
+        "label": "Answer Key English Medium 4",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2023_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Accountancy_march-2023_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2023_Answer_Key_Tamil_Medium_2.pdf",
+        "filename": "12th_Accountancy_march-2023_Answer_Key_Tamil_Medium_2.pdf",
+        "label": "Answer Key Tamil Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2023_Answer_Key_Tamil_Medium_3.pdf",
+        "filename": "12th_Accountancy_march-2023_Answer_Key_Tamil_Medium_3.pdf",
+        "label": "Answer Key Tamil Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Accountancy/Answer_Key/12th_Accountancy_march-2023_Answer_Key_Tamil_Medium_Balaji.pdf",
+        "filename": "12th_Accountancy_march-2023_Answer_Key_Tamil_Medium_Balaji.pdf",
+        "label": "Answer Key Tamil Medium Balaji",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "computer-application-march-2025",
+    "title": "12th Computer Application - March 2025",
+    "subject": "Computer Application",
+    "year": "2025",
+    "examType": "March 2025",
+    "duration": 180,
+    "paperUrl": "/papers/Computer_Application/Question_Paper/12th_Computer_Application_march-2025_Question_Paper.pdf",
+    "paperFileName": "12th_Computer_Application_march-2025_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Computer_Application_march-2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2025_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Computer_Application_march-2025_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Computer_Application_march-2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2025_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Computer_Application_march-2025_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2025_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Computer_Application_march-2025_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2025_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_Computer_Application_march-2025_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2025_Answer_Key_English_Medium_4.pdf",
+        "filename": "12th_Computer_Application_march-2025_Answer_Key_English_Medium_4.pdf",
+        "label": "Answer Key English Medium 4",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "computer-application-june-2024",
+    "title": "12th Computer Application - June 2024 (Supplementary)",
+    "subject": "Computer Application",
+    "year": "2024",
+    "examType": "June 2024 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Computer_Application/Question_Paper/12th_Computer_Application_june-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Computer_Application_june-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "computer-application-march-2024",
+    "title": "12th Computer Application - March 2024",
+    "subject": "Computer Application",
+    "year": "2024",
+    "examType": "March 2024",
+    "duration": 180,
+    "paperUrl": "/papers/Computer_Application/Question_Paper/12th_Computer_Application_march-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Computer_Application_march-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Computer_Application_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Computer_Application_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Computer_Application_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2024_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Computer_Application_march-2024_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2024_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Computer_Application_march-2024_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2024_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_Computer_Application_march-2024_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2024_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Computer_Application_march-2024_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2024_Answer_Key.pdf",
+        "filename": "12th_Computer_Application_march-2024_Answer_Key.pdf",
+        "label": "Answer Key",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "computer-application-june-2023",
+    "title": "12th Computer Application - June 2023 (Supplementary)",
+    "subject": "Computer Application",
+    "year": "2023",
+    "examType": "June 2023 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Computer_Application/Question_Paper/12th_Computer_Application_june-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Computer_Application_june-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileName": "12th_Computer_Application_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "filename": "12th_Computer_Application_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "label": "Answer Key English Medium Sura",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "filename": "12th_Computer_Application_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "label": "Answer Key Tamil Medium Sura",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "computer-application-march-2023",
+    "title": "12th Computer Application - March 2023",
+    "subject": "Computer Application",
+    "year": "2023",
+    "examType": "March 2023",
+    "duration": 180,
+    "paperUrl": "/papers/Computer_Application/Question_Paper/12th_Computer_Application_march-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Computer_Application_march-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Computer_Application_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Computer_Application_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Computer_Application_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2023_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Computer_Application_march-2023_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2023_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Computer_Application_march-2023_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2023_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_Computer_Application_march-2023_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2023_Answer_Key_English_Medium_4.pdf",
+        "filename": "12th_Computer_Application_march-2023_Answer_Key_English_Medium_4.pdf",
+        "label": "Answer Key English Medium 4",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2023_Answer_Key_English_Medium_5.pdf",
+        "filename": "12th_Computer_Application_march-2023_Answer_Key_English_Medium_5.pdf",
+        "label": "Answer Key English Medium 5",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2023_Answer_Key_English_Medium_6.pdf",
+        "filename": "12th_Computer_Application_march-2023_Answer_Key_English_Medium_6.pdf",
+        "label": "Answer Key English Medium 6",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2023_Answer_Key_English_Medium_7.pdf",
+        "filename": "12th_Computer_Application_march-2023_Answer_Key_English_Medium_7.pdf",
+        "label": "Answer Key English Medium 7",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2023_Answer_Key.pdf",
+        "filename": "12th_Computer_Application_march-2023_Answer_Key.pdf",
+        "label": "Answer Key",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Application/Answer_Key/12th_Computer_Application_march-2023_Answer_Key_Svb.pdf",
+        "filename": "12th_Computer_Application_march-2023_Answer_Key_Svb.pdf",
+        "label": "Answer Key Svb",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "business-maths-march-2025",
+    "title": "12th Business Maths - March 2025",
+    "subject": "Business Maths",
+    "year": "2025",
+    "examType": "March 2025",
+    "duration": 180,
+    "paperUrl": "/papers/Business_Maths/Question_Paper/12th_Business_Maths_March_2025_Question_Paper.pdf",
+    "paperFileName": "12th_Business_Maths_March_2025_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Business_Maths/Answer_Key/12th_Business_Maths_March_2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Business_Maths_March_2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Business_Maths/Answer_Key/12th_Business_Maths_March_2025_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Business_Maths_March_2025_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Business_Maths/Answer_Key/12th_Business_Maths_March_2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Business_Maths_March_2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Business_Maths/Answer_Key/12th_Business_Maths_March_2025_Answer_Key_Sura_English_Medium.pdf",
+        "filename": "12th_Business_Maths_March_2025_Answer_Key_Sura_English_Medium.pdf",
+        "label": "Answer Key Sura English Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "business-maths-june-2024",
+    "title": "12th Business Maths - June 2024 (Supplementary)",
+    "subject": "Business Maths",
+    "year": "2024",
+    "examType": "June 2024 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Business_Maths/Question_Paper/12th_Business_Maths_June_2024_Question_Paper.pdf",
+    "paperFileName": "12th_Business_Maths_June_2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "business-maths-march-2024",
+    "title": "12th Business Maths - March 2024",
+    "subject": "Business Maths",
+    "year": "2024",
+    "examType": "March 2024",
+    "duration": 180,
+    "paperUrl": "/papers/Business_Maths/Question_Paper/12th_Business_Maths_March_2024_Question_Paper.pdf",
+    "paperFileName": "12th_Business_Maths_March_2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Business_Maths/Answer_Key/12th_Business_Maths_March_2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Business_Maths_March_2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Business_Maths/Answer_Key/12th_Business_Maths_March_2024_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Business_Maths_March_2024_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Business_Maths/Answer_Key/12th_Business_Maths_March_2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Business_Maths_March_2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Business_Maths/Answer_Key/12th_Business_Maths_March_2024_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Business_Maths_March_2024_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "business-maths-june-2023",
+    "title": "12th Business Maths - June 2023 (Supplementary)",
+    "subject": "Business Maths",
+    "year": "2023",
+    "examType": "June 2023 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Business_Maths/Question_Paper/12th_Business_Maths_June_2023_Question_Paper.pdf",
+    "paperFileName": "12th_Business_Maths_June_2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "business-maths-march-2023",
+    "title": "12th Business Maths - March 2023",
+    "subject": "Business Maths",
+    "year": "2023",
+    "examType": "March 2023",
+    "duration": 180,
+    "paperUrl": "/papers/Business_Maths/Question_Paper/12th_Business_Maths_March_2023_Question_Paper.pdf",
+    "paperFileName": "12th_Business_Maths_March_2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Business_Maths/Answer_Key/12th_Business_Maths_March_2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Business_Maths_March_2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Business_Maths/Answer_Key/12th_Business_Maths_March_2023_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Business_Maths_March_2023_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Business_Maths/Answer_Key/12th_Business_Maths_March_2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Business_Maths_March_2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "chemistry-march-2025",
+    "title": "12th Chemistry - March 2025",
+    "subject": "Chemistry",
+    "year": "2025",
+    "examType": "March 2025",
+    "duration": 180,
+    "paperUrl": "/papers/Chemistry/Question_Paper/12th_Chemistry_march-2025_Question_Paper.pdf",
+    "paperFileName": "12th_Chemistry_march-2025_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Chemistry_march-2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2025_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Chemistry_march-2025_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Chemistry_march-2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2025_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Chemistry_march-2025_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2025_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Chemistry_march-2025_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2025_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_Chemistry_march-2025_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2025_Answer_Key_English_Medium_4.pdf",
+        "filename": "12th_Chemistry_march-2025_Answer_Key_English_Medium_4.pdf",
+        "label": "Answer Key English Medium 4",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2025_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Chemistry_march-2025_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2025_Answer_Key_Tamil_Medium_2.pdf",
+        "filename": "12th_Chemistry_march-2025_Answer_Key_Tamil_Medium_2.pdf",
+        "label": "Answer Key Tamil Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2025_Answer_Key_Tamil_Medium_3.pdf",
+        "filename": "12th_Chemistry_march-2025_Answer_Key_Tamil_Medium_3.pdf",
+        "label": "Answer Key Tamil Medium 3",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "chemistry-june-2024",
+    "title": "12th Chemistry - June 2024 (Supplementary)",
+    "subject": "Chemistry",
+    "year": "2024",
+    "examType": "June 2024 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Chemistry/Question_Paper/12th_Chemistry_june-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Chemistry_june-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "chemistry-march-2024",
+    "title": "12th Chemistry - March 2024",
+    "subject": "Chemistry",
+    "year": "2024",
+    "examType": "March 2024",
+    "duration": 180,
+    "paperUrl": "/papers/Chemistry/Question_Paper/12th_Chemistry_march-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Chemistry_march-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Chemistry_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Chemistry_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Chemistry_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2024_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Chemistry_march-2024_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2024_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Chemistry_march-2024_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2024_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_Chemistry_march-2024_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2024_Answer_Key_English_Medium_4.pdf",
+        "filename": "12th_Chemistry_march-2024_Answer_Key_English_Medium_4.pdf",
+        "label": "Answer Key English Medium 4",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2024_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Chemistry_march-2024_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2024_Answer_Key.pdf",
+        "filename": "12th_Chemistry_march-2024_Answer_Key.pdf",
+        "label": "Answer Key",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2024_Answer_Key_2.pdf",
+        "filename": "12th_Chemistry_march-2024_Answer_Key_2.pdf",
+        "label": "Answer Key 2",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "chemistry-june-2023",
+    "title": "12th Chemistry - June 2023 (Supplementary)",
+    "subject": "Chemistry",
+    "year": "2023",
+    "examType": "June 2023 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Chemistry/Question_Paper/12th_Chemistry_june-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Chemistry_june-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Chemistry/Answer_Key/12th_Chemistry_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileName": "12th_Chemistry_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "filename": "12th_Chemistry_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "label": "Answer Key English Medium Sura",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "filename": "12th_Chemistry_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "label": "Answer Key Tamil Medium Sura",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "chemistry-march-2023",
+    "title": "12th Chemistry - March 2023",
+    "subject": "Chemistry",
+    "year": "2023",
+    "examType": "March 2023",
+    "duration": 180,
+    "paperUrl": "/papers/Chemistry/Question_Paper/12th_Chemistry_march-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Chemistry_march-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Chemistry_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Chemistry_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Chemistry_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2023_Answer_Key_English_Medium_Karthic.pdf",
+        "filename": "12th_Chemistry_march-2023_Answer_Key_English_Medium_Karthic.pdf",
+        "label": "Answer Key English Medium Karthic",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Chemistry/Answer_Key/12th_Chemistry_march-2023_Answer_Key_Tamil_Medium_Karthic.pdf",
+        "filename": "12th_Chemistry_march-2023_Answer_Key_Tamil_Medium_Karthic.pdf",
+        "label": "Answer Key Tamil Medium Karthic",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "physics-march-2025",
+    "title": "12th Physics - March 2025",
+    "subject": "Physics",
+    "year": "2025",
+    "examType": "March 2025",
+    "duration": 180,
+    "paperUrl": "/papers/Physics/Question_Paper/12th_Physics_march-2025_Question_Paper.pdf",
+    "paperFileName": "12th_Physics_march-2025_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Physics/Answer_Key/12th_Physics_march-2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Physics_march-2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2025_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Physics_march-2025_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Physics_march-2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2025_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Physics_march-2025_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2025_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Physics_march-2025_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2025_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Physics_march-2025_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "physics-june-2024",
+    "title": "12th Physics - June 2024 (Supplementary)",
+    "subject": "Physics",
+    "year": "2024",
+    "examType": "June 2024 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Physics/Question_Paper/12th_Physics_june-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Physics_june-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "physics-march-2024",
+    "title": "12th Physics - March 2024",
+    "subject": "Physics",
+    "year": "2024",
+    "examType": "March 2024",
+    "duration": 180,
+    "paperUrl": "/papers/Physics/Question_Paper/12th_Physics_march-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Physics_march-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Physics/Answer_Key/12th_Physics_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Physics_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Physics_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Physics_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2024_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Physics_march-2024_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2024_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Physics_march-2024_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2024_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_Physics_march-2024_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2024_Answer_Key_English_Medium_4.pdf",
+        "filename": "12th_Physics_march-2024_Answer_Key_English_Medium_4.pdf",
+        "label": "Answer Key English Medium 4",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2024_Answer_Key_English_Medium_5.pdf",
+        "filename": "12th_Physics_march-2024_Answer_Key_English_Medium_5.pdf",
+        "label": "Answer Key English Medium 5",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2024_Answer_Key_English_Medium_6.pdf",
+        "filename": "12th_Physics_march-2024_Answer_Key_English_Medium_6.pdf",
+        "label": "Answer Key English Medium 6",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2024_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Physics_march-2024_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "physics-june-2023",
+    "title": "12th Physics - June 2023 (Supplementary)",
+    "subject": "Physics",
+    "year": "2023",
+    "examType": "June 2023 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Physics/Question_Paper/12th_Physics_june-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Physics_june-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Physics/Answer_Key/12th_Physics_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileName": "12th_Physics_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "filename": "12th_Physics_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "label": "Answer Key English Medium Sura",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "filename": "12th_Physics_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "label": "Answer Key Tamil Medium Sura",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "physics-march-2023",
+    "title": "12th Physics - March 2023",
+    "subject": "Physics",
+    "year": "2023",
+    "examType": "March 2023",
+    "duration": 180,
+    "paperUrl": "/papers/Physics/Question_Paper/12th_Physics_march-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Physics_march-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Physics/Answer_Key/12th_Physics_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Physics_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Physics_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Physics_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2023_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Physics_march-2023_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2023_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Physics_march-2023_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Physics/Answer_Key/12th_Physics_march-2023_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_Physics_march-2023_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "maths-march-2025",
+    "title": "12th Maths - March 2025",
+    "subject": "Maths",
+    "year": "2025",
+    "examType": "March 2025",
+    "duration": 180,
+    "paperUrl": "/papers/Maths/Question_Paper/12th_Maths_march-2025_Question_Paper.pdf",
+    "paperFileName": "12th_Maths_march-2025_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Maths/Answer_Key/12th_Maths_march-2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Maths_march-2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2025_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Maths_march-2025_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Maths_march-2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2025_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Maths_march-2025_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2025_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Maths_march-2025_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2025_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_Maths_march-2025_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2025_Answer_Key_English_Medium_4.pdf",
+        "filename": "12th_Maths_march-2025_Answer_Key_English_Medium_4.pdf",
+        "label": "Answer Key English Medium 4",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2025_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Maths_march-2025_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2025_Answer_Key.pdf",
+        "filename": "12th_Maths_march-2025_Answer_Key.pdf",
+        "label": "Answer Key",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "maths-june-2024",
+    "title": "12th Maths - June 2024 (Supplementary)",
+    "subject": "Maths",
+    "year": "2024",
+    "examType": "June 2024 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Maths/Question_Paper/12th_Maths_june-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Maths_june-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "maths-march-2024",
+    "title": "12th Maths - March 2024",
+    "subject": "Maths",
+    "year": "2024",
+    "examType": "March 2024",
+    "duration": 180,
+    "paperUrl": "/papers/Maths/Question_Paper/12th_Maths_march-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Maths_march-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Maths/Answer_Key/12th_Maths_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Maths_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Maths_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2024_Official_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Maths_march-2024_Official_Answer_Key_English_Medium_2.pdf",
+        "label": "Official Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Maths_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2024_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Maths_march-2024_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2024_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Maths_march-2024_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2024_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_Maths_march-2024_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2024_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Maths_march-2024_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2024_Answer_Key.pdf",
+        "filename": "12th_Maths_march-2024_Answer_Key.pdf",
+        "label": "Answer Key",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "maths-june-2023",
+    "title": "12th Maths - June 2023 (Supplementary)",
+    "subject": "Maths",
+    "year": "2023",
+    "examType": "June 2023 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Maths/Question_Paper/12th_Maths_june-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Maths_june-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Maths/Answer_Key/12th_Maths_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileName": "12th_Maths_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "filename": "12th_Maths_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "label": "Answer Key English Medium Sura",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "filename": "12th_Maths_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "label": "Answer Key Tamil Medium Sura",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "maths-march-2023",
+    "title": "12th Maths - March 2023",
+    "subject": "Maths",
+    "year": "2023",
+    "examType": "March 2023",
+    "duration": 180,
+    "paperUrl": "/papers/Maths/Question_Paper/12th_Maths_march-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Maths_march-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Maths/Answer_Key/12th_Maths_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Maths_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Maths_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Maths_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2023_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Maths_march-2023_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2023_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Maths_march-2023_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2023_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_Maths_march-2023_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2023_Answer_Key_English_Medium_4.pdf",
+        "filename": "12th_Maths_march-2023_Answer_Key_English_Medium_4.pdf",
+        "label": "Answer Key English Medium 4",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Maths/Answer_Key/12th_Maths_march-2023_Answer_Key_English_Medium_Svb.pdf",
+        "filename": "12th_Maths_march-2023_Answer_Key_English_Medium_Svb.pdf",
+        "label": "Answer Key English Medium Svb",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "computer-science-march-2025",
+    "title": "12th Computer Science - March 2025",
+    "subject": "Computer Science",
+    "year": "2025",
+    "examType": "March 2025",
+    "duration": 180,
+    "paperUrl": "/papers/Computer_Science/Question_Paper/12th_Computer_Science_march-2025_Question_Paper.pdf",
+    "paperFileName": "12th_Computer_Science_march-2025_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Computer_Science_march-2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2025_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Computer_Science_march-2025_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Computer_Science_march-2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2025_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Computer_Science_march-2025_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2025_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Computer_Science_march-2025_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2025_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_Computer_Science_march-2025_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2025_Answer_Key_English_Medium_4.pdf",
+        "filename": "12th_Computer_Science_march-2025_Answer_Key_English_Medium_4.pdf",
+        "label": "Answer Key English Medium 4",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "computer-science-june-2024",
+    "title": "12th Computer Science - June 2024 (Supplementary)",
+    "subject": "Computer Science",
+    "year": "2024",
+    "examType": "June 2024 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Computer_Science/Question_Paper/12th_Computer_Science_june-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Computer_Science_june-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "computer-science-march-2024",
+    "title": "12th Computer Science - March 2024",
+    "subject": "Computer Science",
+    "year": "2024",
+    "examType": "March 2024",
+    "duration": 180,
+    "paperUrl": "/papers/Computer_Science/Question_Paper/12th_Computer_Science_march-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Computer_Science_march-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Computer_Science_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Computer_Science_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Computer_Science_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2024_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Computer_Science_march-2024_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2024_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Computer_Science_march-2024_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2024_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_Computer_Science_march-2024_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2024_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Computer_Science_march-2024_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2024_Answer_Key.pdf",
+        "filename": "12th_Computer_Science_march-2024_Answer_Key.pdf",
+        "label": "Answer Key",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2024_Answer_Key_2.pdf",
+        "filename": "12th_Computer_Science_march-2024_Answer_Key_2.pdf",
+        "label": "Answer Key 2",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "computer-science-june-2023",
+    "title": "12th Computer Science - June 2023 (Supplementary)",
+    "subject": "Computer Science",
+    "year": "2023",
+    "examType": "June 2023 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Computer_Science/Question_Paper/12th_Computer_Science_june-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Computer_Science_june-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileName": "12th_Computer_Science_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "filename": "12th_Computer_Science_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "label": "Answer Key English Medium Sura",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "filename": "12th_Computer_Science_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "label": "Answer Key Tamil Medium Sura",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "computer-science-march-2023",
+    "title": "12th Computer Science - March 2023",
+    "subject": "Computer Science",
+    "year": "2023",
+    "examType": "March 2023",
+    "duration": 180,
+    "paperUrl": "/papers/Computer_Science/Question_Paper/12th_Computer_Science_march-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Computer_Science_march-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Computer_Science_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Computer_Science_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Computer_Science_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2023_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Computer_Science_march-2023_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2023_Answer_Key_English_Medium_2.pdf",
+        "filename": "12th_Computer_Science_march-2023_Answer_Key_English_Medium_2.pdf",
+        "label": "Answer Key English Medium 2",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2023_Answer_Key_English_Medium_3.pdf",
+        "filename": "12th_Computer_Science_march-2023_Answer_Key_English_Medium_3.pdf",
+        "label": "Answer Key English Medium 3",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2023_Answer_Key_English_Medium_4.pdf",
+        "filename": "12th_Computer_Science_march-2023_Answer_Key_English_Medium_4.pdf",
+        "label": "Answer Key English Medium 4",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2023_Answer_Key.pdf",
+        "filename": "12th_Computer_Science_march-2023_Answer_Key.pdf",
+        "label": "Answer Key",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Computer_Science/Answer_Key/12th_Computer_Science_march-2023_Answer_Key_Svb.pdf",
+        "filename": "12th_Computer_Science_march-2023_Answer_Key_Svb.pdf",
+        "label": "Answer Key Svb",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "botany-march-2025",
+    "title": "12th Botany - March 2025",
+    "subject": "Botany",
+    "year": "2025",
+    "examType": "March 2025",
+    "duration": 180,
+    "paperUrl": "/papers/Botany/Question_Paper/12th_Botany_march-2025_Question_Paper.pdf",
+    "paperFileName": "12th_Botany_march-2025_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Botany/Answer_Key/12th_Botany_march-2025_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Botany_march-2025_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Botany/Answer_Key/12th_Botany_march-2025_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Botany_march-2025_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "botany-june-2024",
+    "title": "12th Botany - June 2024 (Supplementary)",
+    "subject": "Botany",
+    "year": "2024",
+    "examType": "June 2024 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Botany/Question_Paper/12th_Botany_june-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Botany_june-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "botany-march-2024",
+    "title": "12th Botany - March 2024",
+    "subject": "Botany",
+    "year": "2024",
+    "examType": "March 2024",
+    "duration": 180,
+    "paperUrl": "/papers/Botany/Question_Paper/12th_Botany_march-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Botany_march-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Botany/Answer_Key/12th_Botany_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Botany_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Botany/Answer_Key/12th_Botany_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Botany_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Botany/Answer_Key/12th_Botany_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Botany_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Botany/Answer_Key/12th_Botany_march-2024_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Botany_march-2024_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "botany-june-2023",
+    "title": "12th Botany - June 2023 (Supplementary)",
+    "subject": "Botany",
+    "year": "2023",
+    "examType": "June 2023 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Botany/Question_Paper/12th_Botany_june-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Botany_june-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Botany/Answer_Key/12th_Botany_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileName": "12th_Botany_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Botany/Answer_Key/12th_Botany_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "filename": "12th_Botany_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "label": "Answer Key English Medium Sura",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Botany/Answer_Key/12th_Botany_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "filename": "12th_Botany_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "label": "Answer Key Tamil Medium Sura",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "botany-march-2023",
+    "title": "12th Botany - March 2023",
+    "subject": "Botany",
+    "year": "2023",
+    "examType": "March 2023",
+    "duration": 180,
+    "paperUrl": "/papers/Botany/Question_Paper/12th_Botany_march-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Botany_march-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Botany/Answer_Key/12th_Botany_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Botany_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Botany/Answer_Key/12th_Botany_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Botany_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Botany/Answer_Key/12th_Botany_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Botany_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Botany/Answer_Key/12th_Botany_march-2023_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Botany_march-2023_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "zoology-march-2025",
+    "title": "12th Zoology - March 2025",
+    "subject": "Zoology",
+    "year": "2025",
+    "examType": "March 2025",
+    "duration": 180,
+    "paperUrl": "/papers/Zoology/Question_Paper/12th_Zoology_march-2025_Question_Paper.pdf",
+    "paperFileName": "12th_Zoology_march-2025_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Zoology/Answer_Key/12th_Zoology_march-2025_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Zoology_march-2025_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Zoology/Answer_Key/12th_Zoology_march-2025_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Zoology_march-2025_Answer_Key_English_Medium.pdf",
+        "label": "Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Zoology/Answer_Key/12th_Zoology_march-2025_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Zoology_march-2025_Answer_Key_Tamil_Medium.pdf",
+        "label": "Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "zoology-march-2024",
+    "title": "12th Zoology - March 2024",
+    "subject": "Zoology",
+    "year": "2024",
+    "examType": "March 2024",
+    "duration": 180,
+    "paperUrl": "/papers/Zoology/Question_Paper/12th_Zoology_march-2024_Question_Paper.pdf",
+    "paperFileName": "12th_Zoology_march-2024_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Zoology/Answer_Key/12th_Zoology_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Zoology_march-2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Zoology/Answer_Key/12th_Zoology_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Zoology_march-2024_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Zoology/Answer_Key/12th_Zoology_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Zoology_march-2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "zoology-june-2023",
+    "title": "12th Zoology - June 2023 (Supplementary)",
+    "subject": "Zoology",
+    "year": "2023",
+    "examType": "June 2023 (Supplementary)",
+    "duration": 180,
+    "paperUrl": "/papers/Zoology/Question_Paper/12th_Zoology_june-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Zoology_june-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Zoology/Answer_Key/12th_Zoology_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileName": "12th_Zoology_june-2023_Answer_Key_English_Medium_Sura.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Zoology/Answer_Key/12th_Zoology_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "filename": "12th_Zoology_june-2023_Answer_Key_English_Medium_Sura.pdf",
+        "label": "Answer Key English Medium Sura",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Zoology/Answer_Key/12th_Zoology_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "filename": "12th_Zoology_june-2023_Answer_Key_Tamil_Medium_Sura.pdf",
+        "label": "Answer Key Tamil Medium Sura",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "zoology-march-2023",
+    "title": "12th Zoology - March 2023",
+    "subject": "Zoology",
+    "year": "2023",
+    "examType": "March 2023",
+    "duration": 180,
+    "paperUrl": "/papers/Zoology/Question_Paper/12th_Zoology_march-2023_Question_Paper.pdf",
+    "paperFileName": "12th_Zoology_march-2023_Question_Paper.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/Zoology/Answer_Key/12th_Zoology_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "12th_Zoology_march-2023_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/Zoology/Answer_Key/12th_Zoology_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "filename": "12th_Zoology_march-2023_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/Zoology/Answer_Key/12th_Zoology_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "12th_Zoology_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  }
+]
