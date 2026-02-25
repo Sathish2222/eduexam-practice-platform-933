@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   getPaperById,
@@ -9,19 +9,23 @@ import {
   saveAttempt,
   getSettings,
 } from '../utils/storage';
+import { formatTime } from '../utils/helpers';
 import FileViewer from '../components/FileViewer';
 import ExamTimer from '../components/ExamTimer';
 
 /**
  * Exam mode page with persistent countdown timer and auto-submission.
  * Provides a focused exam environment with timer recovery on reload.
+ * Supports stopping/finishing the exam with saved elapsed and remaining time.
  * Optimized for one-hand mobile use with bottom-pinned action controls.
  */
 // PUBLIC_INTERFACE
 /**
- * Full-screen exam mode with persistent timer, paper viewer, and auto-submit.
+ * Full-screen exam mode with persistent timer, paper viewer, stop/finish, and auto-submit.
  * Recovers timer state on page reload/revisit.
- * Features mobile-friendly bottom action bar for submit/quit controls.
+ * Features mobile-friendly bottom action bar for submit/stop/quit controls.
+ * Timer starts when the student clicks "Begin Exam".
+ * Stop/Finish button freezes the timer and records the stopped time for the attempt.
  * @returns {JSX.Element}
  */
 function ExamMode() {
@@ -34,6 +38,11 @@ function ExamMode() {
   const [startTime, setStartTime] = useState(null);
   const [examFinished, setExamFinished] = useState(false);
   const [finishReason, setFinishReason] = useState('');
+  const [examStopped, setExamStopped] = useState(false);
+  // Track elapsed time display string for the finished screen
+  const [stoppedTimeDisplay, setStoppedTimeDisplay] = useState('');
+  // Ref to always have latest remaining seconds from ExamTimer
+  const currentRemainingRef = useRef(null);
 
   useEffect(() => {
     const loadPaper = async () => {
@@ -74,6 +83,18 @@ function ExamMode() {
     loadPaper();
   }, [paperId, navigate]);
 
+  /**
+   * Callback from ExamTimer reporting the current remaining seconds.
+   * Stored in a ref so it's always up-to-date without causing re-renders.
+   */
+  const handleRemainingChange = useCallback((remaining) => {
+    currentRemainingRef.current = remaining;
+  }, []);
+
+  /**
+   * Start the exam: sets the start time and persists timer state.
+   * The countdown begins from this moment.
+   */
   const handleStartExam = () => {
     const now = Date.now();
     setStartTime(now);
@@ -92,6 +113,7 @@ function ExamMode() {
   const handleTimeUp = useCallback(() => {
     setExamFinished(true);
     setFinishReason('⏰ Time is up! Your exam has been auto-submitted.');
+    setStoppedTimeDisplay('');
     clearTimerState();
     saveAttempt({
       paperId,
@@ -102,29 +124,89 @@ function ExamMode() {
     });
   }, [paperId, startTime]);
 
-  const handleSubmitEarly = () => {
-    if (!window.confirm('Are you sure you want to submit your exam early?')) return;
+  /**
+   * Stop/Finish the exam: freezes the timer and records the stopped time.
+   * Saves both the remaining seconds and elapsed seconds to the attempt.
+   */
+  const handleStopExam = () => {
+    if (!window.confirm('Are you sure you want to stop and finish your exam? The timer will be saved.')) return;
+    const now = Date.now();
+    const settings = getSettings();
+    const duration = paper.duration || settings.examDuration || 180;
+    const totalSeconds = duration * 60;
+    // Use the live remaining value from the timer, fallback to calculation
+    const remainingSeconds = currentRemainingRef.current != null
+      ? currentRemainingRef.current
+      : Math.max(0, totalSeconds - Math.floor((now - startTime) / 1000));
+    const elapsedSeconds = totalSeconds - remainingSeconds;
+
+    // First stop the timer visually
+    setExamStopped(true);
+    // Then mark as finished
     setExamFinished(true);
-    setFinishReason('✅ Exam submitted successfully.');
+    setFinishReason('✅ Exam stopped and time saved successfully.');
+    setStoppedTimeDisplay(formatTime(elapsedSeconds));
     clearTimerState();
     saveAttempt({
       paperId,
       startTime,
-      endTime: Date.now(),
+      endTime: now,
+      completed: true,
+      reason: 'stopped',
+      remainingSeconds,
+      elapsedSeconds,
+      timeTaken: formatTime(elapsedSeconds),
+    });
+  };
+
+  const handleSubmitEarly = () => {
+    if (!window.confirm('Are you sure you want to submit your exam early?')) return;
+    const now = Date.now();
+    const settings = getSettings();
+    const duration = paper.duration || settings.examDuration || 180;
+    const totalSeconds = duration * 60;
+    const remainingSeconds = currentRemainingRef.current != null
+      ? currentRemainingRef.current
+      : Math.max(0, totalSeconds - Math.floor((now - startTime) / 1000));
+    const elapsedSeconds = totalSeconds - remainingSeconds;
+
+    setExamFinished(true);
+    setFinishReason('✅ Exam submitted successfully.');
+    setStoppedTimeDisplay(formatTime(elapsedSeconds));
+    clearTimerState();
+    saveAttempt({
+      paperId,
+      startTime,
+      endTime: now,
       completed: true,
       reason: 'manual_submit',
+      remainingSeconds,
+      elapsedSeconds,
+      timeTaken: formatTime(elapsedSeconds),
     });
   };
 
   const handleQuitExam = () => {
     if (!window.confirm('Are you sure you want to quit? Your progress will be saved as incomplete.')) return;
+    const now = Date.now();
+    const settings = getSettings();
+    const duration = paper.duration || settings.examDuration || 180;
+    const totalSeconds = duration * 60;
+    const remainingSeconds = currentRemainingRef.current != null
+      ? currentRemainingRef.current
+      : Math.max(0, totalSeconds - Math.floor((now - startTime) / 1000));
+    const elapsedSeconds = totalSeconds - remainingSeconds;
+
     clearTimerState();
     saveAttempt({
       paperId,
       startTime,
-      endTime: Date.now(),
+      endTime: now,
       completed: false,
       reason: 'quit',
+      remainingSeconds,
+      elapsedSeconds,
+      timeTaken: formatTime(elapsedSeconds),
     });
     navigate(`/paper/${paperId}`);
   };
@@ -168,7 +250,20 @@ function ExamMode() {
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-3">Exam Complete!</h2>
-          <p className="text-secondary mb-8 text-sm">{finishReason}</p>
+          <p className="text-secondary mb-4 text-sm">{finishReason}</p>
+
+          {/* Display the time taken when available */}
+          {stoppedTimeDisplay && (
+            <div className="bg-blue-50 rounded-2xl p-4 mb-6 border border-blue-100 inline-block w-full max-w-xs">
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-blue-800 font-bold text-lg font-mono">{stoppedTimeDisplay}</span>
+              </div>
+              <p className="text-blue-600 text-xs">Time taken for this attempt</p>
+            </div>
+          )}
 
           <div className="flex flex-col gap-3">
             {paper.hasAnswerKey && (
@@ -181,7 +276,7 @@ function ExamMode() {
             )}
             <button
               onClick={() => navigate(`/paper/${paperId}`)}
-              className="w-full px-5 py-3.5 sm:py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all duration-200 font-medium text-sm btn-press flex items-center justify-center gap-2 mobile-touch-target"
+              className="w-full px-5 py-3.5 sm:py-3 bg-primary text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-medium text-sm btn-press flex items-center justify-center gap-2 mobile-touch-target"
             >
               <span>📄</span> Back to Paper
             </button>
@@ -231,7 +326,7 @@ function ExamMode() {
                 </span>
               </div>
               <p className="text-blue-600 text-xs">
-                Timer starts when you click begin. Auto-submits when time runs out.
+                Timer starts when you click begin. You can stop when done.
               </p>
             </div>
 
@@ -239,8 +334,9 @@ function ExamMode() {
             <div className="text-left bg-yellow-50 rounded-xl p-4 mb-6 border border-yellow-100">
               <p className="text-xs font-medium text-yellow-800 mb-1.5">📌 Before you begin:</p>
               <ul className="text-xs text-yellow-700 space-y-1">
-                <li>• The timer will count down continuously</li>
-                <li>• You can submit early or quit at any time</li>
+                <li>• The timer will start counting down when you begin</li>
+                <li>• Use the <strong>Stop / Finish</strong> button when you complete the exam</li>
+                <li>• Your time will be recorded for this attempt</li>
                 <li>• Timer persists if you refresh the page</li>
               </ul>
             </div>
@@ -296,11 +392,25 @@ function ExamMode() {
                   durationMinutes={duration}
                   startTime={startTime}
                   onTimeUp={handleTimeUp}
+                  stopped={examStopped}
+                  onRemainingChange={handleRemainingChange}
                 />
               </div>
 
               {/* Right: Desktop Actions — hidden on mobile (moved to bottom bar) */}
               <div className="hidden md:flex items-center gap-2 shrink-0">
+                {/* Stop/Finish button — primary action */}
+                <button
+                  onClick={handleStopExam}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all duration-200 text-sm font-medium shadow-sm btn-press flex items-center gap-1.5"
+                  title="Stop timer and finish exam"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z" />
+                  </svg>
+                  Stop / Finish
+                </button>
                 <button
                   onClick={handleSubmitEarly}
                   className="px-4 py-2 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 text-sm font-medium shadow-sm btn-press flex items-center gap-1.5"
@@ -333,7 +443,7 @@ function ExamMode() {
         title={paper.paperFileName || 'Question Paper'}
       />
 
-      {/* Mobile bottom action bar — one-hand friendly submit/quit */}
+      {/* Mobile bottom action bar — one-hand friendly stop/submit/quit */}
       <div className="mobile-bottom-bar">
         <div className="flex items-center gap-2">
           {/* Quit button */}
@@ -348,15 +458,27 @@ function ExamMode() {
             Quit
           </button>
 
-          {/* Submit button — primary CTA, takes most space */}
+          {/* Stop/Finish button — prominent action for completing exam */}
+          <button
+            onClick={handleStopExam}
+            className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all duration-200 font-semibold text-sm shadow-sm btn-press mobile-touch-target"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z" />
+            </svg>
+            Stop / Finish
+          </button>
+
+          {/* Submit button */}
           <button
             onClick={handleSubmitEarly}
-            className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-semibold text-sm shadow-sm btn-press mobile-touch-target"
+            className="flex items-center justify-center gap-1.5 px-3 py-2.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 btn-press mobile-touch-target text-xs font-medium"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
-            Submit Exam
+            Submit
           </button>
         </div>
       </div>

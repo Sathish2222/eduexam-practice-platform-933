@@ -5,10 +5,11 @@ import { formatDate } from '../utils/helpers';
 
 /**
  * Attempt history page showing all exam attempts with details.
+ * Displays time taken when recorded via Stop/Finish or Submit.
  */
 // PUBLIC_INTERFACE
 /**
- * Displays a chronological list of all exam attempts with status and duration.
+ * Displays a chronological list of all exam attempts with status, duration, and saved time.
  * @returns {JSX.Element}
  */
 function AttemptHistory() {
@@ -58,8 +59,16 @@ function AttemptHistory() {
                       {attempt.reason === 'manual_submit' && '📤 Submitted'}
                       {attempt.reason === 'quit' && '🚪 Quit early'}
                       {attempt.reason === 'time_up_recovery' && '⏰ Recovered (time up)'}
+                      {attempt.reason === 'stopped' && '⏹ Stopped / Finished'}
                     </span>
-                    <span className="text-gray-400">⏱ {durationMin} min</span>
+                    {/* Show recorded time taken if available */}
+                    {attempt.timeTaken ? (
+                      <span className="px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 font-mono font-medium">
+                        ⏱ {attempt.timeTaken}
+                      </span>
+                    ) : (
+                      <span className="text-gray-400">⏱ {durationMin} min</span>
+                    )}
                     <span className="text-gray-400">{formatDate(new Date(attempt.startTime).toISOString())}</span>
                   </div>
                 </div>
