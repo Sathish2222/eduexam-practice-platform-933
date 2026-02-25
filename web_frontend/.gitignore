@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .env
+
+# PDF files are hosted on Cloudflare R2 — do not commit to git
+public/papers/

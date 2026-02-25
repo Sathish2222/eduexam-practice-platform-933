@@ -61,8 +61,8 @@ function HomePage() {
           Your Exam Practice Hub
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3 tracking-tight leading-tight">
-          📝 EduExam{' '}
-          <span className="text-gradient-emerald">Practice</span>
+          📝 TN Study{' '}
+          <span className="text-gradient-emerald">Hub</span>
         </h1>
         <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-md sm:max-w-lg mx-auto">
           Upload papers, practice with timed exams, and track your progress —{' '}

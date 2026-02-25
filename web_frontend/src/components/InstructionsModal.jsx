@@ -11,7 +11,7 @@ const slides = [
   {
     step: 0,
     emoji: '👋',
-    title: 'Welcome to EduExam!',
+    title: 'Welcome to TN Study Hub!',
     subtitle: 'Your personal exam practice helper',
     bullets: [
       { icon: '📱', text: 'Practice exams on your phone or computer' },
@@ -336,7 +336,7 @@ function InstructionsModal({ isOpen, onClose }) {
       className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4"
       role="dialog"
       aria-modal="true"
-      aria-label="App Instructions — How to use EduExam"
+      aria-label="App Instructions — How to use TN Study Hub"
     >
       {/* Backdrop with blur */}
       <div

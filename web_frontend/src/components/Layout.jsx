@@ -40,11 +40,11 @@ function Layout({ children }) {
               <span className="text-2xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">📝</span>
               <div className="flex flex-col">
                 <span className="hidden sm:inline leading-tight tracking-tight font-extrabold">
-                  EduExam Practice
+                  TN Study Hub
                 </span>
-                <span className="sm:hidden leading-tight tracking-tight font-extrabold">EduExam</span>
+                <span className="sm:hidden leading-tight tracking-tight font-extrabold">TN Study Hub</span>
                 <span className="hidden sm:inline text-[10px] font-normal text-emerald-300/70 leading-none tracking-wide">
-                  Practice Platform
+                  Exam Practice Platform
                 </span>
               </div>
             </Link>
@@ -124,7 +124,7 @@ function Layout({ children }) {
       <footer className="border-t border-gray-100 bg-white/60 backdrop-blur-sm mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col items-center gap-1">
           <p className="text-center text-xs text-gray-400 font-medium">
-            📝 EduExam Practice Platform — All data stored locally on your device
+            📝 TN Study Hub — All data stored locally on your device
           </p>
           <p className="text-center text-xs text-gray-400">
             Designed &amp; Developed by{' '}
