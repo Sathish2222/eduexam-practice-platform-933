@@ -9,7 +9,7 @@
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #f9fafb;
+    background-color: #f8fafc;
     color: #111827;
   }
 
@@ -20,31 +20,31 @@
 
   /* Better focus styles for accessibility */
   *:focus-visible {
-    outline: 2px solid #374151;
+    outline: 2px solid #059669;
     outline-offset: 2px;
-    border-radius: 4px;
+    border-radius: 6px;
   }
 }
 
 /* ===== Component Layer ===== */
 @layer components {
-  /* Card hover lift effect */
+  /* Card hover lift effect — enhanced with glow */
   .card-hover {
-    @apply transition-all duration-200 ease-in-out;
+    @apply transition-all duration-300 ease-out;
   }
   .card-hover:hover {
-    @apply shadow-lg -translate-y-0.5;
+    @apply shadow-lg -translate-y-1;
   }
 
-  /* Gradient header background */
+  /* Modern gradient header background */
   .header-gradient {
-    background: linear-gradient(135deg, #374151 0%, #4B5563 50%, #374151 100%);
+    background: linear-gradient(135deg, #1e293b 0%, #334155 40%, #374151 100%);
   }
 
   /* Subtle patterned background for sections */
   .section-bg {
-    background-image: radial-gradient(circle at 1px 1px, rgba(55,65,81,0.03) 1px, transparent 0);
-    background-size: 24px 24px;
+    background-image: radial-gradient(circle at 1px 1px, rgba(16,185,129,0.03) 1px, transparent 0);
+    background-size: 28px 28px;
   }
 
   /* Smooth button press effect */
@@ -52,52 +52,85 @@
     @apply transition-all duration-150 active:scale-[0.97];
   }
 
-  /* Glass-like card effect */
+  /* Modern glass card effect */
   .glass-card {
-    @apply bg-white/80 backdrop-blur-sm border border-gray-200/60;
+    @apply bg-white/80 backdrop-blur-md border border-gray-200/50 shadow-sm;
   }
 
-  /* Badge / tag pill */
+  /* Badge / tag pill — modernized */
   .tag-pill {
     @apply inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-full;
   }
 
   /* Viewer container with subtle inner shadow */
   .viewer-container {
-    @apply bg-gray-50 rounded-xl border border-gray-200 overflow-hidden;
+    @apply bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.04);
+  }
+
+  /* Modern card base style */
+  .modern-card {
+    @apply bg-white rounded-2xl border border-gray-100 shadow-sm;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .modern-card:hover {
+    @apply shadow-lg border-gray-200;
+    transform: translateY(-2px);
+  }
+
+  /* Gradient button — modern primary action */
+  .btn-gradient {
+    @apply px-6 py-3 rounded-xl font-semibold text-white text-sm transition-all duration-300;
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    box-shadow: 0 4px 14px -3px rgba(16, 185, 129, 0.4);
+  }
+  .btn-gradient:hover {
+    background: linear-gradient(135deg, #047857 0%, #059669 100%);
+    box-shadow: 0 6px 20px -3px rgba(16, 185, 129, 0.5);
+    transform: translateY(-1px);
+  }
+
+  /* Modern section heading */
+  .section-heading {
+    @apply text-lg font-bold text-gray-800 flex items-center gap-2;
   }
 }
 
 /* ===== Utility Layer ===== */
 @layer utilities {
-  /* Text gradient utility */
+  /* Text gradient utility — modernized */
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-gray-700 to-gray-500;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #374151 0%, #059669 100%);
+  }
+
+  /* Emerald text gradient */
+  .text-gradient-emerald {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #059669 0%, #34d399 100%);
   }
 }
 
 /* ===== Custom scrollbar ===== */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f3f4f6;
+  background: transparent;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #9CA3AF;
+  background: #d1d5db;
   border-radius: 4px;
-  border: 2px solid #f3f4f6;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #6B7280;
+  background: #9CA3AF;
 }
 
 /* ===== Selection color ===== */
 ::selection {
-  background-color: rgba(55, 65, 81, 0.15);
+  background-color: rgba(16, 185, 129, 0.15);
   color: #111827;
 }
 
@@ -108,12 +141,12 @@
   left: 0;
   right: 0;
   z-index: 40;
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(229, 231, 235, 0.8);
   padding: 0.625rem 1rem calc(0.625rem + env(safe-area-inset-bottom, 0px)) 1rem;
-  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
 }
 
 /* Add bottom padding to main content when bottom bar is visible on mobile */
@@ -227,8 +260,13 @@
 }
 
 @keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.95); }
+  from { opacity: 0; transform: scale(0.92); }
   to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
 .animate-fadeIn {
@@ -244,17 +282,54 @@
 }
 
 .animate-scaleIn {
-  animation: scaleIn 0.2s ease-out both;
+  animation: scaleIn 0.25s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
 /* Gentle bounce for onboarding emoji */
 @keyframes bounceGentle {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-8px); }
 }
 
 .animate-bounce-gentle {
-  animation: bounceGentle 1.5s ease-in-out infinite;
+  animation: bounceGentle 2s ease-in-out infinite;
+}
+
+/* Shimmer effect for loading states */
+.animate-shimmer {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* ===== Instruction Modal Slide Transitions ===== */
+@keyframes slideContentIn {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideContentOut {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(-30px); }
+}
+
+.slide-enter {
+  animation: slideContentIn 0.35s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* Step number indicator — modern circular badge */
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+  box-shadow: 0 2px 8px -2px rgba(16, 185, 129, 0.4);
 }
 
 /* ===== Enhanced mobile responsiveness ===== */
