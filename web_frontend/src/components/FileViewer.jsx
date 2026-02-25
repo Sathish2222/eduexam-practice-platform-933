@@ -2,8 +2,79 @@ import React, { useEffect, useState, useRef, useCallback } from 'react';
 import * as pdfjsLib from 'pdfjs-dist';
 import { isPdf } from '../utils/helpers';
 
-// Configure PDF.js worker
-pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+/**
+ * Configure PDF.js worker.
+ *
+ * Important: do NOT rely on a CDN worker. In many environments (offline, CSP-restricted,
+ * school networks), the CDN URL fails to load and pdf.js throws "Unable to load document".
+ *
+ * Using the bundled worker ensures consistent behavior in Vite builds.
+ */
+pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.mjs',
+  import.meta.url
+).toString();
+
+/**
+ * Normalize various persisted file representations into bytes suitable for pdf.js.
+ * localforage/IndexedDB should return a Blob, but backups/imports or older records may
+ * store data URLs or raw buffers.
+ *
+ * @param {unknown} input - Blob | File | ArrayBuffer | Uint8Array | string (data URL)
+ * @returns {Promise<Uint8Array>}
+ */
+async function toPdfBytes(input) {
+  if (!input) throw new Error('No file data available');
+
+  if (input instanceof Uint8Array) return input;
+  if (input instanceof ArrayBuffer) return new Uint8Array(input);
+
+  // File is also a Blob
+  if (input instanceof Blob) {
+    const ab = await input.arrayBuffer();
+    return new Uint8Array(ab);
+  }
+
+  if (typeof input === 'string') {
+    // Support data URL (e.g. "data:application/pdf;base64,....")
+    if (input.startsWith('data:')) {
+      const commaIdx = input.indexOf(',');
+      if (commaIdx === -1) throw new Error('Invalid data URL');
+      const b64 = input.slice(commaIdx + 1);
+      const binary = atob(b64);
+      const bytes = new Uint8Array(binary.length);
+      for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+      return bytes;
+    }
+    throw new Error('Unsupported string file format');
+  }
+
+  throw new Error('Unsupported file data type');
+}
+
+/**
+ * Normalize various persisted representations into an <img src> value.
+ * @param {unknown} input
+ * @returns {{src: string, revoke?: () => void}}
+ */
+function toImageSrc(input) {
+  if (!input) throw new Error('No file data available');
+
+  // localforage should return a Blob for images
+  if (input instanceof Blob) {
+    const url = URL.createObjectURL(input);
+    return { src: url, revoke: () => URL.revokeObjectURL(url) };
+  }
+
+  if (typeof input === 'string') {
+    // data URL already
+    if (input.startsWith('data:')) return { src: input };
+    // Otherwise treat as URL
+    return { src: input };
+  }
+
+  throw new Error('Unsupported image data type');
+}
 
 /**
  * FileViewer component for rendering PDFs and images.
@@ -29,6 +100,7 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
   const renderTaskRef = useRef(null);
+  const imageRevokeRef = useRef(null);
 
   // Load file when blob changes
   useEffect(() => {
@@ -42,18 +114,28 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
       setLoading(true);
       setError(null);
 
+      // Cleanup any previous object URL before loading the next file
+      if (imageRevokeRef.current) {
+        try {
+          imageRevokeRef.current();
+        } finally {
+          imageRevokeRef.current = null;
+        }
+      }
+
       try {
         if (isPdf(fileType)) {
-          const arrayBuffer = await fileBlob.arrayBuffer();
-          const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+          const bytes = await toPdfBytes(fileBlob);
+          const pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
           setPdfDoc(pdf);
           setTotalPages(pdf.numPages);
           setCurrentPage(1);
           setImageUrl(null);
         } else {
           // Image file
-          const url = URL.createObjectURL(fileBlob);
-          setImageUrl(url);
+          const { src, revoke } = toImageSrc(fileBlob);
+          setImageUrl(src);
+          imageRevokeRef.current = revoke || null;
           setPdfDoc(null);
           setTotalPages(0);
         }
@@ -68,11 +150,14 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
     loadFile();
 
     return () => {
-      if (imageUrl) {
-        URL.revokeObjectURL(imageUrl);
+      if (imageRevokeRef.current) {
+        try {
+          imageRevokeRef.current();
+        } finally {
+          imageRevokeRef.current = null;
+        }
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fileBlob, fileType]);
 
   // Render PDF page
