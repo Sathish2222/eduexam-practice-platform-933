@@ -3,18 +3,20 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { getPaperById, getFile, getAttemptsForPaper } from '../utils/storage';
 import { formatDate } from '../utils/helpers';
 import FileViewer from '../components/FileViewer';
+import StudentNameDialog from '../components/StudentNameDialog';
 
 /**
  * Paper detail view page showing metadata, file preview, and actions.
  * Provides a comprehensive view of a question paper with exam and answer key access.
  * Paper info and attempt history are collapsible (hidden by default) to reduce clutter.
+ * Requires student name entry before navigating to exam mode.
  * Optimized for one-hand mobile use with bottom action bar.
  */
 // PUBLIC_INTERFACE
 /**
  * Displays paper details, file preview, and provides actions for exam mode and answer key.
  * Paper metadata and attempt info are hidden by default behind a toggle for cleaner student view.
- * Features mobile-friendly bottom action bar for reachable controls.
+ * Features mobile-friendly bottom action bar and student name prompt before exam start.
  * @returns {JSX.Element}
  */
 function PaperView() {
@@ -25,6 +27,7 @@ function PaperView() {
   const [showViewer, setShowViewer] = useState(true);
   const [showDetails, setShowDetails] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [showNameDialog, setShowNameDialog] = useState(false);
 
   useEffect(() => {
     const loadPaper = async () => {
@@ -41,6 +44,23 @@ function PaperView() {
     };
     loadPaper();
   }, [paperId, navigate]);
+
+  /**
+   * Handler when "Start Exam" is clicked — opens name dialog
+   */
+  const handleStartExamClick = () => {
+    setShowNameDialog(true);
+  };
+
+  /**
+   * Handler when student confirms their name — navigate to exam
+   * @param {string} studentName - The confirmed student name
+   */
+  const handleNameConfirm = (studentName) => {
+    setShowNameDialog(false);
+    // Navigate to exam mode — the name is saved in localStorage by the dialog
+    navigate(`/exam/${paperId}`);
+  };
 
   if (loading) {
     return (
@@ -73,45 +93,53 @@ function PaperView() {
 
   return (
     <div className="max-w-5xl mx-auto has-mobile-bottom-bar">
-      {/* Breadcrumb navigation */}
-      <nav className="flex items-center gap-2 text-sm text-gray-400 mb-5">
+      {/* Student Name Dialog — shown before starting exam */}
+      <StudentNameDialog
+        open={showNameDialog}
+        onConfirm={handleNameConfirm}
+        onCancel={() => setShowNameDialog(false)}
+        paperTitle={paper.title}
+      />
+
+      {/* Breadcrumb navigation — compact on mobile */}
+      <nav className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-gray-400 mb-3 sm:mb-5">
         <Link to="/browse" className="hover:text-primary transition-colors duration-150">
           Papers
         </Link>
-        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
-        <span className="text-primary font-medium truncate max-w-[250px]">{paper.title}</span>
+        <span className="text-primary font-medium truncate max-w-[200px] sm:max-w-[250px]">{paper.title}</span>
       </nav>
 
       {/* Compact Paper Header — always visible */}
-      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden mb-4">
+      <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-sm overflow-hidden mb-3 sm:mb-4">
         {/* Header bar with gradient accent */}
-        <div className="h-1.5 bg-gradient-to-r from-gray-600 via-gray-500 to-emerald-500"></div>
+        <div className="h-1 sm:h-1.5 bg-gradient-to-r from-gray-600 via-gray-500 to-emerald-500"></div>
 
-        <div className="p-4 sm:p-5">
+        <div className="p-3.5 sm:p-5">
           {/* Title and essential tags */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5 sm:gap-3">
             <div className="flex-1 min-w-0">
-              <h1 className="text-xl sm:text-2xl font-bold text-primary leading-tight mb-2">
+              <h1 className="text-lg sm:text-2xl font-bold text-primary leading-tight mb-1.5 sm:mb-2">
                 {paper.title}
               </h1>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {paper.subject && (
-                  <span className="tag-pill bg-gray-100 text-secondary">
+                  <span className="tag-pill bg-gray-100 text-secondary text-[10px] sm:text-xs">
                     📚 {paper.subject}
                   </span>
                 )}
                 {paper.year && (
-                  <span className="tag-pill bg-gray-100 text-secondary">
+                  <span className="tag-pill bg-gray-100 text-secondary text-[10px] sm:text-xs">
                     📅 {paper.year}
                   </span>
                 )}
-                <span className="tag-pill bg-blue-50 text-blue-600">
+                <span className="tag-pill bg-blue-50 text-blue-600 text-[10px] sm:text-xs">
                   ⏱ {paper.duration || 180} min
                 </span>
                 {paper.hasAnswerKey && (
-                  <span className="tag-pill bg-emerald-50 text-success">
+                  <span className="tag-pill bg-emerald-50 text-success text-[10px] sm:text-xs">
                     ✓ Answer Key
                   </span>
                 )}
@@ -121,12 +149,12 @@ function PaperView() {
             {/* Toggle details button */}
             <button
               onClick={() => setShowDetails(!showDetails)}
-              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-secondary bg-gray-50 border border-gray-200 rounded-xl hover:bg-gray-100 transition-all duration-200 btn-press shrink-0 self-start"
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 text-[11px] sm:text-xs font-medium text-secondary bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl hover:bg-gray-100 transition-all duration-200 btn-press shrink-0 self-start"
               aria-expanded={showDetails}
               aria-label={showDetails ? 'Hide paper details' : 'Show paper details'}
             >
               <svg
-                className={`w-3.5 h-3.5 transition-transform duration-200 ${showDetails ? 'rotate-180' : ''}`}
+                className={`w-3 h-3 sm:w-3.5 sm:h-3.5 transition-transform duration-200 ${showDetails ? 'rotate-180' : ''}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -135,7 +163,7 @@ function PaperView() {
               </svg>
               {showDetails ? 'Hide Details' : 'More Info'}
               {attempts.length > 0 && !showDetails && (
-                <span className="ml-1 inline-flex items-center justify-center w-5 h-5 text-[10px] font-bold bg-blue-100 text-blue-700 rounded-full">
+                <span className="ml-1 inline-flex items-center justify-center w-4 h-4 sm:w-5 sm:h-5 text-[9px] sm:text-[10px] font-bold bg-blue-100 text-blue-700 rounded-full">
                   {attempts.length}
                 </span>
               )}
@@ -144,17 +172,17 @@ function PaperView() {
 
           {/* Collapsible details section */}
           {showDetails && (
-            <div className="mt-4 pt-4 border-t border-gray-100 animate-fadeIn">
+            <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-100 animate-fadeIn">
               {/* Notes section */}
               {paper.notes && (
-                <div className="bg-gray-50 rounded-xl p-4 mb-4 border border-gray-100">
-                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">Notes</p>
-                  <p className="text-sm text-secondary leading-relaxed">{paper.notes}</p>
+                <div className="bg-gray-50 rounded-lg sm:rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border border-gray-100">
+                  <p className="text-[10px] sm:text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">Notes</p>
+                  <p className="text-xs sm:text-sm text-secondary leading-relaxed">{paper.notes}</p>
                 </div>
               )}
 
               {/* Meta row */}
-              <div className="flex flex-wrap items-center gap-4 text-xs text-gray-400 mb-4">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[10px] sm:text-xs text-gray-400 mb-3 sm:mb-4">
                 <span>
                   📁 {paper.paperFileName || 'Question Paper'}
                 </span>
@@ -168,16 +196,16 @@ function PaperView() {
 
               {/* Attempt summary */}
               {attempts.length > 0 && (
-                <div className="bg-blue-50 rounded-xl p-4 mb-4 border border-blue-100 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-lg shrink-0">
+                <div className="bg-blue-50 rounded-lg sm:rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border border-blue-100 flex items-center gap-2.5 sm:gap-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-100 flex items-center justify-center text-base sm:text-lg shrink-0">
                     📊
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-blue-800">
+                    <p className="text-xs sm:text-sm font-medium text-blue-800">
                       {attempts.length} attempt{attempts.length !== 1 ? 's' : ''} •{' '}
                       {completedAttempts.length} completed
                     </p>
-                    <p className="text-xs text-blue-600 mt-0.5">
+                    <p className="text-[10px] sm:text-xs text-blue-600 mt-0.5">
                       {completedAttempts.length > 0
                         ? `Last completed ${formatDate(new Date(completedAttempts[completedAttempts.length - 1].endTime).toISOString())}`
                         : 'No completed attempts yet'}
@@ -208,13 +236,13 @@ function PaperView() {
               {showViewer ? 'Hide Paper' : 'View Paper'}
             </button>
 
-            <Link
-              to={`/exam/${paperId}`}
+            <button
+              onClick={handleStartExamClick}
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-medium text-sm shadow-sm btn-press"
             >
               <span>🎯</span>
               Start Exam
-            </Link>
+            </button>
 
             {paper.hasAnswerKey && (
               <Link
@@ -262,14 +290,14 @@ function PaperView() {
             {showViewer ? 'Hide' : 'View'}
           </button>
 
-          {/* Start Exam — primary CTA */}
-          <Link
-            to={`/exam/${paperId}`}
+          {/* Start Exam — primary CTA, now opens name dialog */}
+          <button
+            onClick={handleStartExamClick}
             className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-semibold text-sm shadow-sm btn-press mobile-touch-target"
           >
             <span>🎯</span>
             Start Exam
-          </Link>
+          </button>
 
           {/* Answer Key */}
           {paper.hasAnswerKey && (

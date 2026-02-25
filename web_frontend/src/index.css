@@ -207,6 +207,11 @@
   100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0); }
 }
 
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 .animate-fadeIn {
   animation: fadeIn 0.3s ease-out both;
 }
@@ -217,4 +222,35 @@
 
 .animate-pulse-ring {
   animation: pulse-ring 1.5s infinite;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.2s ease-out both;
+}
+
+/* ===== Enhanced mobile responsiveness ===== */
+@media (max-width: 639px) {
+  /* Tighter padding on mobile for more content space */
+  main {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    padding-top: 1rem !important;
+  }
+
+  /* Better tap targets for all interactive elements on mobile */
+  button, a, select, input {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.05);
+  }
+
+  /* Prevent iOS zoom on input focus */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Smooth page transitions */
+@media (prefers-reduced-motion: no-preference) {
+  .card-hover {
+    will-change: transform;
+  }
 }

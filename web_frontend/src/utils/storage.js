@@ -75,6 +75,7 @@ const PAPERS_KEY = 'eduexam_papers';
 const SETTINGS_KEY = 'eduexam_settings';
 const ATTEMPTS_KEY = 'eduexam_attempts';
 const TIMER_KEY = 'eduexam_timer';
+const STUDENT_NAME_KEY = 'eduexam_student_name';
 
 // PUBLIC_INTERFACE
 /**
@@ -177,6 +178,30 @@ export function saveSettings(settings) {
   localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
 }
 
+/* ===================== STUDENT NAME ===================== */
+
+// PUBLIC_INTERFACE
+/**
+ * Get the saved student name from LocalStorage.
+ * @returns {string} The student name or empty string if not set
+ */
+export function getStudentName() {
+  try {
+    return localStorage.getItem(STUDENT_NAME_KEY) || '';
+  } catch {
+    return '';
+  }
+}
+
+// PUBLIC_INTERFACE
+/**
+ * Save the student name to LocalStorage.
+ * @param {string} name - The student's name
+ */
+export function saveStudentName(name) {
+  localStorage.setItem(STUDENT_NAME_KEY, (name || '').trim());
+}
+
 /* ===================== ATTEMPT HISTORY ===================== */
 
 // PUBLIC_INTERFACE
@@ -195,11 +220,18 @@ export function getAttempts() {
 
 // PUBLIC_INTERFACE
 /**
- * Save an attempt record.
- * @param {Object} attempt - Attempt object { paperId, startTime, endTime, completed }
+ * Save an attempt record. Automatically includes student name if available.
+ * @param {Object} attempt - Attempt object { paperId, startTime, endTime, completed, studentName?, ... }
  */
 export function saveAttempt(attempt) {
   const attempts = getAttempts();
+  // Automatically attach student name if not already provided
+  if (!attempt.studentName) {
+    const name = getStudentName();
+    if (name) {
+      attempt.studentName = name;
+    }
+  }
   attempts.push(attempt);
   localStorage.setItem(ATTEMPTS_KEY, JSON.stringify(attempts));
 }
