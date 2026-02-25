@@ -7,10 +7,12 @@ import FileViewer from '../components/FileViewer';
 /**
  * Paper detail view page showing metadata, file preview, and actions.
  * Provides a comprehensive view of a question paper with exam and answer key access.
+ * Optimized for one-hand mobile use with bottom action bar.
  */
 // PUBLIC_INTERFACE
 /**
  * Displays paper details, file preview, and provides actions for exam mode and answer key.
+ * Features mobile-friendly bottom action bar for reachable controls.
  * @returns {JSX.Element}
  */
 function PaperView() {
@@ -67,7 +69,7 @@ function PaperView() {
   const completedAttempts = attempts.filter(a => a.completed);
 
   return (
-    <div className="max-w-5xl mx-auto">
+    <div className="max-w-5xl mx-auto has-mobile-bottom-bar">
       {/* Breadcrumb navigation */}
       <nav className="flex items-center gap-2 text-sm text-gray-400 mb-5">
         <Link to="/browse" className="hover:text-primary transition-colors duration-150">
@@ -84,11 +86,11 @@ function PaperView() {
         {/* Header bar with gradient accent */}
         <div className="h-1.5 bg-gradient-to-r from-gray-600 via-gray-500 to-emerald-500"></div>
 
-        <div className="p-5 sm:p-7">
+        <div className="p-4 sm:p-7">
           {/* Title and basic info */}
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-5">
             <div className="flex-1 min-w-0">
-              <h1 className="text-2xl sm:text-3xl font-bold text-primary leading-tight mb-3">
+              <h1 className="text-xl sm:text-3xl font-bold text-primary leading-tight mb-3">
                 {paper.title}
               </h1>
               <div className="flex flex-wrap gap-2">
@@ -155,8 +157,8 @@ function PaperView() {
             </div>
           )}
 
-          {/* Action Buttons */}
-          <div className="flex flex-wrap gap-3">
+          {/* Action Buttons — visible on desktop, hidden on mobile (moved to bottom bar) */}
+          <div className="hidden md:flex flex-wrap gap-3">
             <button
               onClick={() => setShowViewer(!showViewer)}
               className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 btn-press ${
@@ -206,6 +208,50 @@ function PaperView() {
           />
         </div>
       )}
+
+      {/* Mobile bottom action bar — one-hand friendly */}
+      <div className="mobile-bottom-bar">
+        <div className="flex items-center gap-2">
+          {/* Toggle viewer */}
+          <button
+            onClick={() => setShowViewer(!showViewer)}
+            className={`flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all duration-200 btn-press mobile-touch-target ${
+              showViewer
+                ? 'bg-gray-100 text-primary border border-gray-200'
+                : 'bg-primary text-white'
+            }`}
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {showViewer ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              )}
+            </svg>
+            {showViewer ? 'Hide' : 'View'}
+          </button>
+
+          {/* Start Exam — primary CTA */}
+          <Link
+            to={`/exam/${paperId}`}
+            className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-semibold text-sm shadow-sm btn-press mobile-touch-target"
+          >
+            <span>🎯</span>
+            Start Exam
+          </Link>
+
+          {/* Answer Key */}
+          {paper.hasAnswerKey && (
+            <Link
+              to={`/answer/${paperId}`}
+              className="flex items-center justify-center gap-1.5 px-3 py-2.5 border border-gray-200 text-primary rounded-xl hover:bg-gray-50 transition-all duration-200 text-xs font-medium btn-press mobile-touch-target"
+            >
+              <span>🔑</span>
+              Key
+            </Link>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

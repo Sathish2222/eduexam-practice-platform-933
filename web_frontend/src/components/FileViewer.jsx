@@ -8,10 +8,12 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs
 /**
  * FileViewer component for rendering PDFs and images.
  * Supports page-by-page PDF navigation, zoom controls, and fit-to-width mode.
+ * Mobile-optimized with bottom-positioned navigation controls for one-hand use.
  */
 // PUBLIC_INTERFACE
 /**
  * Renders a PDF or image file from a Blob with navigation and zoom controls.
+ * Features bottom-positioned mobile controls for easy one-hand reach.
  * @param {{ fileBlob: Blob|null, fileType: string, title: string }} props
  * @returns {JSX.Element}
  */
@@ -165,8 +167,8 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
 
   return (
     <div className="viewer-container bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-      {/* Toolbar */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-white">
+      {/* Desktop Toolbar — hidden on mobile, controls are in the bottom bar */}
+      <div className="hidden sm:flex items-center justify-between px-4 py-3 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-white">
         {/* Left: Title */}
         <div className="flex items-center gap-2 min-w-0 mr-3">
           <span className="text-base">
@@ -257,13 +259,26 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
         </div>
       </div>
 
-      {/* Content Area */}
+      {/* Mobile compact title bar */}
+      <div className="sm:hidden flex items-center gap-2 px-3 py-2.5 border-b border-gray-200 bg-gray-50">
+        <span className="text-base">
+          {pdfDoc ? '📄' : '🖼️'}
+        </span>
+        <h3 className="text-xs font-semibold text-primary truncate flex-1">{title}</h3>
+        {pdfDoc && totalPages > 0 && (
+          <span className="text-[11px] text-secondary font-medium tabular-nums shrink-0">
+            {currentPage}/{totalPages}
+          </span>
+        )}
+      </div>
+
+      {/* Content Area — extra bottom padding on mobile for bottom controls */}
       <div
         ref={containerRef}
         className="overflow-auto bg-gray-100 section-bg"
         style={{ maxHeight: '78vh' }}
       >
-        <div className="p-4 sm:p-6">
+        <div className="p-3 sm:p-6 pb-20 sm:pb-6">
           {pdfDoc ? (
             <div className="flex justify-center">
               <canvas
@@ -293,9 +308,9 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
         </div>
       </div>
 
-      {/* Bottom status bar for PDF */}
+      {/* Desktop bottom status bar for PDF */}
       {pdfDoc && totalPages > 1 && (
-        <div className="px-4 py-2 border-t border-gray-100 bg-gray-50/80 flex items-center justify-between">
+        <div className="hidden sm:flex px-4 py-2 border-t border-gray-100 bg-gray-50/80 items-center justify-between">
           <p className="text-[11px] text-gray-400">
             Use controls above to navigate pages
           </p>
@@ -313,6 +328,100 @@ function FileViewer({ fileBlob, fileType, title = 'Document' }) {
           </div>
         </div>
       )}
+
+      {/* Mobile bottom control bar — one-hand friendly, within the viewer */}
+      <div className="sm:hidden border-t border-gray-200 bg-white/97 backdrop-blur-sm">
+        <div className="flex items-center justify-between px-2 py-2 gap-1">
+          {/* Page navigation (PDF) or zoom info */}
+          {pdfDoc && totalPages > 1 ? (
+            <>
+              {/* Prev page — large touch target */}
+              <button
+                onClick={goToPrevPage}
+                disabled={currentPage <= 1}
+                className="p-2.5 rounded-xl bg-white border border-gray-200 hover:bg-gray-50 disabled:opacity-30 transition-all duration-150 btn-press mobile-touch-target"
+                aria-label="Previous page"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
+              {/* Page progress bar */}
+              <div className="flex-1 flex flex-col items-center gap-1 px-1">
+                <span className="text-[11px] text-secondary font-medium tabular-nums">
+                  Page {currentPage} of {totalPages}
+                </span>
+                <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-success rounded-full transition-all duration-300"
+                    style={{ width: `${(currentPage / totalPages) * 100}%` }}
+                  />
+                </div>
+              </div>
+
+              {/* Next page — large touch target */}
+              <button
+                onClick={goToNextPage}
+                disabled={currentPage >= totalPages}
+                className="p-2.5 rounded-xl bg-white border border-gray-200 hover:bg-gray-50 disabled:opacity-30 transition-all duration-150 btn-press mobile-touch-target"
+                aria-label="Next page"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </>
+          ) : (
+            <div className="flex-1" />
+          )}
+
+          {/* Divider */}
+          {pdfDoc && totalPages > 1 && (
+            <div className="w-px h-7 bg-gray-200 mx-0.5" />
+          )}
+
+          {/* Zoom controls — always visible on mobile */}
+          <button
+            onClick={zoomOut}
+            className="p-2.5 rounded-xl bg-white border border-gray-200 hover:bg-gray-50 transition-all duration-150 btn-press mobile-touch-target"
+            aria-label="Zoom out"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+            </svg>
+          </button>
+          <span className="text-[11px] text-secondary font-medium w-9 text-center tabular-nums">
+            {fitWidth ? 'Fit' : `${Math.round(scale * 100)}%`}
+          </span>
+          <button
+            onClick={zoomIn}
+            className="p-2.5 rounded-xl bg-white border border-gray-200 hover:bg-gray-50 transition-all duration-150 btn-press mobile-touch-target"
+            aria-label="Zoom in"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+            </svg>
+          </button>
+
+          {/* Fit width toggle for PDF */}
+          {pdfDoc && (
+            <button
+              onClick={toggleFitWidth}
+              className={`p-2.5 rounded-xl border transition-all duration-150 btn-press mobile-touch-target ${
+                fitWidth
+                  ? 'bg-primary text-white border-primary'
+                  : 'bg-white border-gray-200 hover:bg-gray-50'
+              }`}
+              aria-label="Fit to width"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+              </svg>
+            </button>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

@@ -6,10 +6,12 @@ import { truncateText } from '../utils/helpers';
 /**
  * Student browse page for searching, filtering, and selecting papers.
  * Displays papers in a responsive grid with filter controls.
+ * Optimized for one-hand mobile use with bottom-reachable controls.
  */
 // PUBLIC_INTERFACE
 /**
  * Searchable paper list for students with filtering by subject and year.
+ * Features mobile-optimized layout with bottom-reachable actions and larger touch targets.
  * @returns {JSX.Element}
  */
 function StudentBrowse() {
@@ -17,6 +19,7 @@ function StudentBrowse() {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterSubject, setFilterSubject] = useState('');
   const [filterYear, setFilterYear] = useState('');
+  const [showFilters, setShowFilters] = useState(false);
 
   // Unique subjects and years for filter dropdowns
   const subjects = useMemo(() => {
@@ -44,21 +47,22 @@ function StudentBrowse() {
   }, [allPapers, searchTerm, filterSubject, filterYear]);
 
   const hasActiveFilters = filterSubject || filterYear || searchTerm;
+  const activeFilterCount = [filterSubject, filterYear, searchTerm].filter(Boolean).length;
 
   return (
-    <div>
+    <div className="has-mobile-bottom-bar">
       {/* Page Header */}
-      <div className="mb-6">
+      <div className="mb-5 sm:mb-6">
         <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-1">📄 Browse Papers</h1>
         <p className="text-sm text-secondary">
           Find and practice with available question papers
         </p>
       </div>
 
-      {/* Search & Filters */}
-      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4 sm:p-5 mb-6">
-        {/* Search input */}
-        <div className="relative mb-3">
+      {/* Search & Filters — desktop always visible, mobile toggle via bottom bar */}
+      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4 sm:p-5 mb-5 sm:mb-6">
+        {/* Search input — always visible */}
+        <div className="relative mb-3 sm:mb-3">
           <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
             <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -69,16 +73,16 @@ function StudentBrowse() {
             placeholder="Search by title, subject, or notes..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-sm transition-all duration-200"
+            className="w-full pl-10 pr-4 py-3 sm:py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-sm transition-all duration-200"
           />
         </div>
 
-        {/* Filter row */}
-        <div className="flex flex-wrap items-center gap-2.5">
+        {/* Filter row — visible on desktop always, on mobile when toggled */}
+        <div className={`${showFilters ? 'flex' : 'hidden'} sm:flex flex-wrap items-center gap-2.5`}>
           <select
             value={filterSubject}
             onChange={(e) => setFilterSubject(e.target.value)}
-            className="px-3 py-2 border border-gray-200 rounded-xl text-sm text-secondary focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none bg-white transition-all duration-200 cursor-pointer"
+            className="px-3 py-2.5 sm:py-2 border border-gray-200 rounded-xl text-sm text-secondary focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none bg-white transition-all duration-200 cursor-pointer flex-1 sm:flex-none"
           >
             <option value="">All Subjects</option>
             {subjects.map(s => (
@@ -88,7 +92,7 @@ function StudentBrowse() {
           <select
             value={filterYear}
             onChange={(e) => setFilterYear(e.target.value)}
-            className="px-3 py-2 border border-gray-200 rounded-xl text-sm text-secondary focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none bg-white transition-all duration-200 cursor-pointer"
+            className="px-3 py-2.5 sm:py-2 border border-gray-200 rounded-xl text-sm text-secondary focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none bg-white transition-all duration-200 cursor-pointer flex-1 sm:flex-none"
           >
             <option value="">All Years</option>
             {years.map(y => (
@@ -98,7 +102,7 @@ function StudentBrowse() {
           {hasActiveFilters && (
             <button
               onClick={() => { setSearchTerm(''); setFilterSubject(''); setFilterYear(''); }}
-              className="inline-flex items-center gap-1 px-3 py-2 text-sm text-error hover:bg-red-50 rounded-xl transition-all duration-150"
+              className="inline-flex items-center gap-1 px-3 py-2.5 sm:py-2 text-sm text-error hover:bg-red-50 rounded-xl transition-all duration-150 mobile-touch-target"
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -126,7 +130,7 @@ function StudentBrowse() {
 
       {/* Papers Grid */}
       {filteredPapers.length === 0 ? (
-        <div className="text-center py-20 bg-white rounded-2xl border border-gray-200">
+        <div className="text-center py-16 sm:py-20 bg-white rounded-2xl border border-gray-200">
           <div className="text-5xl mb-4">
             {allPapers.length === 0 ? '📭' : '🔍'}
           </div>
@@ -135,14 +139,14 @@ function StudentBrowse() {
               ? 'No papers available yet'
               : 'No papers match your search'}
           </p>
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-400 text-sm px-4">
             {allPapers.length === 0
               ? 'Ask your admin to upload some question papers to get started.'
               : 'Try adjusting your search terms or clearing filters.'}
           </p>
         </div>
       ) : (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {filteredPapers.map((paper) => {
             const attempts = getAttemptsForPaper(paper.id);
             const completedCount = attempts.filter(a => a.completed).length;
@@ -150,7 +154,7 @@ function StudentBrowse() {
               <Link
                 key={paper.id}
                 to={`/paper/${paper.id}`}
-                className="group bg-white rounded-2xl border border-gray-200 p-5 card-hover block"
+                className="group bg-white rounded-2xl border border-gray-200 p-4 sm:p-5 card-hover block mobile-touch-target"
               >
                 {/* Card header */}
                 <div className="flex items-start justify-between mb-3">
@@ -200,6 +204,45 @@ function StudentBrowse() {
           })}
         </div>
       )}
+
+      {/* Mobile bottom bar — filter toggle and quick actions */}
+      <div className="mobile-bottom-bar">
+        <div className="flex items-center justify-between gap-3">
+          {/* Filter toggle button */}
+          <button
+            onClick={() => setShowFilters(!showFilters)}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 btn-press mobile-touch-target relative bg-white border border-gray-200 hover:bg-gray-50 text-primary"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+            </svg>
+            Filters
+            {activeFilterCount > 0 && (
+              <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-success text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                {activeFilterCount}
+              </span>
+            )}
+          </button>
+
+          {/* Results count — compact */}
+          <span className="text-xs text-secondary font-medium">
+            {filteredPapers.length} paper{filteredPapers.length !== 1 ? 's' : ''}
+          </span>
+
+          {/* Clear filters — only when active */}
+          {hasActiveFilters && (
+            <button
+              onClick={() => { setSearchTerm(''); setFilterSubject(''); setFilterYear(''); setShowFilters(false); }}
+              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-medium text-error bg-red-50 hover:bg-red-100 transition-all duration-200 btn-press mobile-touch-target"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+              Clear
+            </button>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

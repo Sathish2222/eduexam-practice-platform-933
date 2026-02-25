@@ -15,11 +15,13 @@ import ExamTimer from '../components/ExamTimer';
 /**
  * Exam mode page with persistent countdown timer and auto-submission.
  * Provides a focused exam environment with timer recovery on reload.
+ * Optimized for one-hand mobile use with bottom-pinned action controls.
  */
 // PUBLIC_INTERFACE
 /**
  * Full-screen exam mode with persistent timer, paper viewer, and auto-submit.
  * Recovers timer state on page reload/revisit.
+ * Features mobile-friendly bottom action bar for submit/quit controls.
  * @returns {JSX.Element}
  */
 function ExamMode() {
@@ -155,8 +157,8 @@ function ExamMode() {
   // Exam finished screen
   if (examFinished) {
     return (
-      <div className="max-w-lg mx-auto text-center py-12 sm:py-20 animate-fadeIn">
-        <div className="bg-white rounded-3xl border border-gray-200 shadow-lg p-8 sm:p-10">
+      <div className="max-w-lg mx-auto text-center py-8 sm:py-20 px-2 animate-fadeIn">
+        <div className="bg-white rounded-3xl border border-gray-200 shadow-lg p-6 sm:p-10">
           {/* Success icon */}
           <div className="relative mx-auto mb-6 w-20 h-20">
             <div className="absolute inset-0 bg-emerald-100 rounded-full animate-pulse-ring"></div>
@@ -172,20 +174,20 @@ function ExamMode() {
             {paper.hasAnswerKey && (
               <button
                 onClick={() => navigate(`/answer/${paperId}`)}
-                className="w-full px-5 py-3 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-medium text-sm shadow-sm btn-press flex items-center justify-center gap-2"
+                className="w-full px-5 py-3.5 sm:py-3 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-medium text-sm shadow-sm btn-press flex items-center justify-center gap-2 mobile-touch-target"
               >
                 <span>🔑</span> View Answer Key
               </button>
             )}
             <button
               onClick={() => navigate(`/paper/${paperId}`)}
-              className="w-full px-5 py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all duration-200 font-medium text-sm btn-press flex items-center justify-center gap-2"
+              className="w-full px-5 py-3.5 sm:py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all duration-200 font-medium text-sm btn-press flex items-center justify-center gap-2 mobile-touch-target"
             >
               <span>📄</span> Back to Paper
             </button>
             <button
               onClick={() => navigate('/browse')}
-              className="w-full px-5 py-3 border border-gray-200 text-secondary rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 text-sm btn-press flex items-center justify-center gap-2"
+              className="w-full px-5 py-3.5 sm:py-3 border border-gray-200 text-secondary rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 text-sm btn-press flex items-center justify-center gap-2 mobile-touch-target"
             >
               <span>📋</span> Browse All Papers
             </button>
@@ -203,12 +205,12 @@ function ExamMode() {
     const mins = duration % 60;
 
     return (
-      <div className="max-w-lg mx-auto py-10 sm:py-16 animate-fadeIn">
+      <div className="max-w-lg mx-auto py-6 sm:py-16 px-1 animate-fadeIn">
         <div className="bg-white rounded-3xl border border-gray-200 shadow-lg overflow-hidden">
           {/* Top accent */}
           <div className="h-2 bg-gradient-to-r from-emerald-500 via-emerald-400 to-teal-400"></div>
 
-          <div className="p-8 sm:p-10 text-center">
+          <div className="p-6 sm:p-10 text-center">
             {/* Exam icon */}
             <div className="mx-auto mb-6 w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center">
               <span className="text-4xl">🎯</span>
@@ -243,17 +245,17 @@ function ExamMode() {
               </ul>
             </div>
 
-            {/* Action buttons */}
+            {/* Action buttons — larger targets for mobile */}
             <div className="flex flex-col gap-3">
               <button
                 onClick={handleStartExam}
-                className="w-full px-8 py-3.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-bold text-base shadow-md btn-press flex items-center justify-center gap-2"
+                className="w-full px-8 py-4 sm:py-3.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-bold text-base shadow-md btn-press flex items-center justify-center gap-2 mobile-touch-target"
               >
                 <span>▶</span> Begin Exam
               </button>
               <button
                 onClick={() => navigate(`/paper/${paperId}`)}
-                className="w-full px-5 py-2.5 border border-gray-200 rounded-xl text-secondary hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 text-sm btn-press"
+                className="w-full px-5 py-3 sm:py-2.5 border border-gray-200 rounded-xl text-secondary hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 text-sm btn-press mobile-touch-target"
               >
                 Cancel
               </button>
@@ -269,26 +271,26 @@ function ExamMode() {
   const duration = paper.duration || settings.examDuration || 180;
 
   return (
-    <div className="animate-fadeIn">
+    <div className="animate-fadeIn has-mobile-bottom-bar">
       {/* Exam Header - Sticky */}
       <div className="sticky top-16 z-40 -mx-4 sm:-mx-6 mb-5">
         <div className="bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-            <div className="flex items-center justify-between gap-3">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 sm:py-3">
+            <div className="flex items-center justify-between gap-2 sm:gap-3">
               {/* Left: Paper info */}
-              <div className="min-w-0 flex-1 mr-3">
+              <div className="min-w-0 flex-1 mr-2 sm:mr-3">
                 <div className="flex items-center gap-2 mb-0.5">
                   <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-emerald-50 text-success text-[10px] font-semibold uppercase tracking-wider rounded-full">
                     <span className="w-1.5 h-1.5 bg-success rounded-full animate-pulse"></span>
                     Live
                   </span>
-                  <h2 className="font-semibold text-primary text-sm truncate">{paper.title}</h2>
+                  <h2 className="font-semibold text-primary text-xs sm:text-sm truncate">{paper.title}</h2>
                 </div>
-                <p className="text-[11px] text-gray-400">Exam in progress — stay focused!</p>
+                <p className="text-[10px] sm:text-[11px] text-gray-400 hidden sm:block">Exam in progress — stay focused!</p>
               </div>
 
               {/* Center: Timer */}
-              <div className="shrink-0 bg-gray-50 rounded-xl px-4 py-2 border border-gray-200">
+              <div className="shrink-0 bg-gray-50 rounded-xl px-3 sm:px-4 py-1.5 sm:py-2 border border-gray-200">
                 <ExamTimer
                   paperId={paperId}
                   durationMinutes={duration}
@@ -297,27 +299,16 @@ function ExamMode() {
                 />
               </div>
 
-              {/* Right: Actions */}
-              <div className="flex items-center gap-2 shrink-0">
+              {/* Right: Desktop Actions — hidden on mobile (moved to bottom bar) */}
+              <div className="hidden md:flex items-center gap-2 shrink-0">
                 <button
                   onClick={handleSubmitEarly}
-                  className="px-4 py-2 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 text-sm font-medium shadow-sm btn-press hidden sm:flex items-center gap-1.5"
+                  className="px-4 py-2 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 text-sm font-medium shadow-sm btn-press flex items-center gap-1.5"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   Submit
-                </button>
-                {/* Mobile submit */}
-                <button
-                  onClick={handleSubmitEarly}
-                  className="sm:hidden p-2 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 btn-press"
-                  title="Submit exam"
-                  aria-label="Submit exam"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
                 </button>
                 <button
                   onClick={handleQuitExam}
@@ -341,6 +332,34 @@ function ExamMode() {
         fileType={paper.paperFileType}
         title={paper.paperFileName || 'Question Paper'}
       />
+
+      {/* Mobile bottom action bar — one-hand friendly submit/quit */}
+      <div className="mobile-bottom-bar">
+        <div className="flex items-center gap-2">
+          {/* Quit button */}
+          <button
+            onClick={handleQuitExam}
+            className="flex items-center justify-center gap-1.5 px-3 py-2.5 border border-red-200 text-error rounded-xl hover:bg-red-50 transition-all duration-200 btn-press mobile-touch-target text-xs font-medium"
+            aria-label="Quit exam"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
+            Quit
+          </button>
+
+          {/* Submit button — primary CTA, takes most space */}
+          <button
+            onClick={handleSubmitEarly}
+            className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-success text-white rounded-xl hover:bg-success/90 transition-all duration-200 font-semibold text-sm shadow-sm btn-press mobile-touch-target"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            Submit Exam
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
