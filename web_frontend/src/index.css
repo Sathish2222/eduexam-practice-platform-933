@@ -228,6 +228,16 @@
   animation: scaleIn 0.2s ease-out both;
 }
 
+/* Gentle bounce for onboarding emoji */
+@keyframes bounceGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-bounce-gentle {
+  animation: bounceGentle 1.5s ease-in-out infinite;
+}
+
 /* ===== Enhanced mobile responsiveness ===== */
 @media (max-width: 639px) {
   /* Tighter padding on mobile for more content space */
