@@ -12,296 +12,244 @@ const slides = [
     step: 0,
     emoji: '👋',
     title: 'Welcome to TN Study Hub!',
-    subtitle: 'Your personal exam practice helper',
+    subtitle: 'Your free Tamil Nadu board exam practice app',
     bullets: [
-      { icon: '📱', text: 'Practice exams on your phone or computer' },
-      { icon: '🎯', text: 'Get better at exams with timed practice' },
-      { icon: '🔒', text: 'Everything is saved on YOUR device — safe & private' },
+      { icon: '🏫', text: 'For 10th, 11th & 12th Standard TN Board students' },
+      { icon: '📱', text: 'Use on your phone or computer — works everywhere' },
+      { icon: '🎯', text: 'Practice with real past question papers & answer keys' },
+      { icon: '🔒', text: 'All your data is saved privately on your own device' },
     ],
-    tip: '💡 Swipe through these slides to learn how to use the app!',
+    tip: '💡 Swipe the slides or tap Next to learn how to use the app!',
     tipColor: 'emerald',
     illustration: (
       <svg viewBox="0 0 220 120" className="w-full h-24 mx-auto" aria-hidden="true">
-        {/* Open book with sparkles */}
         <rect x="40" y="40" width="140" height="65" rx="8" fill="#ecfdf5" stroke="#059669" strokeWidth="1.5" />
         <rect x="46" y="46" width="128" height="53" rx="5" fill="#ffffff" />
         <line x1="110" y1="46" x2="110" y2="99" stroke="#d1fae5" strokeWidth="1.5" />
-        {/* Left page lines */}
         <line x1="56" y1="58" x2="100" y2="58" stroke="#a7f3d0" strokeWidth="2" strokeLinecap="round" />
         <line x1="56" y1="68" x2="95" y2="68" stroke="#a7f3d0" strokeWidth="2" strokeLinecap="round" />
         <line x1="56" y1="78" x2="98" y2="78" stroke="#a7f3d0" strokeWidth="2" strokeLinecap="round" />
-        <line x1="56" y1="88" x2="90" y2="88" stroke="#d1fae5" strokeWidth="2" strokeLinecap="round" />
-        {/* Right page lines */}
         <line x1="120" y1="58" x2="164" y2="58" stroke="#a7f3d0" strokeWidth="2" strokeLinecap="round" />
         <line x1="120" y1="68" x2="158" y2="68" stroke="#a7f3d0" strokeWidth="2" strokeLinecap="round" />
-        <line x1="120" y1="78" x2="160" y2="78" stroke="#d1fae5" strokeWidth="2" strokeLinecap="round" />
-        {/* Graduation cap */}
         <polygon points="110,8 145,22 110,36 75,22" fill="#059669" opacity="0.9" />
         <line x1="110" y1="36" x2="110" y2="42" stroke="#059669" strokeWidth="2" />
-        <line x1="145" y1="22" x2="145" y2="34" stroke="#059669" strokeWidth="1.5" />
         <circle cx="145" cy="36" r="2.5" fill="#34d399" />
-        {/* Sparkles */}
         <circle cx="30" cy="25" r="3" fill="#fbbf24" opacity="0.8" />
         <circle cx="190" cy="30" r="2.5" fill="#fbbf24" opacity="0.7" />
-        <circle cx="25" cy="65" r="2" fill="#34d399" opacity="0.6" />
-        <circle cx="195" cy="70" r="2" fill="#34d399" opacity="0.7" />
-        {/* Star */}
         <polygon points="185,15 187,21 193,21 188,25 190,31 185,27 180,31 182,25 177,21 183,21" fill="#fbbf24" opacity="0.8" />
       </svg>
     ),
   },
   {
     step: 1,
-    emoji: '📄',
-    title: 'Step 1: Find Your Paper',
-    subtitle: 'Browse & search question papers easily',
+    emoji: '🎓',
+    title: 'Step 1: Choose Your Class',
+    subtitle: 'Pick 10th, 11th or 12th on the home screen',
     bullets: [
-      { icon: '👆', text: 'Tap "Papers" in the menu at the top' },
-      { icon: '🔍', text: 'Type in the search box to find your subject' },
-      { icon: '🏷️', text: 'Use filters to pick subject and year' },
-      { icon: '📋', text: 'Tap any paper card to open it' },
+      { icon: '📘', text: '10th Standard — SSLC Board Exam papers' },
+      { icon: '📗', text: '11th Standard — First Year HSC papers' },
+      { icon: '📕', text: '12th Standard — HSC Board Exam papers' },
+      { icon: '👆', text: 'Tap your class card on the home page to begin' },
     ],
-    tip: '🎓 Your teacher or admin uploads papers for you!',
+    tip: '💾 Your class choice is remembered — no need to select again next time!',
     tipColor: 'blue',
     illustration: (
       <svg viewBox="0 0 220 120" className="w-full h-24 mx-auto" aria-hidden="true">
-        {/* Search bar */}
-        <rect x="25" y="10" width="170" height="30" rx="15" fill="#f0fdf4" stroke="#059669" strokeWidth="1.5" />
-        <circle cx="48" cy="25" r="7" fill="none" stroke="#6ee7b7" strokeWidth="2" />
-        <line x1="53" y1="30" x2="58" y2="35" stroke="#6ee7b7" strokeWidth="2" strokeLinecap="round" />
-        <text x="68" y="29" fill="#6b7280" fontSize="11" fontFamily="sans-serif">Search papers...</text>
-        {/* Paper cards with green accents */}
-        <rect x="25" y="48" width="80" height="30" rx="8" fill="#ffffff" stroke="#d1fae5" strokeWidth="1.5" />
-        <rect x="31" y="54" width="30" height="3" rx="1.5" fill="#059669" />
-        <rect x="31" y="61" width="50" height="2" rx="1" fill="#d1d5db" />
-        <rect x="31" y="67" width="40" height="2" rx="1" fill="#e5e7eb" />
-        <rect x="115" y="48" width="80" height="30" rx="8" fill="#ffffff" stroke="#d1fae5" strokeWidth="1.5" />
-        <rect x="121" y="54" width="35" height="3" rx="1.5" fill="#059669" />
-        <rect x="121" y="61" width="48" height="2" rx="1" fill="#d1d5db" />
-        <rect x="121" y="67" width="42" height="2" rx="1" fill="#e5e7eb" />
-        {/* Bottom card with checkmark */}
-        <rect x="25" y="86" width="170" height="26" rx="8" fill="#ecfdf5" stroke="#a7f3d0" strokeWidth="1.5" />
-        <rect x="31" y="92" width="40" height="3" rx="1.5" fill="#059669" />
-        <rect x="31" y="99" width="80" height="2" rx="1" fill="#6ee7b7" />
-        {/* Checkmark badge */}
-        <circle cx="180" cy="99" r="7" fill="#059669" />
-        <polyline points="176,99 179,102 184,96" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        {/* Tap finger indicator */}
-        <circle cx="65" cy="63" r="4" fill="#059669" opacity="0.15" />
-        <circle cx="65" cy="63" r="8" fill="#059669" opacity="0.08" />
+        <rect x="10" y="30" width="58" height="70" rx="8" fill="#dbeafe" stroke="#3b82f6" strokeWidth="1.5" />
+        <text x="39" y="58" textAnchor="middle" fontSize="18">📘</text>
+        <text x="39" y="74" textAnchor="middle" fill="#1d4ed8" fontSize="11" fontWeight="bold">10th</text>
+        <text x="39" y="87" textAnchor="middle" fill="#3b82f6" fontSize="7">SSLC</text>
+        <rect x="81" y="30" width="58" height="70" rx="8" fill="#d1fae5" stroke="#059669" strokeWidth="2.5" />
+        <rect x="81" y="30" width="58" height="4" rx="4" fill="#059669" />
+        <text x="110" y="58" textAnchor="middle" fontSize="18">📗</text>
+        <text x="110" y="74" textAnchor="middle" fill="#065f46" fontSize="11" fontWeight="bold">11th</text>
+        <text x="110" y="87" textAnchor="middle" fill="#059669" fontSize="7">First Year</text>
+        <rect x="152" y="30" width="58" height="70" rx="8" fill="#fee2e2" stroke="#ef4444" strokeWidth="1.5" />
+        <text x="181" y="58" textAnchor="middle" fontSize="18">📕</text>
+        <text x="181" y="74" textAnchor="middle" fill="#991b1b" fontSize="11" fontWeight="bold">12th</text>
+        <text x="181" y="87" textAnchor="middle" fill="#ef4444" fontSize="7">HSC Board</text>
+        <circle cx="110" cy="17" r="8" fill="#059669" />
+        <polyline points="107,17 110,20 114,13" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <text x="110" y="112" textAnchor="middle" fill="#6b7280" fontSize="8">Tap to select your class</text>
       </svg>
     ),
   },
   {
     step: 2,
-    emoji: '⏱️',
-    title: 'Step 2: Start Your Exam',
-    subtitle: 'Practice with a real countdown timer',
+    emoji: '🔍',
+    title: 'Step 2: Find Your Paper',
+    subtitle: 'Search by subject, year or paper type',
     bullets: [
-      { icon: '✏️', text: 'Enter your name when asked' },
-      { icon: '▶️', text: 'Tap the green "Start Exam" button' },
-      { icon: '⏳', text: 'A 3-hour timer starts counting down' },
-      { icon: '🔔', text: 'When time is up, it auto-submits for you!' },
+      { icon: '👆', text: 'Tap "Browse Papers" from the home screen or menu' },
+      { icon: '🔍', text: 'Type your subject name in the search box' },
+      { icon: '🏷️', text: 'Use tab filters: All Papers / Question Paper / Answer Key' },
+      { icon: '📋', text: 'Tap any paper card to open it and start practising' },
     ],
-    tip: '⚡ Don\'t worry — if you close the app, the timer remembers where you left off!',
-    tipColor: 'amber',
+    tip: '🎓 Papers are uploaded by your admin — new papers are added regularly!',
+    tipColor: 'blue',
     illustration: (
       <svg viewBox="0 0 220 120" className="w-full h-24 mx-auto" aria-hidden="true">
-        {/* Clock face */}
-        <circle cx="110" cy="58" r="42" fill="#f0fdf4" stroke="#059669" strokeWidth="2" />
-        <circle cx="110" cy="58" r="36" fill="#ffffff" stroke="#d1fae5" strokeWidth="1" />
-        {/* Clock marks */}
-        <line x1="110" y1="26" x2="110" y2="30" stroke="#059669" strokeWidth="2" strokeLinecap="round" />
-        <line x1="110" y1="86" x2="110" y2="90" stroke="#059669" strokeWidth="2" strokeLinecap="round" />
-        <line x1="78" y1="58" x2="82" y2="58" stroke="#059669" strokeWidth="2" strokeLinecap="round" />
-        <line x1="138" y1="58" x2="142" y2="58" stroke="#059669" strokeWidth="2" strokeLinecap="round" />
-        {/* Hour hand */}
-        <line x1="110" y1="58" x2="110" y2="36" stroke="#374151" strokeWidth="2.5" strokeLinecap="round" />
-        {/* Minute hand */}
-        <line x1="110" y1="58" x2="128" y2="46" stroke="#059669" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="110" cy="58" r="3" fill="#059669" />
-        {/* Timer display */}
-        <rect x="70" y="102" width="80" height="16" rx="8" fill="#059669" />
-        <text x="110" y="113" textAnchor="middle" fill="white" fontSize="9" fontWeight="bold" fontFamily="monospace">03:00:00</text>
-        {/* Play button */}
-        <circle cx="175" cy="95" r="14" fill="#059669" opacity="0.12" />
-        <polygon points="171,88 185,95 171,102" fill="#059669" />
-        {/* Sparkle */}
-        <polygon points="45,30 47,36 53,36 48,40 50,46 45,42 40,46 42,40 37,36 43,36" fill="#fbbf24" opacity="0.7" />
+        <rect x="25" y="10" width="170" height="28" rx="14" fill="#f0fdf4" stroke="#059669" strokeWidth="1.5" />
+        <circle cx="48" cy="24" r="7" fill="none" stroke="#6ee7b7" strokeWidth="2" />
+        <line x1="53" y1="29" x2="58" y2="34" stroke="#6ee7b7" strokeWidth="2" strokeLinecap="round" />
+        <text x="68" y="28" fill="#6b7280" fontSize="10" fontFamily="sans-serif">Tamil, Maths, Physics...</text>
+        <rect x="25" y="46" width="80" height="30" rx="8" fill="#ffffff" stroke="#d1fae5" strokeWidth="1.5" />
+        <rect x="31" y="52" width="30" height="3" rx="1.5" fill="#059669" />
+        <rect x="31" y="59" width="50" height="2" rx="1" fill="#d1d5db" />
+        <rect x="31" y="65" width="40" height="2" rx="1" fill="#e5e7eb" />
+        <rect x="115" y="46" width="80" height="30" rx="8" fill="#ffffff" stroke="#d1fae5" strokeWidth="1.5" />
+        <rect x="121" y="52" width="35" height="3" rx="1.5" fill="#059669" />
+        <rect x="121" y="59" width="48" height="2" rx="1" fill="#d1d5db" />
+        <rect x="121" y="65" width="42" height="2" rx="1" fill="#e5e7eb" />
+        <rect x="25" y="84" width="170" height="26" rx="8" fill="#ecfdf5" stroke="#a7f3d0" strokeWidth="1.5" />
+        <rect x="31" y="90" width="40" height="3" rx="1.5" fill="#059669" />
+        <rect x="31" y="97" width="80" height="2" rx="1" fill="#6ee7b7" />
+        <circle cx="180" cy="97" r="7" fill="#059669" />
+        <polyline points="176,97 179,100 184,94" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },
   {
     step: 3,
     emoji: '🎯',
-    title: 'Exam Mode',
-    subtitle: 'Simulate a real exam environment',
+    title: 'Step 3: Exam Mode',
+    subtitle: 'Simulate the real Tamil Nadu board exam',
     bullets: [
-      { icon: '⏱️', text: 'A 3-hour countdown timer runs automatically' },
-      { icon: '📄', text: 'Question paper is shown full screen — focus only on exam' },
-      { icon: '⏸️', text: 'You can pause & resume anytime — timer saves your progress' },
-      { icon: '🔒', text: 'Answer key is locked during the exam — unlocks after!' },
-      { icon: '✅', text: 'Submit early or wait for the timer to auto-submit' },
+      { icon: '✏️', text: 'Enter your name — it will be saved for future attempts' },
+      { icon: '⏱️', text: 'A 3-hour countdown timer starts automatically' },
+      { icon: '📄', text: 'Question paper appears full screen — stay focused!' },
+      { icon: '✅', text: 'Click Stop / Submit when done, or let the timer auto-submit' },
+      { icon: '🔁', text: 'Timer is saved — close & reopen the app without losing time' },
     ],
-    tip: '💡 Treat it like a real exam — no peeking at answers during the test!',
+    tip: '💡 Treat it like the real exam — no peeking at answers until you submit!',
     tipColor: 'amber',
     illustration: (
       <svg viewBox="0 0 220 120" className="w-full h-24 mx-auto" aria-hidden="true">
-        {/* Exam paper */}
         <rect x="35" y="10" width="90" height="100" rx="8" fill="#ffffff" stroke="#d1fae5" strokeWidth="1.5" />
-        <rect x="35" y="10" width="90" height="18" rx="8" fill="#059669" />
-        <rect x="35" y="20" width="90" height="8" rx="0" fill="#059669" />
-        <text x="80" y="23" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold" fontFamily="sans-serif">EXAM MODE</text>
+        <rect x="35" y="10" width="90" height="20" rx="8" fill="#059669" />
+        <rect x="35" y="22" width="90" height="8" rx="0" fill="#059669" />
+        <text x="80" y="24" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">EXAM MODE</text>
         <rect x="45" y="38" width="60" height="3" rx="1.5" fill="#d1d5db" />
         <rect x="45" y="46" width="70" height="2" rx="1" fill="#e5e7eb" />
         <rect x="45" y="52" width="65" height="2" rx="1" fill="#e5e7eb" />
         <rect x="45" y="62" width="60" height="3" rx="1.5" fill="#d1d5db" />
         <rect x="45" y="70" width="70" height="2" rx="1" fill="#e5e7eb" />
-        <rect x="45" y="76" width="55" height="2" rx="1" fill="#e5e7eb" />
-        {/* Timer circle */}
-        <circle cx="170" cy="40" r="28" fill="#fef3c7" stroke="#f59e0b" strokeWidth="2" />
-        <circle cx="170" cy="40" r="22" fill="#ffffff" stroke="#fde68a" strokeWidth="1" />
-        <line x1="170" y1="22" x2="170" y2="26" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
-        <line x1="170" y1="54" x2="170" y2="58" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
-        <line x1="148" y1="40" x2="152" y2="40" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
-        <line x1="188" y1="40" x2="192" y2="40" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
-        <line x1="170" y1="40" x2="170" y2="26" stroke="#374151" strokeWidth="2" strokeLinecap="round" />
-        <line x1="170" y1="40" x2="180" y2="34" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="170" cy="40" r="2.5" fill="#f59e0b" />
-        {/* Lock icon */}
-        <rect x="152" y="80" width="36" height="28" rx="5" fill="#ecfdf5" stroke="#059669" strokeWidth="1.5" />
-        <path d="M160 80 L160 74 A10 10 0 0 1 180 74 L180 80" fill="none" stroke="#059669" strokeWidth="2" />
-        <circle cx="170" cy="94" r="4" fill="#059669" />
-        <rect x="168.5" y="94" width="3" height="6" rx="1" fill="#059669" />
+        <circle cx="170" cy="42" r="28" fill="#fef3c7" stroke="#f59e0b" strokeWidth="2" />
+        <circle cx="170" cy="42" r="22" fill="#ffffff" stroke="#fde68a" strokeWidth="1" />
+        <line x1="170" y1="42" x2="170" y2="28" stroke="#374151" strokeWidth="2.5" strokeLinecap="round" />
+        <line x1="170" y1="42" x2="180" y2="36" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="170" cy="42" r="2.5" fill="#f59e0b" />
+        <rect x="145" y="80" width="50" height="14" rx="7" fill="#059669" />
+        <text x="170" y="90" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">SUBMIT ✓</text>
       </svg>
     ),
   },
   {
     step: 4,
     emoji: '📖',
-    title: 'Study Mode',
-    subtitle: 'Question paper & answer key side by side',
+    title: 'Step 4: Study Mode',
+    subtitle: 'Learn with paper & answer key side by side',
     bullets: [
-      { icon: '🖥️', text: 'Desktop: QP and Answer Key shown side by side' },
-      { icon: '📱', text: 'Mobile: Switch between QP and Answer Key with one tap' },
-      { icon: '🔑', text: 'Multiple answer key variants available (Official, Sura, etc.)' },
-      { icon: '📚', text: 'Perfect for reviewing and understanding correct answers' },
-      { icon: '🎯', text: 'Use Study Mode AFTER attempting the exam for best results' },
+      { icon: '🖥️', text: 'Desktop: Question Paper and Answer Key shown together' },
+      { icon: '📱', text: 'Mobile: Switch between paper and key with one tap' },
+      { icon: '🔑', text: 'Multiple answer keys: Official, Sura, Together, etc.' },
+      { icon: '⏰', text: 'No timer — study at your own comfortable pace' },
+      { icon: '💡', text: 'Best used AFTER completing an exam attempt' },
     ],
-    tip: '✨ Study Mode is best used after you finish an exam attempt!',
+    tip: '✨ Use Study Mode to understand where you went wrong in your exam!',
     tipColor: 'blue',
     illustration: (
       <svg viewBox="0 0 220 120" className="w-full h-24 mx-auto" aria-hidden="true">
-        {/* Desktop split view */}
         <rect x="10" y="15" width="95" height="90" rx="6" fill="#ffffff" stroke="#bfdbfe" strokeWidth="1.5" />
-        <rect x="10" y="15" width="95" height="14" rx="6" fill="#3b82f6" />
-        <rect x="10" y="22" width="95" height="7" rx="0" fill="#3b82f6" />
-        <text x="57" y="25" textAnchor="middle" fill="white" fontSize="7" fontWeight="bold">📄 Question Paper</text>
-        <rect x="18" y="38" width="70" height="3" rx="1.5" fill="#d1d5db" />
-        <rect x="18" y="46" width="79" height="2" rx="1" fill="#e5e7eb" />
-        <rect x="18" y="52" width="72" height="2" rx="1" fill="#e5e7eb" />
-        <rect x="18" y="58" width="75" height="2" rx="1" fill="#e5e7eb" />
-        <rect x="18" y="68" width="70" height="3" rx="1.5" fill="#d1d5db" />
-        <rect x="18" y="76" width="79" height="2" rx="1" fill="#e5e7eb" />
-        <rect x="18" y="82" width="65" height="2" rx="1" fill="#e5e7eb" />
-        {/* AK panel */}
+        <rect x="10" y="15" width="95" height="16" rx="6" fill="#3b82f6" />
+        <rect x="10" y="24" width="95" height="7" rx="0" fill="#3b82f6" />
+        <text x="57" y="27" textAnchor="middle" fill="white" fontSize="7" fontWeight="bold">📄 Question Paper</text>
+        <rect x="18" y="40" width="70" height="3" rx="1.5" fill="#d1d5db" />
+        <rect x="18" y="48" width="79" height="2" rx="1" fill="#e5e7eb" />
+        <rect x="18" y="54" width="72" height="2" rx="1" fill="#e5e7eb" />
+        <rect x="18" y="64" width="70" height="3" rx="1.5" fill="#d1d5db" />
+        <rect x="18" y="72" width="79" height="2" rx="1" fill="#e5e7eb" />
         <rect x="115" y="15" width="95" height="90" rx="6" fill="#ffffff" stroke="#a7f3d0" strokeWidth="1.5" />
-        <rect x="115" y="15" width="95" height="14" rx="6" fill="#059669" />
-        <rect x="115" y="22" width="95" height="7" rx="0" fill="#059669" />
-        <text x="162" y="25" textAnchor="middle" fill="white" fontSize="7" fontWeight="bold">🔑 Answer Key</text>
-        {/* Answer key content with checkmarks */}
-        <rect x="123" y="38" width="50" height="3" rx="1.5" fill="#d1d5db" />
-        <circle cx="186" cy="40" r="5" fill="#ecfdf5" stroke="#059669" strokeWidth="1" />
-        <polyline points="183,40 185,42 189,37" fill="none" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <rect x="123" y="50" width="50" height="3" rx="1.5" fill="#d1d5db" />
-        <circle cx="186" cy="52" r="5" fill="#ecfdf5" stroke="#059669" strokeWidth="1" />
-        <polyline points="183,52 185,54 189,49" fill="none" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <rect x="123" y="62" width="50" height="3" rx="1.5" fill="#d1d5db" />
-        <circle cx="186" cy="64" r="5" fill="#fef3c7" stroke="#f59e0b" strokeWidth="1" />
-        <text x="186" y="67" textAnchor="middle" fill="#f59e0b" fontSize="7" fontWeight="bold">?</text>
-        <rect x="123" y="74" width="50" height="3" rx="1.5" fill="#d1d5db" />
-        <circle cx="186" cy="76" r="5" fill="#ecfdf5" stroke="#059669" strokeWidth="1" />
-        <polyline points="183,76 185,78 189,73" fill="none" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        {/* Divider line */}
+        <rect x="115" y="15" width="95" height="16" rx="6" fill="#059669" />
+        <rect x="115" y="24" width="95" height="7" rx="0" fill="#059669" />
+        <text x="162" y="27" textAnchor="middle" fill="white" fontSize="7" fontWeight="bold">🔑 Answer Key</text>
+        <rect x="123" y="40" width="50" height="3" rx="1.5" fill="#d1d5db" />
+        <circle cx="186" cy="42" r="5" fill="#ecfdf5" stroke="#059669" strokeWidth="1" />
+        <polyline points="183,42 185,44 189,39" fill="none" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="123" y="52" width="50" height="3" rx="1.5" fill="#d1d5db" />
+        <circle cx="186" cy="54" r="5" fill="#ecfdf5" stroke="#059669" strokeWidth="1" />
+        <polyline points="183,54 185,56 189,51" fill="none" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="123" y="64" width="50" height="3" rx="1.5" fill="#d1d5db" />
+        <circle cx="186" cy="66" r="5" fill="#fef3c7" stroke="#f59e0b" strokeWidth="1" />
+        <text x="186" y="69" textAnchor="middle" fill="#f59e0b" fontSize="7" fontWeight="bold">?</text>
         <line x1="110" y1="15" x2="110" y2="105" stroke="#e5e7eb" strokeWidth="1" strokeDasharray="4,3" />
       </svg>
     ),
   },
   {
     step: 5,
-    emoji: '✅',
-    title: 'Step 5: Check Your Answers',
-    subtitle: 'See how well you did!',
+    emoji: '📊',
+    title: 'Step 5: Track Your Progress',
+    subtitle: 'See your scores and improve each attempt',
     bullets: [
-      { icon: '🔑', text: 'Tap "Answer Key" to see correct answers' },
-      { icon: '📊', text: 'Go to "History" to see all your past attempts' },
-      { icon: '🎯', text: 'Practice again and try to improve each time!' },
+      { icon: '🔑', text: 'After exam — tap "Answer Key" to check your answers' },
+      { icon: '📊', text: 'Go to "My History" to see all past exam attempts' },
+      { icon: '⏱️', text: 'See how much time you took for each attempt' },
+      { icon: '🔁', text: 'Retake the same paper to beat your previous time' },
+      { icon: '🏆', text: 'Consistent practice = better board exam score!' },
     ],
-    tip: '🏆 The more you practice, the better you get!',
+    tip: '🏆 The more papers you practice, the more confident you become!',
     tipColor: 'purple',
     illustration: (
       <svg viewBox="0 0 220 120" className="w-full h-24 mx-auto" aria-hidden="true">
-        {/* Checklist card */}
         <rect x="50" y="10" width="120" height="95" rx="10" fill="#ffffff" stroke="#d1fae5" strokeWidth="1.5" />
-        {/* Header */}
         <rect x="60" y="20" width="60" height="5" rx="2.5" fill="#059669" />
-        {/* Row 1 - checked */}
         <rect x="60" y="35" width="16" height="16" rx="4" fill="#ecfdf5" stroke="#059669" strokeWidth="1.5" />
         <polyline points="64,43 67,47 74,39" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
         <rect x="82" y="40" width="70" height="3" rx="1.5" fill="#d1d5db" />
-        {/* Row 2 - checked */}
         <rect x="60" y="57" width="16" height="16" rx="4" fill="#ecfdf5" stroke="#059669" strokeWidth="1.5" />
         <polyline points="64,65 67,69 74,61" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
         <rect x="82" y="62" width="55" height="3" rx="1.5" fill="#d1d5db" />
-        {/* Row 3 - unchecked */}
         <rect x="60" y="79" width="16" height="16" rx="4" fill="#f9fafb" stroke="#e5e7eb" strokeWidth="1.5" />
         <rect x="82" y="84" width="60" height="3" rx="1.5" fill="#e5e7eb" />
-        {/* Trophy */}
-        <circle cx="190" cy="30" r="15" fill="#fef3c7" stroke="#f59e0b" strokeWidth="1" />
-        <text x="190" y="35" textAnchor="middle" fontSize="16">🏆</text>
-        {/* Progress bar */}
-        <rect x="25" y="112" width="170" height="5" rx="2.5" fill="#e5e7eb" />
-        <rect x="25" y="112" width="113" height="5" rx="2.5" fill="#059669" />
-        <text x="200" y="117" fill="#059669" fontSize="8" fontWeight="bold">67%</text>
+        <circle cx="190" cy="28" r="15" fill="#fef3c7" stroke="#f59e0b" strokeWidth="1" />
+        <text x="190" y="33" textAnchor="middle" fontSize="16">🏆</text>
+        <rect x="25" y="110" width="170" height="5" rx="2.5" fill="#e5e7eb" />
+        <rect x="25" y="110" width="113" height="5" rx="2.5" fill="#059669" />
+        <text x="200" y="115" fill="#059669" fontSize="8" fontWeight="bold">67%</text>
       </svg>
     ),
   },
   {
     step: 6,
     emoji: '💾',
-    title: 'Step 6: Your Data is Safe',
-    subtitle: 'No internet? No problem!',
+    title: 'Your Data is Always Safe',
+    subtitle: 'Private, secure & works offline too!',
     bullets: [
-      { icon: '📱', text: 'Everything is saved on YOUR device' },
-      { icon: '🌐', text: 'Works without internet — practice anywhere!' },
-      { icon: '💾', text: 'Use "Backup" to save & move your data' },
-      { icon: '🔄', text: 'Restore your data on a new device anytime' },
+      { icon: '📱', text: 'All your attempts are stored only on your own device' },
+      { icon: '🌐', text: 'Works offline — practice even without internet!' },
+      { icon: '💾', text: 'Use "Backup" page to export and save your data safely' },
+      { icon: '🔄', text: 'Restore your data on any device from the backup file' },
+      { icon: '🔖', text: 'Bookmark this page in your browser for quick access' },
     ],
-    tip: '📌 Bookmark this app in your browser for easy access!',
+    tip: '📌 Add this app to your phone home screen for one-tap access!',
     tipColor: 'emerald',
     illustration: (
       <svg viewBox="0 0 220 120" className="w-full h-24 mx-auto" aria-hidden="true">
-        {/* Phone device */}
         <rect x="75" y="8" width="70" height="104" rx="12" fill="#f8fafc" stroke="#374151" strokeWidth="2" />
         <rect x="82" y="22" width="56" height="72" rx="4" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" />
-        {/* Screen content */}
         <rect x="88" y="30" width="44" height="4" rx="2" fill="#059669" />
         <rect x="88" y="40" width="34" height="2" rx="1" fill="#d1d5db" />
         <rect x="88" y="46" width="38" height="2" rx="1" fill="#e5e7eb" />
-        {/* Save button on screen */}
         <rect x="88" y="56" width="44" height="14" rx="5" fill="#ecfdf5" stroke="#059669" strokeWidth="1" />
         <text x="110" y="66" textAnchor="middle" fill="#059669" fontSize="8" fontWeight="bold">SAVED ✓</text>
-        {/* Lock icon */}
         <rect x="101" y="76" width="18" height="13" rx="3" fill="#374151" />
         <path d="M105 76 L105 72 A5 5 0 0 1 115 72 L115 76" fill="none" stroke="#374151" strokeWidth="2" />
         <circle cx="110" cy="82" r="2" fill="#ffffff" />
-        {/* Home indicator */}
         <rect x="101" y="100" width="18" height="3" rx="1.5" fill="#d1d5db" />
-        {/* Cloud sync icon */}
         <path d="M180 50 A16 16 0 0 1 180 82 L165 82 A13 13 0 0 1 160 56 A17 17 0 0 1 180 50Z" fill="#ecfdf5" stroke="#059669" strokeWidth="1.5" />
         <line x1="172" y1="62" x2="172" y2="76" stroke="#059669" strokeWidth="2" strokeLinecap="round" />
         <polyline points="167,70 172,76 177,70" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        {/* Shield icon */}
         <path d="M38 40 L38 60 Q38 75 50 82 Q62 75 62 60 L62 40 L50 35 Z" fill="#ecfdf5" stroke="#059669" strokeWidth="1.5" />
         <polyline points="44,57 49,62 56,52" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
