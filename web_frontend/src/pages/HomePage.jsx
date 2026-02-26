@@ -13,13 +13,9 @@ function HomePage() {
 
   const [showInstructions, setShowInstructions] = useState(true);
 
-  // Persisted class selection
   const [selectedClass, setSelectedClass] = useState(
     () => localStorage.getItem('tn_selected_class') || ''
   );
-
-  const completedCount = attempts.filter((a) => a.completed).length;
-  const subjectCount = new Set(papers.map((p) => p.subject)).size;
 
   const handleClassSelect = (cls) => {
     setSelectedClass(cls);
@@ -30,174 +26,173 @@ function HomePage() {
   const classes = [
     {
       label: '10th',
-      full: '10th Standard',
+      sublabel: 'SSLC Board',
       icon: '📘',
-      desc: 'SSLC Board Exam',
-      accent: 'from-blue-500 to-blue-600',
-      border: 'border-blue-300',
+      color: 'blue',
       bg: 'bg-blue-50',
-      text: 'text-blue-700',
-      badge: 'bg-blue-600',
-      ring: 'ring-blue-200',
+      border: 'border-blue-200',
+      hoverBorder: 'hover:border-blue-400',
+      iconBg: 'bg-blue-100',
+      textColor: 'text-blue-700',
+      subColor: 'text-blue-400',
+      selectedBg: 'bg-blue-600',
+      selectedShadow: 'shadow-lg shadow-blue-300/50',
     },
     {
       label: '11th',
-      full: '11th Standard',
+      sublabel: 'First Year HSC',
       icon: '📗',
-      desc: 'First Year HSC',
-      accent: 'from-amber-500 to-orange-500',
-      border: 'border-amber-300',
+      color: 'amber',
       bg: 'bg-amber-50',
-      text: 'text-amber-700',
-      badge: 'bg-amber-500',
-      ring: 'ring-amber-200',
+      border: 'border-amber-200',
+      hoverBorder: 'hover:border-amber-400',
+      iconBg: 'bg-amber-100',
+      textColor: 'text-amber-700',
+      subColor: 'text-amber-400',
+      selectedBg: 'bg-amber-500',
+      selectedShadow: 'shadow-lg shadow-amber-300/50',
     },
     {
       label: '12th',
-      full: '12th Standard',
+      sublabel: 'HSC Board',
       icon: '📕',
-      desc: 'HSC Board Exam',
-      accent: 'from-emerald-500 to-teal-500',
-      border: 'border-emerald-300',
+      color: 'emerald',
       bg: 'bg-emerald-50',
-      text: 'text-emerald-700',
-      badge: 'bg-emerald-600',
-      ring: 'ring-emerald-200',
+      border: 'border-emerald-200',
+      hoverBorder: 'hover:border-emerald-400',
+      iconBg: 'bg-emerald-100',
+      textColor: 'text-emerald-700',
+      subColor: 'text-emerald-400',
+      selectedBg: 'bg-emerald-600',
+      selectedShadow: 'shadow-lg shadow-emerald-300/50',
     },
+  ];
+
+  const quickLinks = [
+    { to: '/browse',        icon: '📋', label: 'Browse Papers' },
+    { to: '/history',       icon: '📊', label: 'My History'    },
+    { to: '/settings',      icon: '⚙️',  label: 'Settings'      },
+    { to: '/import-export', icon: '💾', label: 'Backup'         },
   ];
 
   return (
     <div>
-      {/* Instructions Modal */}
       <InstructionsModal
         isOpen={showInstructions}
-        onClose={() => {
-          markInstructionsSeen();
-          setShowInstructions(false);
-        }}
+        onClose={() => { markInstructionsSeen(); setShowInstructions(false); }}
       />
 
-      {/* ── Hero — full-width breakout ── */}
-      <section className="-mx-4 sm:-mx-6 px-4 sm:px-8 pt-10 pb-14 sm:pt-14 sm:pb-20 bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-950 text-white mb-0">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-semibold mb-5">
-            <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
-            Tamil Nadu Board Exam Practice
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
-            📝 TN Study{' '}
-            <span className="text-emerald-400">Hub</span>
-          </h1>
-          <p className="text-gray-300 text-sm sm:text-lg leading-relaxed max-w-xl mx-auto">
-            Practice question papers, take timed exams &amp; study with answer keys —{' '}
-            <span className="text-white font-semibold">everything saved on your device</span>.
-          </p>
-        </div>
-      </section>
+      {/* ── Hero + Class Selector ── */}
+      <section className="-mx-4 sm:-mx-6 -mt-6 sm:-mt-8 overflow-hidden relative">
+        {/* Clean gradient background */}
+        <div className="bg-gradient-to-b from-gray-900 via-gray-900 to-gray-800 text-white">
 
-      {/* ── Class Selector — overlaps hero bottom ── */}
-      <section className="-mx-4 sm:-mx-6 px-4 sm:px-8 -mt-6 sm:-mt-8 mb-8 sm:mb-10">
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 sm:p-6">
-            <p className="text-center text-xs sm:text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">
-              Select Your Class to Get Started
+          {/* ── Brand + Subtitle ── */}
+          <div className="relative px-5 pt-7 pb-5 sm:pt-12 sm:pb-6 text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-[10px] sm:text-xs font-semibold mb-4 tracking-wide">
+              <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
+              Tamil Nadu Board Exam Practice
+            </div>
+            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight mb-2 leading-tight">
+              📝 TN Study <span className="text-emerald-400">Hub</span>
+            </h1>
+            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed max-w-sm mx-auto">
+              Practice papers, timed exams &amp; answer keys —{' '}
+              <span className="text-gray-300 font-semibold">saved on your device</span>.
             </p>
-            <div className="grid grid-cols-3 gap-2.5 sm:gap-4">
-              {classes.map((cls) => {
-                const isSelected = selectedClass === cls.label;
-                return (
-                  <button
-                    key={cls.label}
-                    onClick={() => handleClassSelect(cls.label)}
-                    className={`relative group flex flex-col items-center py-4 sm:py-5 px-2 rounded-xl border-2 transition-all duration-200 overflow-hidden active:scale-[0.97] ${
-                      isSelected
-                        ? `${cls.border} ${cls.bg} shadow-md ring-4 ${cls.ring}`
-                        : 'border-gray-200 bg-gray-50 hover:border-gray-300 hover:bg-white hover:shadow-sm'
-                    }`}
-                  >
-                    {isSelected && (
-                      <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${cls.accent}`} />
-                    )}
-                    <span className="text-2xl sm:text-3xl mb-1.5 group-hover:scale-110 transition-transform duration-200">
+          </div>
+        </div>
+
+        {/* ── Class Selector ── */}
+        <div className="relative bg-white px-4 sm:px-8 pt-6 pb-6 sm:pb-8">
+          <p className="text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.15em] mb-4">
+            Select Your Class to Begin
+          </p>
+
+          <div className="grid grid-cols-3 gap-3 sm:gap-4 sm:max-w-xl sm:mx-auto">
+            {classes.map((cls) => {
+              const isSelected = selectedClass === cls.label;
+              return (
+                <button
+                  key={cls.label}
+                  onClick={() => handleClassSelect(cls.label)}
+                  className={`group relative flex flex-col items-center rounded-2xl border-2 transition-all duration-200 active:scale-[0.96] ${
+                    isSelected
+                      ? `${cls.selectedBg} border-transparent ${cls.selectedShadow}`
+                      : `${cls.bg} ${cls.border} ${cls.hoverBorder} hover:shadow-md`
+                  }`}
+                >
+                  {/* Checkmark badge */}
+                  {isSelected && (
+                    <div className="absolute -top-1.5 -right-1.5 z-10 w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center">
+                      <svg className={`w-3.5 h-3.5 ${cls.textColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                  )}
+
+                  {/* Card content */}
+                  <div className="flex flex-col items-center pt-4 pb-4 px-2 gap-1.5 w-full">
+                    {/* Icon container */}
+                    <div className={`w-11 h-11 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center text-2xl sm:text-3xl mb-0.5 transition-transform duration-200 group-hover:scale-110 ${isSelected ? 'bg-white/20' : cls.iconBg}`}>
                       {cls.icon}
-                    </span>
-                    <span className={`font-extrabold text-lg sm:text-xl ${isSelected ? cls.text : 'text-gray-800'}`}>
+                    </div>
+
+                    {/* Class number */}
+                    <span className={`font-extrabold text-lg sm:text-2xl leading-none tracking-tight ${isSelected ? 'text-white' : cls.textColor}`}>
                       {cls.label}
                     </span>
-                    <span className={`text-[10px] sm:text-xs font-medium mt-0.5 ${isSelected ? cls.text : 'text-gray-400'}`}>
-                      {cls.desc}
-                    </span>
-                    {isSelected ? (
-                      <span className={`mt-2.5 text-[10px] px-2.5 py-0.5 rounded-full text-white font-bold ${cls.badge}`}>
-                        ✓ Selected
-                      </span>
-                    ) : (
-                      <span className="mt-2.5 text-[10px] px-2.5 py-0.5 rounded-full text-gray-400 bg-gray-100 font-medium">
-                        Tap to select
-                      </span>
-                    )}
-                  </button>
-                );
-              })}
-            </div>
-            {selectedClass && (
-              <p className="text-center text-xs text-gray-400 mt-3">
-                Browsing papers for{' '}
-                <span className="font-bold text-gray-600">{selectedClass} Standard</span>.{' '}
-                <button
-                  onClick={() => { setSelectedClass(''); localStorage.removeItem('tn_selected_class'); }}
-                  className="text-error hover:underline font-medium"
-                >
-                  Clear
-                </button>
-              </p>
-            )}
-          </div>
-        </div>
-      </section>
 
-      {/* ── Stats Grid ── */}
-      <section className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-10">
-        {[
-          { icon: '📄', value: papers.length, label: 'Papers', bg: 'bg-emerald-50', iconBg: 'bg-emerald-100' },
-          { icon: '✏️', value: attempts.length, label: 'Attempts', bg: 'bg-blue-50', iconBg: 'bg-blue-100' },
-          { icon: '✅', value: completedCount, label: 'Completed', bg: 'bg-amber-50', iconBg: 'bg-amber-100' },
-          { icon: '📚', value: subjectCount, label: 'Subjects', bg: 'bg-purple-50', iconBg: 'bg-purple-100' },
-        ].map((stat) => (
-          <div key={stat.label} className={`${stat.bg} rounded-2xl border border-white p-4 sm:p-5 text-center shadow-sm`}>
-            <div className={`w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 rounded-xl ${stat.iconBg} flex items-center justify-center text-xl sm:text-2xl`}>
-              {stat.icon}
-            </div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-gray-800 leading-none">
-              {stat.value}
-            </div>
-            <div className="text-xs sm:text-sm text-gray-500 mt-1 font-medium">{stat.label}</div>
+                    {/* Sublabel */}
+                    <span className={`text-[9px] sm:text-[11px] font-medium text-center leading-tight ${isSelected ? 'text-white/80' : cls.subColor}`}>
+                      {cls.sublabel}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
           </div>
-        ))}
+
+          {selectedClass && (
+            <p className="text-center text-[10px] text-gray-400 mt-4">
+              Browsing{' '}
+              <span className="text-gray-600 font-semibold">{selectedClass} Standard</span>
+              {' · '}
+              <button
+                onClick={() => { setSelectedClass(''); localStorage.removeItem('tn_selected_class'); }}
+                className="text-red-400 hover:text-red-500 font-medium"
+              >
+                Clear
+              </button>
+            </p>
+          )}
+        </div>
       </section>
 
       {/* ── Mode Cards ── */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-8 sm:mb-10">
+      <section className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5 mt-4 mb-4 sm:mb-8 max-w-4xl mx-auto w-full">
+
         {/* Exam Mode */}
         <Link
           to="/browse"
-          className="group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 active:scale-[0.98]"
+          className="group relative rounded-2xl overflow-hidden border border-emerald-100 hover:border-emerald-200 bg-gradient-to-br from-emerald-50/80 to-teal-50/40 backdrop-blur-sm hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-300 active:scale-[0.98]"
         >
-          <div className="h-1.5 bg-gradient-to-r from-emerald-500 via-emerald-400 to-teal-400" />
-          <div className="p-5 sm:p-6 flex items-start gap-4">
-            <div className="shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center text-2xl sm:text-3xl group-hover:scale-105 transition-transform duration-300 shadow-sm">
+          <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-400" />
+          <div className="p-4 sm:p-6 flex items-center gap-3.5 sm:gap-4">
+            <div className="shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-xl sm:text-3xl shadow-lg shadow-emerald-500/30 group-hover:scale-105 transition-transform duration-300">
               🎯
             </div>
-            <div className="min-w-0">
-              <h2 className="text-base sm:text-lg font-extrabold text-gray-900 mb-1 group-hover:text-emerald-600 transition-colors duration-200">
+            <div className="min-w-0 flex-1">
+              <h2 className="text-sm sm:text-lg font-extrabold text-gray-900 mb-0.5 group-hover:text-emerald-600 transition-colors">
                 Exam Mode
               </h2>
-              <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
-                Timed practice with a real countdown timer. Auto-submits when time ends — just like the real board exam.
+              <p className="text-gray-400 text-xs leading-relaxed">
+                Timed countdown — auto-submits when time ends.
               </p>
-              <span className="inline-flex items-center gap-1 mt-3 text-xs font-bold text-emerald-600 group-hover:translate-x-1.5 transition-transform duration-300">
+              <span className="inline-flex items-center gap-1 mt-2 text-xs font-bold text-emerald-600 group-hover:translate-x-1 transition-transform duration-200">
                 Start Exam
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                 </svg>
               </span>
@@ -208,23 +203,23 @@ function HomePage() {
         {/* Study Mode */}
         <Link
           to="/browse"
-          className="group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 active:scale-[0.98]"
+          className="group relative rounded-2xl overflow-hidden border border-blue-100 hover:border-blue-200 bg-gradient-to-br from-blue-50/80 to-indigo-50/40 backdrop-blur-sm hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 active:scale-[0.98]"
         >
-          <div className="h-1.5 bg-gradient-to-r from-blue-500 via-blue-400 to-indigo-400" />
-          <div className="p-5 sm:p-6 flex items-start gap-4">
-            <div className="shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center text-2xl sm:text-3xl group-hover:scale-105 transition-transform duration-300 shadow-sm">
+          <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-indigo-400" />
+          <div className="p-4 sm:p-6 flex items-center gap-3.5 sm:gap-4">
+            <div className="shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center text-xl sm:text-3xl shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform duration-300">
               📖
             </div>
-            <div className="min-w-0">
-              <h2 className="text-base sm:text-lg font-extrabold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors duration-200">
+            <div className="min-w-0 flex-1">
+              <h2 className="text-sm sm:text-lg font-extrabold text-gray-900 mb-0.5 group-hover:text-blue-600 transition-colors">
                 Study Mode
               </h2>
-              <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
-                View the question paper &amp; answer key side by side. Study at your own pace with no timer pressure.
+              <p className="text-gray-400 text-xs leading-relaxed">
+                Paper &amp; answer key side by side. No timer.
               </p>
-              <span className="inline-flex items-center gap-1 mt-3 text-xs font-bold text-blue-600 group-hover:translate-x-1.5 transition-transform duration-300">
+              <span className="inline-flex items-center gap-1 mt-2 text-xs font-bold text-blue-600 group-hover:translate-x-1 transition-transform duration-200">
                 Start Studying
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                 </svg>
               </span>
@@ -234,35 +229,21 @@ function HomePage() {
       </section>
 
       {/* ── Quick Links ── */}
-      <section className="mb-4">
-        <div className="flex flex-wrap justify-center gap-2.5">
-          <Link
-            to="/browse"
-            className="flex items-center gap-1.5 px-4 py-2.5 bg-white border border-gray-200 rounded-full text-xs sm:text-sm text-gray-600 font-medium hover:text-emerald-600 hover:border-emerald-300 hover:bg-emerald-50 transition-all duration-200 shadow-sm"
-          >
-            📋 Browse Papers
-          </Link>
-          <Link
-            to="/history"
-            className="flex items-center gap-1.5 px-4 py-2.5 bg-white border border-gray-200 rounded-full text-xs sm:text-sm text-gray-600 font-medium hover:text-emerald-600 hover:border-emerald-300 hover:bg-emerald-50 transition-all duration-200 shadow-sm"
-          >
-            📊 My History
-          </Link>
-          <Link
-            to="/settings"
-            className="flex items-center gap-1.5 px-4 py-2.5 bg-white border border-gray-200 rounded-full text-xs sm:text-sm text-gray-600 font-medium hover:text-emerald-600 hover:border-emerald-300 hover:bg-emerald-50 transition-all duration-200 shadow-sm"
-          >
-            ⚙️ Settings
-          </Link>
-          <Link
-            to="/import-export"
-            className="flex items-center gap-1.5 px-4 py-2.5 bg-white border border-gray-200 rounded-full text-xs sm:text-sm text-gray-600 font-medium hover:text-emerald-600 hover:border-emerald-300 hover:bg-emerald-50 transition-all duration-200 shadow-sm"
-          >
-            💾 Backup
-          </Link>
+      <section className="mb-6 max-w-4xl mx-auto w-full">
+        {/* 2-column grid on mobile, flex-wrap on desktop */}
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-center gap-2 sm:gap-2.5">
+          {quickLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="flex items-center justify-center gap-1.5 px-3 py-2.5 bg-white/70 backdrop-blur-sm border border-gray-200/80 rounded-xl text-xs text-gray-600 font-medium hover:text-emerald-600 hover:border-emerald-200 hover:bg-emerald-50/70 transition-all duration-200 shadow-sm sm:rounded-full sm:px-4"
+            >
+              {link.icon} {link.label}
+            </Link>
+          ))}
           <button
             onClick={() => setShowInstructions(true)}
-            className="flex items-center gap-1.5 px-4 py-2.5 bg-emerald-50 border border-emerald-200 rounded-full text-xs sm:text-sm text-emerald-700 font-semibold hover:bg-emerald-100 transition-all duration-200 shadow-sm"
+            className="col-span-2 sm:col-span-1 flex items-center justify-center gap-1.5 px-3 py-2.5 bg-emerald-50/80 backdrop-blur-sm border border-emerald-200 rounded-xl text-xs text-emerald-700 font-semibold hover:bg-emerald-100 transition-all duration-200 shadow-sm sm:rounded-full sm:px-4"
           >
             ❓ How to Use
           </button>

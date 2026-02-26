@@ -33,7 +33,7 @@ function Layout({ children }) {
     <div className="min-h-screen bg-background flex flex-col">
       {/* Navigation Header */}
       <header className="header-gradient text-white shadow-lg sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="w-full px-4 sm:px-6">
           <div className="flex items-center justify-between h-14 sm:h-16">
 
             {/* Logo */}
@@ -87,7 +87,7 @@ function Layout({ children }) {
         {/* Mobile Dropdown Menu */}
         {menuOpen && (
           <div className="md:hidden border-t border-white/10 animate-slideDown">
-            <nav className="max-w-7xl mx-auto px-3 py-2 grid grid-cols-2 gap-1.5">
+            <nav className="w-full px-3 py-2 grid grid-cols-2 gap-1.5">
               {navItems.map((item) => (
                 <Link
                   key={item.to}
@@ -111,13 +111,13 @@ function Layout({ children }) {
       </header>
 
       {/* Main content — smooth fade-in */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8 animate-fadeIn">
+      <main className="flex-1 w-full px-4 sm:px-6 py-6 sm:py-8 animate-fadeIn">
         {children}
       </main>
 
       {/* Footer — clean modern style */}
       <footer className="border-t border-gray-100 bg-white/60 backdrop-blur-sm mt-auto">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 sm:py-6 flex flex-col items-center gap-2">
+        <div className="w-full px-4 sm:px-6 py-5 sm:py-6 flex flex-col items-center gap-2">
           <p className="text-center text-sm sm:text-base text-gray-500 font-medium">
             📝 TN Study Hub — All data stored locally on your device
           </p>

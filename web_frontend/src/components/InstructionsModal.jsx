@@ -377,153 +377,176 @@ function InstructionsModal({ isOpen, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4 bg-black/50 backdrop-blur-md"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-6 bg-black/70 backdrop-blur-md"
       role="dialog"
       aria-modal="true"
       aria-label="App Instructions — How to use TN Study Hub"
       onClick={(e) => { if (e.target === e.currentTarget) handleClose(); }}
     >
+      {/* Modal — narrow on mobile, wide horizontal card on desktop */}
+      <div className="relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-sm sm:max-w-4xl overflow-hidden animate-scaleIn sm:h-[500px]">
 
-      {/* Modal Container — modern rounded design */}
-      <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden animate-scaleIn border border-gray-100">
-        {/* Progress bar at the very top */}
-        <div className="h-1 bg-gray-100">
+        {/* Progress bar */}
+        <div className="h-1 bg-gray-100 shrink-0">
           <div
             className="h-full rounded-full transition-all duration-500 ease-out"
-            style={{
-              width: `${progress}%`,
-              background: 'linear-gradient(90deg, #059669, #34d399)',
-            }}
+            style={{ width: `${progress}%`, background: 'linear-gradient(90deg, #059669, #34d399)' }}
           />
         </div>
 
-        {/* Close button — subtle but accessible */}
+        {/* Close button */}
         <button
           onClick={handleClose}
-          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100/80 hover:bg-gray-200 text-gray-400 hover:text-gray-600 transition-all duration-200 backdrop-blur-sm"
+          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-xl bg-white shadow-md border border-gray-200 text-gray-500 hover:text-gray-800 hover:shadow-lg active:scale-95 transition-all duration-200"
           aria-label="Close instructions"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
-        {/* Slide Content — animated transitions */}
-        <div key={slideKey} className="px-5 sm:px-7 pt-6 pb-3 slide-enter">
-          {/* Step badge + Emoji */}
-          <div className="flex items-center justify-center gap-3 mb-3">
-            {slide.step > 0 && (
-              <span className="step-number">{slide.step}</span>
-            )}
-            <span className="text-4xl sm:text-5xl animate-bounce-gentle">{slide.emoji}</span>
-          </div>
+        {/* Body: stacked on mobile, side-by-side on desktop, fills full card height */}
+        <div key={slideKey} className="sm:flex sm:h-[calc(100%-4px)] slide-enter">
 
-          {/* Title */}
-          <h2 className="text-xl sm:text-2xl font-extrabold text-gray-800 text-center mb-1 leading-tight">
-            {slide.title}
-          </h2>
-
-          {/* Subtitle */}
-          <p className="text-sm text-gray-500 text-center mb-4 font-medium">
-            {slide.subtitle}
-          </p>
-
-          {/* Illustration */}
-          <div className="mb-4 px-2">{slide.illustration}</div>
-
-          {/* Bullet points — clear & easy to read */}
-          <div className="space-y-2 mb-4">
-            {slide.bullets.map((bullet, idx) => (
-              <div
-                key={idx}
-                className="flex items-start gap-2.5 bg-gray-50 rounded-xl px-3 py-2.5 border border-gray-100"
-              >
-                <span className="text-lg leading-none shrink-0 mt-0.5">{bullet.icon}</span>
-                <span className="text-sm text-gray-700 leading-snug font-medium">
-                  {bullet.text}
-                </span>
+          {/* ── LEFT PANEL (desktop only) — dark bg, illustration + dots ── */}
+          <div className="hidden sm:flex flex-col items-center justify-between w-64 shrink-0 bg-gradient-to-b from-gray-900 to-emerald-950 px-6 py-7">
+            {/* Step + Emoji */}
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex items-center gap-2">
+                {slide.step > 0 && <span className="step-number">{slide.step}</span>}
+                <span className="text-4xl animate-bounce-gentle">{slide.emoji}</span>
               </div>
-            ))}
+              <p className="text-emerald-300 text-xs font-semibold text-center leading-tight mt-1">
+                {slide.subtitle}
+              </p>
+            </div>
+            {/* Illustration */}
+            <div className="w-full px-1 my-4 opacity-95">{slide.illustration}</div>
+            {/* Dots + counter */}
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex gap-1.5">
+                {slides.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => { setCurrentSlide(idx); setSlideKey((p) => p + 1); }}
+                    className={`rounded-full transition-all duration-300 ${
+                      idx === currentSlide
+                        ? 'w-5 h-2 bg-emerald-400'
+                        : idx < currentSlide
+                        ? 'w-2 h-2 bg-emerald-600'
+                        : 'w-2 h-2 bg-white/20 hover:bg-white/40'
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+              <p className="text-white/30 text-xs">{currentSlide + 1} / {slides.length}</p>
+            </div>
           </div>
 
-          {/* Tip box — colored */}
-          {slide.tip && (
-            <div className={`rounded-xl px-3 py-2.5 text-xs sm:text-sm font-medium border ${tipColors[slide.tipColor] || tipColors.emerald}`}>
-              {slide.tip}
+          {/* ── RIGHT PANEL (full on mobile, right column on desktop) ── */}
+          <div className="flex-1 flex flex-col max-h-[82dvh] sm:max-h-none sm:h-full">
+
+            {/* Title header — proper breathing room, pr-10 avoids close button */}
+            <div className="px-5 sm:px-7 pt-5 sm:pt-6 pb-3 pr-10 sm:pr-12 bg-gradient-to-b from-gray-50 to-white shrink-0">
+              {/* Mobile: step badge + emoji */}
+              <div className="flex items-center gap-2 mb-1.5 sm:hidden">
+                {slide.step > 0 && <span className="step-number">{slide.step}</span>}
+                <span className="text-2xl animate-bounce-gentle">{slide.emoji}</span>
+              </div>
+              <h2 className="text-base sm:text-xl font-extrabold text-gray-900 leading-tight">
+                {slide.title}
+              </h2>
+              <p className="text-xs text-gray-400 mt-0.5 sm:hidden font-medium">{slide.subtitle}</p>
+              {/* Accent underline */}
+              <div className="mt-2.5 h-0.5 w-10 rounded-full bg-gradient-to-r from-emerald-500 to-teal-400" />
             </div>
-          )}
-        </div>
 
-        {/* Progress Dots */}
-        <div className="flex justify-center gap-2 py-3">
-          {slides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => {
-                setCurrentSlide(idx);
-                setSlideKey((prev) => prev + 1);
-              }}
-              className={`rounded-full transition-all duration-300 ${
-                idx === currentSlide
-                  ? 'w-6 h-2.5 bg-emerald-500'
-                  : idx < currentSlide
-                  ? 'w-2.5 h-2.5 bg-emerald-300'
-                  : 'w-2.5 h-2.5 bg-gray-200 hover:bg-gray-300'
-              }`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
-        </div>
+            {/* Bullets — scrollable flex-1 area */}
+            <div className="flex-1 overflow-y-auto px-5 sm:px-7 py-3">
+              <div className="space-y-1.5">
+                {slide.bullets.map((bullet, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-start gap-2 bg-gray-50 rounded-xl px-3 py-2 border border-gray-100"
+                  >
+                    <span className="text-base leading-none shrink-0 mt-0.5">{bullet.icon}</span>
+                    <span className="text-xs sm:text-sm text-gray-700 leading-snug font-medium">
+                      {bullet.text}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-        {/* Navigation Buttons — prominent and student-friendly */}
-        <div className="flex items-center justify-between px-5 sm:px-7 pb-5 pt-1">
-          {/* Skip / Back */}
-          {isFirst ? (
-            <button
-              onClick={handleClose}
-              className="text-sm text-gray-400 hover:text-gray-600 transition-colors px-3 py-2 rounded-lg hover:bg-gray-50"
-            >
-              Skip
-            </button>
-          ) : (
-            <button
-              onClick={goPrev}
-              className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-700 transition-all px-3 py-2 rounded-lg hover:bg-gray-50 font-medium"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              Back
-            </button>
-          )}
+            {/* Tip — pinned above nav */}
+            {slide.tip && (
+              <div className={`mx-5 sm:mx-7 mb-2 rounded-xl px-3 py-2 text-xs font-medium border shrink-0 ${tipColors[slide.tipColor] || tipColors.emerald}`}>
+                {slide.tip}
+              </div>
+            )}
 
-          {/* Next / Get Started */}
-          {isLast ? (
-            <button
-              onClick={handleClose}
-              className="flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold text-white text-sm transition-all duration-300 shadow-md hover:shadow-lg active:scale-[0.97]"
-              style={{
-                background: 'linear-gradient(135deg, #059669 0%, #10b981 100%)',
-              }}
-            >
-              🚀 Let's Start!
-            </button>
-          ) : (
-            <button
-              onClick={goNext}
-              className="flex items-center gap-1.5 px-5 py-2.5 bg-gray-800 hover:bg-gray-900 text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-sm hover:shadow-md active:scale-[0.97]"
-            >
-              Next
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          )}
-        </div>
+            {/* Mobile dots */}
+            <div className="flex justify-center gap-1.5 py-1.5 sm:hidden shrink-0">
+              {slides.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => { setCurrentSlide(idx); setSlideKey((p) => p + 1); }}
+                  className={`rounded-full transition-all duration-300 ${
+                    idx === currentSlide
+                      ? 'w-5 h-2 bg-emerald-500'
+                      : idx < currentSlide
+                      ? 'w-2 h-2 bg-emerald-300'
+                      : 'w-2 h-2 bg-gray-200'
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
 
-        {/* Slide counter — minimal */}
-        <div className="text-center pb-4 text-xs text-gray-300 font-medium">
-          {currentSlide + 1} of {slides.length}
+            {/* Navigation — always at bottom */}
+            <div className="flex items-center justify-between px-5 sm:px-7 py-3 shrink-0">
+              {isFirst ? (
+                <button
+                  onClick={handleClose}
+                  className="text-xs text-gray-400 hover:text-gray-600 transition-colors px-3 py-1.5 rounded-lg hover:bg-gray-50"
+                >
+                  Skip
+                </button>
+              ) : (
+                <button
+                  onClick={goPrev}
+                  className="flex items-center gap-1 text-xs text-gray-500 hover:text-gray-700 transition-all px-3 py-1.5 rounded-lg hover:bg-gray-50 font-semibold"
+                >
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                  Back
+                </button>
+              )}
+
+              {isLast ? (
+                <button
+                  onClick={handleClose}
+                  className="flex items-center gap-1.5 px-5 py-2 rounded-xl font-bold text-white text-xs sm:text-sm transition-all duration-300 shadow-md hover:shadow-lg active:scale-[0.97]"
+                  style={{ background: 'linear-gradient(135deg, #059669 0%, #10b981 100%)' }}
+                >
+                  🚀 Let's Start!
+                </button>
+              ) : (
+                <button
+                  onClick={goNext}
+                  className="flex items-center gap-1 px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white text-xs sm:text-sm font-bold rounded-xl transition-all duration-200 shadow-sm hover:shadow-md active:scale-[0.97]"
+                >
+                  Next
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              )}
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

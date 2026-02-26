@@ -93,51 +93,58 @@ function StudentBrowse() {
   return (
     <div className="has-mobile-bottom-bar">
       {/* Page Header */}
-      <div className="flex items-center justify-between mb-3 sm:mb-6">
+      <div className="flex items-center justify-between mb-4 sm:mb-6">
         <div className="min-w-0">
-          <h1 className="text-xl sm:text-2xl font-bold text-primary leading-tight truncate">
+          <h1 className="text-xl sm:text-2xl font-extrabold text-gray-900 leading-tight truncate">
             Browse Papers
           </h1>
-          <p className="text-xs sm:text-sm text-secondary mt-0.5 hidden sm:block">
+          <p className="text-xs sm:text-sm text-gray-500 mt-0.5 hidden sm:block">
             Find and practice with available question papers
           </p>
         </div>
-        <span className="shrink-0 ml-2 text-xs font-medium text-secondary bg-gray-100 rounded-full px-2.5 py-1">
+        <span className="shrink-0 ml-2 text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-full px-3 py-1">
           {allPapers.length} paper{allPapers.length !== 1 ? 's' : ''}
         </span>
       </div>
 
       {/* Search + Filter Panel */}
-      <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-sm mb-3 sm:mb-5 overflow-hidden">
-        {/* Row 1: Type tabs */}
-        <div className="flex border-b border-gray-100">
+      <div className="mb-3 sm:mb-5">
+        {/* Tab Navigation */}
+        <div className="flex gap-1.5 sm:gap-2 mb-3">
           {[
             { key: 'all', label: 'All Papers',     icon: '📋' },
             { key: 'qp',  label: 'Question Paper', icon: '📄' },
             { key: 'ak',  label: 'Answer Key',     icon: '🔑' },
-          ].map(tab => (
-            <button
-              key={tab.key}
-              onClick={() => setFilterType(tab.key)}
-              className={`flex-1 flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1.5 px-1 sm:px-3 py-2 sm:py-2.5 font-medium transition-colors duration-150 ${
-                filterType === tab.key
-                  ? 'bg-primary text-white'
-                  : 'text-secondary hover:bg-gray-50'
-              }`}
-            >
-              <span className="text-base sm:text-sm leading-none">{tab.icon}</span>
-              <span className="text-[10px] sm:text-sm leading-tight text-center">{tab.label}</span>
-              <span className={`text-[9px] sm:text-xs font-bold px-1 sm:px-1.5 py-0.5 rounded-full ${
-                filterType === tab.key ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-500'
-              }`}>
-                {counts[tab.key]}
-              </span>
-            </button>
-          ))}
+          ].map(tab => {
+            const isActive = filterType === tab.key;
+            return (
+              <button
+                key={tab.key}
+                onClick={() => setFilterType(tab.key)}
+                className={`relative flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
+                  isActive
+                    ? 'bg-gray-900 text-white shadow-md shadow-gray-900/20'
+                    : 'bg-white text-gray-500 border border-gray-200 hover:border-gray-300 hover:text-gray-700 hover:shadow-sm'
+                }`}
+              >
+                <span className="text-sm sm:text-base leading-none">{tab.icon}</span>
+                <span className="hidden sm:inline">{tab.label}</span>
+                <span className="sm:hidden">{tab.label.split(' ')[0]}</span>
+                <span className={`text-[10px] sm:text-xs font-bold px-1.5 py-0.5 rounded-md ${
+                  isActive
+                    ? 'bg-white/15 text-white'
+                    : 'bg-gray-100 text-gray-500'
+                }`}>
+                  {counts[tab.key]}
+                </span>
+              </button>
+            );
+          })}
         </div>
 
-        {/* Row 2: Search + filter toggle */}
-        <div className="flex items-center gap-1.5 px-2.5 sm:px-4 py-2 sm:py-3">
+        {/* Search Bar */}
+        <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+        <div className="flex items-center gap-1.5 px-3 sm:px-4 py-2.5 sm:py-3">
           <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
@@ -205,6 +212,7 @@ function StudentBrowse() {
             </div>
           </div>
         )}
+      </div>
       </div>
 
       {/* Active filter chips */}
