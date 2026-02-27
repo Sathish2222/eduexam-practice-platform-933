@@ -1,5 +1,100 @@
 [
   {
+    "id": "10th-tamil-model-2026",
+    "title": "10th Tamil (Part-I) - 2026 Model Paper",
+    "subject": "Tamil",
+    "class": "10th",
+    "year": "2026",
+    "examType": "Model Paper 2026",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_Tamil_Model_2026.pdf",
+    "paperFileName": "10th_Tamil_Model_2026.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2026-02-27T00:00:00.000Z",
+    "updatedAt": "2026-02-27T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "10th-english-model-2026",
+    "title": "10th English (Part-II) - 2026 Model Paper",
+    "subject": "English",
+    "class": "10th",
+    "year": "2026",
+    "examType": "Model Paper 2026",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_English_Model_2026.pdf",
+    "paperFileName": "10th_English_Model_2026.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2026-02-27T00:00:00.000Z",
+    "updatedAt": "2026-02-27T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "10th-maths-model-2026",
+    "title": "10th Mathematics (Part-III) - 2026 Model Paper",
+    "subject": "Mathematics",
+    "class": "10th",
+    "year": "2026",
+    "examType": "Model Paper 2026",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_Maths_Model_2026.pdf",
+    "paperFileName": "10th_Maths_Model_2026.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2026-02-27T00:00:00.000Z",
+    "updatedAt": "2026-02-27T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "10th-science-model-2026",
+    "title": "10th Science (Part-III) - 2026 Model Paper",
+    "subject": "Science",
+    "class": "10th",
+    "year": "2026",
+    "examType": "Model Paper 2026",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_Science_Model_2026.pdf",
+    "paperFileName": "10th_Science_Model_2026.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2026-02-27T00:00:00.000Z",
+    "updatedAt": "2026-02-27T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
+    "id": "10th-social-science-model-2026",
+    "title": "10th Social Science (Part-III) - 2026 Model Paper",
+    "subject": "Social Science",
+    "class": "10th",
+    "year": "2026",
+    "examType": "Model Paper 2026",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_Social_Science_Model_2026.pdf",
+    "paperFileName": "10th_Social_Science_Model_2026.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": false,
+    "answerKeyUrl": null,
+    "answerFileName": null,
+    "answerFileType": null,
+    "createdAt": "2026-02-27T00:00:00.000Z",
+    "updatedAt": "2026-02-27T00:00:00.000Z",
+    "allAnswerKeys": []
+  },
+  {
     "id": "tamil-march-2025",
     "title": "12th Tamil - March 2025",
     "subject": "Tamil",
@@ -28,7 +123,8 @@
         "label": "Answer Key",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "tamil-june-2024",
@@ -46,7 +142,8 @@
     "answerFileType": null,
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z",
-    "allAnswerKeys": []
+    "allAnswerKeys": [],
+    "class": "12th"
   },
   {
     "id": "tamil-march-2024",
@@ -71,7 +168,8 @@
         "label": "Official Answer Key",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "tamil-june-2023",
@@ -96,7 +194,8 @@
         "label": "QP with Answer Key Sura",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "tamil-march-2023",
@@ -121,7 +220,8 @@
         "label": "Official Answer Key",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "english-march-2025",
@@ -188,7 +288,8 @@
         "label": "Answer Key Win",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "english-june-2024",
@@ -206,7 +307,8 @@
     "answerFileType": null,
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z",
-    "allAnswerKeys": []
+    "allAnswerKeys": [],
+    "class": "12th"
   },
   {
     "id": "english-march-2024",
@@ -285,7 +387,8 @@
         "label": "Answer Key 8",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "english-june-2023",
@@ -316,7 +419,8 @@
         "label": "Answer Key",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "english-march-2023",
@@ -419,7 +523,8 @@
         "label": "Answer Key Svb",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "commerce-march-2025",
@@ -474,7 +579,8 @@
         "label": "Answer Key Tamil Medium 3",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "commerce-june-2024",
@@ -492,7 +598,8 @@
     "answerFileType": null,
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z",
-    "allAnswerKeys": []
+    "allAnswerKeys": [],
+    "class": "12th"
   },
   {
     "id": "commerce-march-2024",
@@ -559,7 +666,8 @@
         "label": "Answer Key",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "commerce-june-2023",
@@ -590,7 +698,8 @@
         "label": "Answer Key Tamil Medium Sura",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "commerce-march-2023",
@@ -675,7 +784,8 @@
         "label": "Answer Key Tamil Medium 4",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "economics-march-2025",
@@ -724,7 +834,8 @@
         "label": "Answer Key Tamil Medium 3",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "economics-june-2024",
@@ -742,7 +853,8 @@
     "answerFileType": null,
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z",
-    "allAnswerKeys": []
+    "allAnswerKeys": [],
+    "class": "12th"
   },
   {
     "id": "economics-march-2024",
@@ -815,7 +927,8 @@
         "label": "Answer Key Tamil Medium 4",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "economics-june-2023",
@@ -846,7 +959,8 @@
         "label": "Answer Key Tamil Medium Sura",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "economics-march-2023",
@@ -895,7 +1009,8 @@
         "label": "Answer Key Tamil Medium",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "accountancy-march-2025",
@@ -950,7 +1065,8 @@
         "label": "Answer Key Tamil Medium 3",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "accountancy-june-2024",
@@ -968,7 +1084,8 @@
     "answerFileType": null,
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z",
-    "allAnswerKeys": []
+    "allAnswerKeys": [],
+    "class": "12th"
   },
   {
     "id": "accountancy-march-2024",
@@ -1053,7 +1170,8 @@
         "label": "Answer Key 2",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "accountancy-june-2023",
@@ -1084,7 +1202,8 @@
         "label": "Answer Key Tamil Medium",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "accountancy-march-2023",
@@ -1163,7 +1282,8 @@
         "label": "Answer Key Tamil Medium Balaji",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "computer-application-march-2025",
@@ -1218,7 +1338,8 @@
         "label": "Answer Key English Medium 4",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "computer-application-june-2024",
@@ -1236,7 +1357,8 @@
     "answerFileType": null,
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z",
-    "allAnswerKeys": []
+    "allAnswerKeys": [],
+    "class": "12th"
   },
   {
     "id": "computer-application-march-2024",
@@ -1297,7 +1419,8 @@
         "label": "Answer Key",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "computer-application-june-2023",
@@ -1328,7 +1451,8 @@
         "label": "Answer Key Tamil Medium Sura",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "computer-application-march-2023",
@@ -1413,7 +1537,8 @@
         "label": "Answer Key Svb",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "business-maths-march-2025",
@@ -1450,7 +1575,8 @@
         "label": "Answer Key Sura English Medium",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "business-maths-june-2024",
@@ -1468,7 +1594,8 @@
     "answerFileType": null,
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z",
-    "allAnswerKeys": []
+    "allAnswerKeys": [],
+    "class": "12th"
   },
   {
     "id": "business-maths-march-2024",
@@ -1505,7 +1632,8 @@
         "label": "Answer Key English Medium",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "business-maths-june-2023",
@@ -1523,7 +1651,8 @@
     "answerFileType": null,
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z",
-    "allAnswerKeys": []
+    "allAnswerKeys": [],
+    "class": "12th"
   },
   {
     "id": "business-maths-march-2023",
@@ -1554,7 +1683,8 @@
         "label": "Official Answer Key Tamil Medium",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "chemistry-march-2025",
@@ -1627,7 +1757,8 @@
         "label": "Answer Key Tamil Medium 3",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "chemistry-june-2024",
@@ -1645,7 +1776,8 @@
     "answerFileType": null,
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z",
-    "allAnswerKeys": []
+    "allAnswerKeys": [],
+    "class": "12th"
   },
   {
     "id": "chemistry-march-2024",
@@ -1718,7 +1850,8 @@
         "label": "Answer Key 2",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "chemistry-june-2023",
@@ -1749,7 +1882,8 @@
         "label": "Answer Key Tamil Medium Sura",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "chemistry-march-2023",
@@ -1792,7 +1926,8 @@
         "label": "Answer Key Tamil Medium Karthic",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "physics-march-2025",
@@ -1841,7 +1976,8 @@
         "label": "Answer Key Tamil Medium",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "physics-june-2024",
@@ -1859,7 +1995,8 @@
     "answerFileType": null,
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z",
-    "allAnswerKeys": []
+    "allAnswerKeys": [],
+    "class": "12th"
   },
   {
     "id": "physics-march-2024",
@@ -1932,7 +2069,8 @@
         "label": "Answer Key Tamil Medium",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "physics-june-2023",
@@ -1963,7 +2101,8 @@
         "label": "Answer Key Tamil Medium Sura",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "physics-march-2023",
@@ -2012,7 +2151,8 @@
         "label": "Answer Key English Medium 3",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "maths-march-2025",
@@ -2079,7 +2219,8 @@
         "label": "Answer Key",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "maths-june-2024",
@@ -2097,7 +2238,8 @@
     "answerFileType": null,
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z",
-    "allAnswerKeys": []
+    "allAnswerKeys": [],
+    "class": "12th"
   },
   {
     "id": "maths-march-2024",
@@ -2164,7 +2306,8 @@
         "label": "Answer Key",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "maths-june-2023",
@@ -2195,7 +2338,8 @@
         "label": "Answer Key Tamil Medium Sura",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "maths-march-2023",
@@ -2256,7 +2400,8 @@
         "label": "Answer Key English Medium Svb",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "computer-science-march-2025",
@@ -2311,7 +2456,8 @@
         "label": "Answer Key English Medium 4",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "computer-science-june-2024",
@@ -2329,7 +2475,8 @@
     "answerFileType": null,
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z",
-    "allAnswerKeys": []
+    "allAnswerKeys": [],
+    "class": "12th"
   },
   {
     "id": "computer-science-march-2024",
@@ -2396,7 +2543,8 @@
         "label": "Answer Key 2",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "computer-science-june-2023",
@@ -2427,7 +2575,8 @@
         "label": "Answer Key Tamil Medium Sura",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "computer-science-march-2023",
@@ -2494,7 +2643,8 @@
         "label": "Answer Key Svb",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "botany-march-2025",
@@ -2519,7 +2669,8 @@
         "label": "Answer Key English Medium",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "botany-june-2024",
@@ -2537,7 +2688,8 @@
     "answerFileType": null,
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z",
-    "allAnswerKeys": []
+    "allAnswerKeys": [],
+    "class": "12th"
   },
   {
     "id": "botany-march-2024",
@@ -2574,7 +2726,8 @@
         "label": "Answer Key English Medium",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "botany-june-2023",
@@ -2605,7 +2758,8 @@
         "label": "Answer Key Tamil Medium Sura",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "botany-march-2023",
@@ -2642,7 +2796,8 @@
         "label": "Answer Key English Medium",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "zoology-march-2025",
@@ -2673,7 +2828,8 @@
         "label": "Answer Key Tamil Medium",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "zoology-march-2024",
@@ -2704,7 +2860,8 @@
         "label": "Official Answer Key Tamil Medium",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "zoology-june-2023",
@@ -2735,7 +2892,8 @@
         "label": "Answer Key Tamil Medium Sura",
         "fileType": "application/pdf"
       }
-    ]
+    ],
+    "class": "12th"
   },
   {
     "id": "zoology-march-2023",
@@ -2763,6 +2921,433 @@
       {
         "url": "/papers/Zoology/Answer_Key/12th_Zoology_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
         "filename": "12th_Zoology_march-2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ],
+    "class": "12th"
+  },
+  {
+    "id": "10th-tamil-2024",
+    "title": "10th Tamil - 2024 Public Exam Question Paper",
+    "subject": "Tamil",
+    "class": "10th",
+    "year": "2024",
+    "examType": "Public Exam 2024",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_Tamil_2024.pdf",
+    "paperFileName": "10th_Tamil_2024.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/10th/Answer_Key/10th_Tamil_2024_Official_Answer_Key.pdf",
+    "answerFileName": "10th_Tamil_2024_Official_Answer_Key.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2026-02-27T00:00:00.000Z",
+    "updatedAt": "2026-02-27T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/10th/Answer_Key/10th_Tamil_2024_Official_Answer_Key.pdf",
+        "filename": "10th_Tamil_2024_Official_Answer_Key.pdf",
+        "label": "Official Answer Key",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "10th-english-2024",
+    "title": "10th English - 2024 Public Exam Question Paper",
+    "subject": "English",
+    "class": "10th",
+    "year": "2024",
+    "examType": "Public Exam 2024",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_English_2024.pdf",
+    "paperFileName": "10th_English_2024.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/10th/Answer_Key/10th_English_2024_Official_Answer_Key.pdf",
+    "answerFileName": "10th_English_2024_Official_Answer_Key.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2026-02-27T00:00:00.000Z",
+    "updatedAt": "2026-02-27T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/10th/Answer_Key/10th_English_2024_Official_Answer_Key.pdf",
+        "filename": "10th_English_2024_Official_Answer_Key.pdf",
+        "label": "Official Answer Key",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "10th-science-2024",
+    "title": "10th Science - 2024 Public Exam Question Paper",
+    "subject": "Science",
+    "class": "10th",
+    "year": "2024",
+    "examType": "Public Exam 2024",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_Science_2024.pdf",
+    "paperFileName": "10th_Science_2024.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/10th/Answer_Key/10th_Science_2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "10th_Science_2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2026-02-27T00:00:00.000Z",
+    "updatedAt": "2026-02-27T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/10th/Answer_Key/10th_Science_2024_Official_Answer_Key_English_Medium.pdf",
+        "filename": "10th_Science_2024_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/10th/Answer_Key/10th_Science_2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "10th_Science_2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "10th-maths-2024",
+    "title": "10th Mathematics - 2024 Public Exam Question Paper",
+    "subject": "Mathematics",
+    "class": "10th",
+    "year": "2024",
+    "examType": "Public Exam 2024",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_Maths_2024.pdf",
+    "paperFileName": "10th_Maths_2024.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/10th/Answer_Key/10th_Maths_2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "10th_Maths_2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2026-02-27T00:00:00.000Z",
+    "updatedAt": "2026-02-27T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/10th/Answer_Key/10th_Maths_2024_Official_Answer_Key_English_Medium.pdf",
+        "filename": "10th_Maths_2024_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/10th/Answer_Key/10th_Maths_2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "10th_Maths_2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "10th-social-science-2024",
+    "title": "10th Social Science - 2024 Public Exam Question Paper",
+    "subject": "Social Science",
+    "class": "10th",
+    "year": "2024",
+    "examType": "Public Exam 2024",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_Social_Science_2024.pdf",
+    "paperFileName": "10th_Social_Science_2024.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/10th/Answer_Key/10th_Social_Science_2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "10th_Social_Science_2024_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2026-02-27T00:00:00.000Z",
+    "updatedAt": "2026-02-27T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/10th/Answer_Key/10th_Social_Science_2024_Official_Answer_Key_English_Medium.pdf",
+        "filename": "10th_Social_Science_2024_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/10th/Answer_Key/10th_Social_Science_2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "10th_Social_Science_2024_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "10th-tamil-2023",
+    "title": "10th Tamil - 2023 Public Exam Question Paper",
+    "subject": "Tamil",
+    "class": "10th",
+    "year": "2023",
+    "examType": "Public Exam 2023",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_Tamil_2023.pdf",
+    "paperFileName": "10th_Tamil_2023.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/10th/Answer_Key/10th_Tamil_2023_Official_Answer_Key.pdf",
+    "answerFileName": "10th_Tamil_2023_Official_Answer_Key.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2026-02-27T00:00:00.000Z",
+    "updatedAt": "2026-02-28T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/10th/Answer_Key/10th_Tamil_2023_Official_Answer_Key.pdf",
+        "filename": "10th_Tamil_2023_Official_Answer_Key.pdf",
+        "label": "Official Answer Key",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "10th-english-2023",
+    "title": "10th English - 2023 Public Exam Question Paper",
+    "subject": "English",
+    "class": "10th",
+    "year": "2023",
+    "examType": "Public Exam 2023",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_English_2023.pdf",
+    "paperFileName": "10th_English_2023.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/10th/Answer_Key/10th_English_2023_Official_Answer_Key.pdf",
+    "answerFileName": "10th_English_2023_Official_Answer_Key.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2026-02-27T00:00:00.000Z",
+    "updatedAt": "2026-02-28T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/10th/Answer_Key/10th_English_2023_Official_Answer_Key.pdf",
+        "filename": "10th_English_2023_Official_Answer_Key.pdf",
+        "label": "Official Answer Key",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "10th-social-science-2023",
+    "title": "10th Social Science - 2023 Public Exam Question Paper",
+    "subject": "Social Science",
+    "class": "10th",
+    "year": "2023",
+    "examType": "Public Exam 2023",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_Social_Science_2023.pdf",
+    "paperFileName": "10th_Social_Science_2023.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/10th/Answer_Key/10th_Social_Science_2023_Official_Answer_Key_Tamil_Medium.pdf",
+    "answerFileName": "10th_Social_Science_2023_Official_Answer_Key_Tamil_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2026-02-27T00:00:00.000Z",
+    "updatedAt": "2026-02-28T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/10th/Answer_Key/10th_Social_Science_2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "10th_Social_Science_2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "10th-science-2023",
+    "title": "10th Science - 2023 Public Exam Question Paper",
+    "subject": "Science",
+    "class": "10th",
+    "year": "2023",
+    "examType": "Public Exam 2023",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_Science_2023.pdf",
+    "paperFileName": "10th_Science_2023.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/10th/Answer_Key/10th_Science_2023_Official_Answer_Key_Tamil_Medium.pdf",
+    "answerFileName": "10th_Science_2023_Official_Answer_Key_Tamil_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2026-02-27T00:00:00.000Z",
+    "updatedAt": "2026-02-28T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/10th/Answer_Key/10th_Science_2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "10th_Science_2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "10th-maths-2023",
+    "title": "10th Mathematics - 2023 Public Exam Question Paper",
+    "subject": "Mathematics",
+    "class": "10th",
+    "year": "2023",
+    "examType": "Public Exam 2023",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_Maths_2023.pdf",
+    "paperFileName": "10th_Maths_2023.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/10th/Answer_Key/10th_Maths_2023_Official_Answer_Key_Tamil_Medium.pdf",
+    "answerFileName": "10th_Maths_2023_Official_Answer_Key_Tamil_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2026-02-27T00:00:00.000Z",
+    "updatedAt": "2026-02-28T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/10th/Answer_Key/10th_Maths_2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "10th_Maths_2023_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "10th-tamil-2025",
+    "title": "10th Tamil - 2025 Public Exam Question Paper",
+    "subject": "Tamil",
+    "class": "10th",
+    "year": "2025",
+    "examType": "Public Exam 2025",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_Tamil_2025.pdf",
+    "paperFileName": "10th_Tamil_2025.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/10th/Answer_Key/10th_Tamil_2025_Official_Answer_Key.pdf",
+    "answerFileName": "10th_Tamil_2025_Official_Answer_Key.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2026-02-28T00:00:00.000Z",
+    "updatedAt": "2026-02-28T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/10th/Answer_Key/10th_Tamil_2025_Official_Answer_Key.pdf",
+        "filename": "10th_Tamil_2025_Official_Answer_Key.pdf",
+        "label": "Official Answer Key",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "10th-english-2025",
+    "title": "10th English - 2025 Public Exam Question Paper",
+    "subject": "English",
+    "class": "10th",
+    "year": "2025",
+    "examType": "Public Exam 2025",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_English_2025.pdf",
+    "paperFileName": "10th_English_2025.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/10th/Answer_Key/10th_English_2025_Official_Answer_Key.pdf",
+    "answerFileName": "10th_English_2025_Official_Answer_Key.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2026-02-28T00:00:00.000Z",
+    "updatedAt": "2026-02-28T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/10th/Answer_Key/10th_English_2025_Official_Answer_Key.pdf",
+        "filename": "10th_English_2025_Official_Answer_Key.pdf",
+        "label": "Official Answer Key",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "10th-maths-2025",
+    "title": "10th Mathematics - 2025 Public Exam Question Paper",
+    "subject": "Mathematics",
+    "class": "10th",
+    "year": "2025",
+    "examType": "Public Exam 2025",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_Maths_2025.pdf",
+    "paperFileName": "10th_Maths_2025.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/10th/Answer_Key/10th_Maths_2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "10th_Maths_2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2026-02-28T00:00:00.000Z",
+    "updatedAt": "2026-02-28T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/10th/Answer_Key/10th_Maths_2025_Official_Answer_Key_English_Medium.pdf",
+        "filename": "10th_Maths_2025_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/10th/Answer_Key/10th_Maths_2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "10th_Maths_2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "10th-science-2025",
+    "title": "10th Science - 2025 Public Exam Question Paper",
+    "subject": "Science",
+    "class": "10th",
+    "year": "2025",
+    "examType": "Public Exam 2025",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_Science_2025.pdf",
+    "paperFileName": "10th_Science_2025.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/10th/Answer_Key/10th_Science_2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "10th_Science_2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2026-02-28T00:00:00.000Z",
+    "updatedAt": "2026-02-28T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/10th/Answer_Key/10th_Science_2025_Official_Answer_Key_English_Medium.pdf",
+        "filename": "10th_Science_2025_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/10th/Answer_Key/10th_Science_2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "10th_Science_2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "label": "Official Answer Key Tamil Medium",
+        "fileType": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "10th-social-science-2025",
+    "title": "10th Social Science - 2025 Public Exam Question Paper",
+    "subject": "Social Science",
+    "class": "10th",
+    "year": "2025",
+    "examType": "Public Exam 2025",
+    "duration": 180,
+    "paperUrl": "/papers/10th/10th_Social_Science_2025.pdf",
+    "paperFileName": "10th_Social_Science_2025.pdf",
+    "paperFileType": "application/pdf",
+    "hasAnswerKey": true,
+    "answerKeyUrl": "/papers/10th/Answer_Key/10th_Social_Science_2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileName": "10th_Social_Science_2025_Official_Answer_Key_English_Medium.pdf",
+    "answerFileType": "application/pdf",
+    "createdAt": "2026-02-28T00:00:00.000Z",
+    "updatedAt": "2026-02-28T00:00:00.000Z",
+    "allAnswerKeys": [
+      {
+        "url": "/papers/10th/Answer_Key/10th_Social_Science_2025_Official_Answer_Key_English_Medium.pdf",
+        "filename": "10th_Social_Science_2025_Official_Answer_Key_English_Medium.pdf",
+        "label": "Official Answer Key English Medium",
+        "fileType": "application/pdf"
+      },
+      {
+        "url": "/papers/10th/Answer_Key/10th_Social_Science_2025_Official_Answer_Key_Tamil_Medium.pdf",
+        "filename": "10th_Social_Science_2025_Official_Answer_Key_Tamil_Medium.pdf",
         "label": "Official Answer Key Tamil Medium",
         "fileType": "application/pdf"
       }

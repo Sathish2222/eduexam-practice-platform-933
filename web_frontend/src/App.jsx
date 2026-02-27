@@ -32,6 +32,7 @@ function App() {
           if (existingIds.has(p.id)) updatePaper(p.id, p);
           else addPaper(p);
         }
+        window.dispatchEvent(new CustomEvent('catalogSynced'));
       } catch (e) {
         console.warn('Could not sync catalog:', e);
       }

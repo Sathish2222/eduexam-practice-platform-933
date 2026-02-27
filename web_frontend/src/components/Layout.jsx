@@ -1,47 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-/**
- * Main layout component with modern navigation header, mobile menu, and footer.
- * Provides consistent page structure and responsive navigation with a fresh, modern feel.
- */
 // PUBLIC_INTERFACE
-/**
- * Application layout wrapper with modern gradient navigation bar, responsive mobile menu, and footer.
- * @param {{ children: React.ReactNode }} props
- * @returns {JSX.Element}
- */
 function Layout({ children }) {
-  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location.pathname]);
-
   const navItems = [
-    { to: '/', label: 'Home', icon: '🏠' },
-    { to: '/browse', label: 'Exam', icon: '🎯' },
-    { to: '/history', label: 'History', icon: '📊' },
-    { to: '/settings', label: 'Settings', icon: '⚙️' },
+    { to: '/',        label: 'Home',     icon: '🏠' },
+    { to: '/browse',  label: 'Exam',     icon: '🎯' },
+    { to: '/history', label: 'History',  icon: '📊' },
+    { to: '/settings',label: 'Settings', icon: '⚙️'  },
   ];
 
   const isActive = (path) => location.pathname === path;
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      {/* Navigation Header */}
-      <header className="header-gradient text-white shadow-lg sticky top-0 z-50">
+
+      {/* ── Top Header ── */}
+      <header className="header-gradient text-white shadow-md sticky top-0 z-50">
         <div className="w-full px-4 sm:px-6">
-          <div className="flex items-center justify-between h-14 sm:h-16">
+          <div className="flex items-center justify-between h-13 sm:h-16">
 
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 group shrink-0">
-              <span className="text-xl sm:text-2xl transition-transform duration-300 group-hover:scale-110">📝</span>
+            <Link to="/" className="flex items-center gap-2 group shrink-0 py-2">
+              <span className="text-xl sm:text-2xl transition-transform duration-300 group-hover:scale-110 leading-none">📝</span>
               <div className="flex flex-col leading-none">
                 <span className="text-sm sm:text-base font-extrabold tracking-tight">TN Study Hub</span>
-                <span className="text-[10px] text-emerald-300/80 font-normal tracking-wide hidden sm:block">Exam Practice Platform</span>
+                <span className="text-[10px] text-emerald-300/80 font-normal tracking-wide hidden sm:block mt-0.5">Exam Practice Platform</span>
               </div>
             </Link>
 
@@ -63,65 +49,29 @@ function Layout({ children }) {
               ))}
             </nav>
 
-            {/* Mobile: bottom tab bar (rendered below) — just show brand on mobile header */}
-            {/* Mobile hamburger */}
-            <button
-              className="md:hidden flex items-center justify-center w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-200 active:scale-95"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Toggle menu"
-              aria-expanded={menuOpen}
-            >
-              {menuOpen ? (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
+            {/* Mobile: current page indicator */}
+            <div className="md:hidden">
+              <span className="text-xs font-semibold text-white/70 bg-white/10 px-3 py-1.5 rounded-full">
+                {navItems.find(n => isActive(n.to))?.label || 'TN Hub'}
+              </span>
+            </div>
+
           </div>
         </div>
-
-        {/* Mobile Dropdown Menu */}
-        {menuOpen && (
-          <div className="md:hidden border-t border-white/10 animate-slideDown">
-            <nav className="w-full px-3 py-2 grid grid-cols-2 gap-1.5">
-              {navItems.map((item) => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className={`flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-200 ${
-                    isActive(item.to)
-                      ? 'bg-white/20 text-white'
-                      : 'text-white/75 hover:bg-white/10 hover:text-white'
-                  }`}
-                >
-                  <span className="text-lg">{item.icon}</span>
-                  <span>{item.label}</span>
-                  {isActive(item.to) && (
-                    <span className="ml-auto w-2 h-2 rounded-full bg-emerald-400" />
-                  )}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        )}
       </header>
 
-      {/* Main content — smooth fade-in */}
-      <main className="flex-1 w-full px-4 sm:px-6 py-6 sm:py-8 animate-fadeIn">
+      {/* Main content */}
+      <main className="flex-1 w-full px-3 sm:px-6 pt-4 sm:pt-8 pb-24 md:pb-10 animate-fadeIn">
         {children}
       </main>
 
-      {/* Footer — clean modern style */}
-      <footer className="border-t border-gray-100 bg-white/60 backdrop-blur-sm mt-auto">
-        <div className="w-full px-4 sm:px-6 py-5 sm:py-6 flex flex-col items-center gap-2">
-          <p className="text-center text-sm sm:text-base text-gray-500 font-medium">
+      {/* Footer — desktop only */}
+      <footer className="hidden md:block border-t border-gray-100 bg-white/60 backdrop-blur-sm mt-auto">
+        <div className="w-full px-4 sm:px-6 py-5 flex flex-col items-center gap-1.5">
+          <p className="text-center text-sm text-gray-500 font-medium">
             📝 TN Study Hub — All data stored locally on your device
           </p>
-          <p className="text-center text-sm sm:text-base text-gray-500">
+          <p className="text-center text-sm text-gray-400">
             Designed &amp; Developed by{' '}
             <a
               href="https://www.linkedin.com/in/sathish-kumar-balakrishnan-3436611b5/"
@@ -138,6 +88,41 @@ function Layout({ children }) {
           </p>
         </div>
       </footer>
+
+      {/* ── Mobile Bottom Tab Navigation ── */}
+      <nav
+        className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-100"
+        style={{
+          boxShadow: '0 -4px 20px rgba(0,0,0,0.08)',
+          paddingBottom: 'env(safe-area-inset-bottom, 0px)',
+        }}
+      >
+        <div className="flex items-stretch">
+          {navItems.map((item) => {
+            const active = isActive(item.to);
+            return (
+              <Link
+                key={item.to}
+                to={item.to}
+                className={`flex-1 flex flex-col items-center justify-center gap-0.5 py-2.5 transition-colors duration-150 active:scale-95 ${
+                  active ? 'text-emerald-600' : 'text-gray-400'
+                }`}
+              >
+                <span className={`text-[22px] leading-none transition-transform duration-200 ${active ? 'scale-110' : ''}`}>
+                  {item.icon}
+                </span>
+                <span className={`text-[10px] font-bold tracking-wide ${active ? 'text-emerald-600' : 'text-gray-400'}`}>
+                  {item.label}
+                </span>
+                {active && (
+                  <span className="w-4 h-0.5 rounded-full bg-emerald-500 mt-0.5" />
+                )}
+              </Link>
+            );
+          })}
+        </div>
+      </nav>
+
     </div>
   );
 }
